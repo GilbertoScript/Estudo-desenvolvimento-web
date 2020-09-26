@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulários </title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Css/forms.css">
+</head>
+<body>
+
+     <h2>Estilizando formulários</h2>
+
+     <div id="form">
+
+         <form>
+             <fieldset>
+                 <legend>Detalhes de contato</legend>
+
+                 <div>
+                     <label for="nome">Nome: </label>
+                     <input id="nome" type="text" name="nome">
+                 </div>
+
+                 <div>
+                     <label for="email">Email: </label>
+                     <input id="email" type="text" name="email">
+                 </div>
+
+                 <div>
+                     <label for="url">URL: </label>
+                     <input id="url" type="text" name="url">
+                 </div>
+
+             </fieldset>
+
+             <fieldset>
+                 <legend>Comentários</legend>
+
+                 <div>
+                     <label for="mensagem">Mensagem:</label>
+                     <textarea id="mensagem" name="mensagem"></textarea>
+                 </div>
+             </fieldset>
+
+             <fieldset>
+                 <legend>Lembrar de mim</legend>
+
+                 <div>
+                     <label>
+                         <input class="radio" type="radio" name="lembrar">Sim
+                     </label>
+                 </div>
+
+                <div>
+                     <label>
+                         <input class="radio" type="radio" name="lembrar">Não
+                     </label>
+                 </div>
+
+                <div id="button" >
+                    <button id="botao" type="button" name="enviar">Enviar</button>
+                </div>
+
+             </fieldset>
+
+         </form>
+
+    </div>
+
+</body>
+</html>
