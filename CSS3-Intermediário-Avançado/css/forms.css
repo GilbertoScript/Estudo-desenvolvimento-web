@@ -1,0 +1,78 @@
+/* * {
+	border: 1px solid red;
+}*/
+
+body {
+	background-image: url('https://image.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8184.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h2 {
+	border: 2px solid grey;
+	margin: auto;
+	margin-bottom: 16px;
+	width: 900px;
+	background-color: #f8f8f8;
+	height: 64px;
+	line-height: 64px;
+	margin-top: 0;
+	text-align: center;
+	border-radius: 20px;
+}
+
+#form {
+	border: 2px solid grey;
+	background-color: #f8f8f8;
+	width: 600px;
+	margin: auto;
+	border-radius: 20px;
+}
+
+legend {
+	font-weight: bold;
+}
+
+fieldset {
+	margin: 1em 0;
+	padding: 1em;
+	border: 1px solid #ccc;
+	background: #f8f8f8;
+}
+
+label {
+	display: block;
+	padding-bottom: 3px;
+	cursor: pointer;
+}
+
+input/*[type="text"]*/ {
+	width: 300px;
+	height: 19px;
+	border-radius: 9px;
+}
+
+textarea {
+	width: 300px;
+	height: 100px;
+}
+
+input.radio, input.checkbox, input.submit {
+	width: auto;
+}
+
+.radio {
+	margin-right: 1em;
+}
+
+#button {
+	width: 70px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+#botao {
+	width: 70px;
+	height: 30px;
+}

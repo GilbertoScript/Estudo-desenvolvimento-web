@@ -1,0 +1,40 @@
+/* * {
+	border: 1px solid red;
+}
+
+.caixa {
+	margin: auto;
+	width: 400px;
+	background: #dedede url(../Imagens/topo2.png) no-repeat left top;
+}
+
+.caixa h2 {
+	padding: 10px 20px 0 20px;
+}
+
+.caixa p {
+	padding: 0 20px 20px 20px;
+	background: url(../Imagens/baixo2.png) no-repeat left bottom;
+}
+*/
+
+.caixa {
+	margin: auto;
+	width: 400px;
+	background: #dedede url(../Imagens/fundo-arredondamento.png) repeat-y;
+}
+
+.caixa h2 {
+	text-align: center;
+	padding: 10px 20px 0 20px;
+	background: url(../Imagens/topo2.png) no-repeat left top;
+}
+
+.caixa .ultimo  {
+	background: url(../Imagens/baixo2.png) no-repeat left bottom;
+	padding-bottom: 20px;
+}
+
+.caixa p {
+	text-align: center;
+}
