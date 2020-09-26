@@ -1,0 +1,19 @@
+#caixa {
+	width: 300px;
+	height: 300px;
+	background: #b9c941;
+	padding: 50px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/* -webkit-border-radius: 10px 60px 10px 60px;
+	-moz-border-radius: 10px 60px 10px 60px;
+	border-radius: 10px 60px 10px 60px;*/
+}
+
+/*.arredondamento {
+	width: 300px;
+	height: 300px;
+	float: left;
+	border-radius: 300px;
+}*/

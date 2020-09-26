@@ -1,0 +1,45 @@
+header {
+	border: 1px solid #ccc;
+	background: #f2f2f2;
+	padding: 10px;
+}
+
+header img {
+	width: 150px;
+}
+
+nav {
+	border: 1px solid green;
+	background: #f2f2f2;
+	padding: 10px;
+}
+
+nav ul li a {
+	text-decoration: none;
+}
+
+nav ul li {
+	display: inline;
+	padding: 7px;
+}
+
+nav ul {
+	list-style: none;
+}
+
+article {
+	background: lightblue;
+	padding: 10px;
+}
+
+section {
+	border: 1px dotted white;
+}
+
+aside {
+	background: lightgreen;
+}
+
+footer {
+	background: #ccc;
+}

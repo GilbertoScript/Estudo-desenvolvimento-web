@@ -1,0 +1,10 @@
+html, body {
+	width: 100Vw;
+	height: 100Vh;
+	background: linear-gradient(red, orange, yellow) no-repeat;
+}
+
+#container {
+	color: black;
+	text-align: center;
+}
