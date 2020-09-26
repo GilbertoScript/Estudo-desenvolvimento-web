@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Bootstrap - Margin e Padding</title>
+
+    <style type="text/css">
+
+      * {
+        /* border: 1px solid red; */
+        margin: 0;
+        padding: 0;
+      }
+      
+      h1 {}
+
+      .img {
+        display: flex;
+        justify-content: center;
+      }
+
+    </style>
+
+  </head>
+
+  <body class="bg-white" style="margin-bottom: 200px; padding: 16px;>
+
+    <!-- Aplicação de Margin
+
+    mt => Margin top
+    mb => Margin bottom
+    ml => Margin left 
+    mr => Margin right
+    mx => Margin no eixo x (horizontal) esquerda/direita
+    my => Margin no eixo y (vertical) top/bottom
+    m => Margin em todos os lados valor a definir (0 a 5)
+    -->
+
+    <div class="img">
+      <!-- <h1 class="bg-warning text-center rounded">Logo ipsum</h1> -->
+      <img class="mb-2 img-responsive img" src="img/logotest.PNG" width="300px">
+    </div>
+      
+     <div style="display: flex; justify-content: center; padding: 5px;">
+      <ul style="margin: auto; margin-left: 50%; max-width: 500px; padding: 0 100px 0 100px;" class="list-unstyled list-inline bg-white mx-5 text-center rounded border border-dark text-uppercase font-weight-bold">
+        <li class="list-inline-item"><a class="text-dark" href="">Home</a></li>
+        <li class="list-inline-item"><a class="text-dark" href="">Sobre</a></li>
+        <li class="list-inline-item"><a class="text-dark" href="">Contato</a></li>
+      </ul>
+     </div>
+
+
+    <div class="clear-fix">
+      <article class="float-left">
+        <h2 class="mt-5 ml-5 display-4">Montarias?</h2>
+        <img class="ml-5 mt-3 border border-dark" src="https://i.imgur.com/YJbHjGf.png" height="400px" width="500px">
+      </article>
+
+      <aside class="m-5 float-right" style="width: 800px;">
+        <h2 class="display-4">Sim isso mesmo!</h2>
+        <p class="text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis odio vitae sem porta pretium non eget sem. Proin ut mauris neque. Vestibulum imperdiet est ac elementum finibus. Donec consequat, turpis ut rutrum iaculis, purus urna condimentum nibh, vel tempor augue augue ac mauris. Pellentesque mattis quam in ultrices pulvinar. Vestibulum eget dui turpis. Etiam congue vel enim at ornare.
+        </p>
+
+        <p class="text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis odio vitae sem porta pretium non eget sem. Proin ut mauris neque. Vestibulum imperdiet est ac elementum finibus. Donec consequat, turpis ut rutrum iaculis, purus urna condimentum nibh, vel tempor augue augue ac mauris. Pellentesque mattis quam in ultrices pulvinar. Vestibulum eget dui turpis. Etiam congue vel enim at ornare.
+        </p>
+
+        <p class="text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis odio vitae sem porta pretium non eget sem. Proin ut mauris neque. Vestibulum imperdiet est ac elementum finibus. Donec consequat, turpis ut rutrum iaculis, purus urna condimentum nibh, vel tempor augue augue ac mauris. Pellentesque mattis quam in ultrices pulvinar. Vestibulum eget dui turpis. Etiam congue vel enim at ornare.
+        </p>
+      </aside>
+    </div>
+
+    <div style="clear: both;"></div>
+
+      <hr><hr>
+
+    <div class="clear-fix">
+      <article class="float-left">
+        <h2 class="mt-5 ml-5 display-4">Montarias?</h2>
+        <img class="ml-5 mt-3 border border-dark" src="https://steamcdn-a.akamaihd.net/steam/apps/326360/ss_5875d4267294bfd175d95c4b70134cf9e7d48500.1920x1080.jpg?t=1518046472" height="400px" width="500px">
+      </article>
+
+      <aside class="m-5 float-right" style="width: 800px;">
+        <h2 class="display-4">Sim isso mesmo!</h2>
+        <p class="text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis odio vitae sem porta pretium non eget sem. Proin ut mauris neque. Vestibulum imperdiet est ac elementum finibus. Donec consequat, turpis ut rutrum iaculis, purus urna condimentum nibh, vel tempor augue augue ac mauris. Pellentesque mattis quam in ultrices pulvinar. Vestibulum eget dui turpis. Etiam congue vel enim at ornare.
+        </p>
+
+        <p class="text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis odio vitae sem porta pretium non eget sem. Proin ut mauris neque. Vestibulum imperdiet est ac elementum finibus. Donec consequat, turpis ut rutrum iaculis, purus urna condimentum nibh, vel tempor augue augue ac mauris. Pellentesque mattis quam in ultrices pulvinar. Vestibulum eget dui turpis. Etiam congue vel enim at ornare.
+        </p>
+
+        <p class="text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis odio vitae sem porta pretium non eget sem. Proin ut mauris neque. Vestibulum imperdiet est ac elementum finibus. Donec consequat, turpis ut rutrum iaculis, purus urna condimentum nibh, vel tempor augue augue ac mauris. Pellentesque mattis quam in ultrices pulvinar. Vestibulum eget dui turpis. Etiam congue vel enim at ornare.
+        </p>
+      </aside>
+    </div>
+
+
+
+
+
+
+    <!-- Aplicação de Padding
+
+    pt => Padding top
+    pb => Padding bottom
+    pl => Padding left 
+    pr => Padding right
+    px => Padding no eixo x (horizontal) esquerda/direita
+    py => Padding no eixo y (vertical) top/bottom
+    p => Padding em todos os lados valor a definir (0 a 5)
+    -->
+
+   <!-- <h1 class="bg-success">Padding</h1>
+    <p class="bg-success p-5">Conteúdo principal</p>
+    <h1 class="bg-success">Padding</h1>
+
+    <br><br>-->
+
+
+
+   
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

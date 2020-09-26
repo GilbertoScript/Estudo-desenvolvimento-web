@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Bootstrap - Elementos flutuantes</title>
+
+  </head>
+
+  <body style="margin-bottom: 200px; padding: 16px;">
+
+    <ul class="sticky-top"
+
+    style="list-style: none; background: lightblue; text-align: center; margin-top: 0; margin-bottom: 5px; padding: 10px;">
+
+      <li style="display: inline;"><a href="#">Home |</a></li>
+      <li style="display: inline;"><a href="#">Contato |</a></li>
+      <li style="display: inline;"><a href="#">Sobre Nós</a></li>
+    </ul>
+
+    <!-- Elementos flutuantes -->
+
+    <div style="border:1px solid red;" class="clearfix">
+
+      <div class="float-left" style="width: 500px; height: 500px;">
+          <img src="https://png.pngtree.com/element_our/png_detail/20180911/background-material-design-for-lorem-ipsum-logo-png_89715.jpg" width="500px" height="500px" style="border-right: 1px solid orange;">
+      </div>
+
+      <div class="float-none">
+        <h1 class="display-2 text-center">Elementos flutuantes</h1>
+        <p class="lead text-center text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis purus ut nisl congue hendrerit. Aliquam ipsum nisl, tincidunt eu sapien et, molestie commodo dui. Vestibulum nec accumsan tortor. Curabitur molestie non lorem non ultrices. Donec libero arcu, congue non ex at, dignissim rhoncus mi. Quisque eget massa tristique, hendrerit felis vitae, vehicula ante. Donec malesuada, eros sed finibus dictum, lacus diam consequat nibh, et dignissim massa turpis vel sapien.
+        </p>
+
+        <section style="margin-top: 55px;">
+          <p class="lead text-center"><strong>Email: email@gmail.com</strong></p>
+          <p class="lead text-center"><strong>Whatsapp: (61)9-9999-9999</strong></p>
+          <p class="lead text-center"><strong>Telefone: (61)3333-3333</strong></p>
+        </section>
+      </div>
+
+    </div>
+
+    <!-- Posicionamento fixo - top e bottom -->
+
+    <h2 style="text-align: center; background: lightblue" class="fixed-bottom">Footer fixo</h2>
+
+    <!-- Float responsivo - float-"tela"-"direção"
+         Telas: sm ,md, lg, xl;
+         Alinhamento: left, right;
+     -->
+
+     <p class="float-sm-right">tela &gt;= 576px</p><!-- Small -->
+     <p class="float-md-right">tela &gt;= 768px</p><!-- Medium -->
+     <p class="float-lg-right">tela &gt;= 992px</p><!-- Large -->
+     <p class="float-xl-right">tela &gt;= 1200px</p><!-- Extra Large -->
+
+     <br><br>
+
+     <!-- Colar no top (sticky) -->
+
+     <ul class="list-inline bg-warning sticky-top"><!-- FIcará colado no topo apenas quando for feita o scroll da página -->
+       <li class="list-inline-item">Item 1</li>
+       <li class="list-inline-item">Item 2</li>
+       <li class="list-inline-item">Item 3</li>
+     </ul>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
