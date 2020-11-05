@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Fontawesome icons -->
+    <script src="https://kit.fontawesome.com/8ed9f1c0d5.js" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+      
+      .marcador {
+        background: #f8f9fa;
+        border: 1px solid red;
+        height: 150px;
+      }
+
+      .marcador-container {
+        background: #f8f9fa;
+        border: 1px solid #36ae26;
+      }
+
+      .borda {
+        border: 1px solid blue;
+      }
+
+      h2 {
+        text-align: center;
+        padding: 10px;
+      }
+
+    </style>
+
+    <title>Bootstrap - Alinhamento do Grid</title>
+
+  </head>
+  <body class="" style="">
+
+    <div class="container marcador-container">
+
+      <h2>Alinhamento vertical (align-itens-alinhamento : start, center, end)</h2>
+      <div class="marcador row align-items-center">
+        <div class="col borda">Área 1</div>
+        <div class="col borda">Área 2</div>
+        <div class="col borda">Área 3</div>
+      </div>
+
+      <h2>Alinhamento vertical individual (align-self-alinhamento : start, center, end)</h2>
+      <div class="marcador row">
+        <div class="col borda align-self-start">Área 1</div>
+        <div class="col borda align-self-center">Área 2</div>
+        <div class="col borda align-self-end">Área 3</div>
+        <div class="col borda align-self-end">Área 4</div>
+        <div class="col borda align-self-center">Área 5</div>
+        <div class="col borda align-self-start">Área 6</div>
+      </div>
+
+      <h2>Alinhamento horizontal nas colunas (justify-content-alinhamento : start, center, end)</h2>
+      <div class="marcador row justify-content-center">
+        <div class="col borda col-3">Área 1</div>
+        <div class="col borda col-3">Área 2</div>
+        <div class="col borda col-3">Área 3</div>
+      </div>
+
+      <h2>Distribuição (justify-content-alinhamento : around, between)</h2>
+      <div class="marcador row justify-content-between">
+        <div class="col borda col-5">Área 1</div>
+        <div class="col borda col-5">Área 2</div>
+      </div>
+
+      <h2>Removendo espaçamentos</h2>
+      <div class="marcador row no-gutters">
+        <div class="col borda">Área 1</div>
+        <div class="col borda">Área 2</div>
+        <div class="col borda">Área 3</div>
+      </div>
+
+      
+    </div>
+
+
+
+    
+    
+
+
+  
+
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
