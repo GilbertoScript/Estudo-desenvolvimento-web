@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+
+    	/** {
+    		border: 1px solid red;
+    	}*/
+    	
+    </style>
+
+    <title>Javascript - If Else Operadores Lógicos</title>
+  </head>
+  <body>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12 m-auto d-flex justify-content-center">
+    			
+    		</div>
+    	</div>
+    </div>
+
+
+
+    <script>
+
+        /* Temos ao todo 3 operadores lógicos o: e(&&), ou(||) e negação(!), os operadores podem ser utilizados da seguinte forma: 
+
+        && = Verdadeiro se todas as expressões retornarem verdadeiro.
+        || = Verdadeiro se pelo menos uma das expressões retornarem verdadeiro.
+        ! = Negação, Inverte o resultado da expressão de comparação
+
+        && = true e true = true
+        && = true true e false = false
+        || = true e false = true, false e false = false
+        || = false e false = false
+        ! = true e true = false (inversão)
+
+        */
+
+        /* No exemplo a seguir temos a checagem da nota do aluno e se o mesmo foi aprovado com nota média como destaque ou reprovado, seja por faltas ou pela sua nota baixa, e para realizar esse pequeno sistema será utilizado vários componentes, teremos 5 variaveis diferentes e colocaremos todas dentro de if's para que seja feita a verificação da nota do aluno, e utilizando um operador lógico ||(ou), no comando           while(enquanto) faremos com que não seja possível ao usuário que ele coloque notas abaixo de -1 e notas acima de 11, sendo assim utilizando uma lógica simples de comandos if's, concatenações e comparações teremos o seguinte resultado no navegador: o primeiro pedido que é do nome, depois da turma, depois da nota do aluno, e depois de suas faltas, então como resultado teremos uma mensagem no navegador que indica se o aluno está reprovado(por nota ou por falta), aprovado(com nota normal ou como aluno destaque).
+
+        */
+
+        var nome = prompt('Digite seu nome: ')
+        var turma = prompt('Qual sua turma?')
+        var nota = prompt('Digite sua nota: ')
+        var faltas = prompt('Digite a quantidade de faltas: ')
+        var faltas_maximas = 120
+
+        // Altera o valor de nota de String para number
+        nota = parseFloat(nota)
+
+        // observação: while é um laço de repetição
+        // while(!(nota <= -1 || nota >= 11)) // Negação fazendo com que o valor inverta
+        while(nota <= -1 || nota >= 11) {
+            alert('Digite uma nota válida: ')
+            var nota = prompt('Digite a nota do aluno: ')
+
+        } if(nota == 5 || nota == 6) {
+            document.write(
+                '<h1>Parabéns ' 
+                + nome + 
+                ' você foi aprovado!</h1>'
+                )
+
+        } if(nota >= 7) {
+            document.write(
+                '<h1>Parabéns ' 
+                + nome + 
+                ' você foi aprovado como aluno Destaque!</h1>'
+                )
+
+        } if(nota <= 4 && faltas > faltas_maximas) {
+            document.write(
+                '<h1>Que pena ' 
+                + nome + 
+                ' você reprovou.</h1>'
+                )
+        } if(faltas > faltas_maximas) {
+            document.write(
+                '<h1>Que pena ' 
+                + nome + 
+                'você reprovou pois suas faltas ultrapassaram o limite</h1>'
+                )
+        }
+
+        console.log(nome)
+        console.log(nota)
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
