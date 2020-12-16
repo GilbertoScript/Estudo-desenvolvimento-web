@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+
+    	/** {
+    		border: 1px solid red;
+    	}*/
+    	
+    </style>
+
+    <title>Javascript - Funções</title>
+  </head>
+  <body>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12 m-auto d-flex justify-content-center">
+    			
+    		</div>
+    	</div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        /* Funções: Uma função é construida da seguinte forma: declaramos que é uma função, depois nomeamos esta função, em seguida atribuimos parametros(variaveis) para a função, logo após dentro do escopo criamos a lógica a ser executada quando nossa função for chamada e em seguida podemos dar um return ou não, quando não damos um return a função respectivamente será de um tipo que não precisa de retorno ou seja quando uma função do tipo void for chamada, irá apenas processar o script definido.
+
+            function calcularAreaTerreno(largura, comprimento) {
+                
+                var area = largura * comprimento
+                return area
+            }
+
+        */
+
+        // Void, retorno
+
+        /*function calcularAreaTerreno(  largura, comprimento ) {
+
+            // lógica a ser executada
+            var area = largura * comprimento
+            
+            return area
+
+        }
+
+        largura = prompt('Digite a largura : ')
+        comprimento = prompt('Digite o comprimento: ')
+
+        document.write('O terreno possui : ' + calcularAreaTerreno(largura, comprimento) + ' metros quadrados.')*/
+
+        /* Para a fixação do conteúdo resolvi adicionar um cálculo de imc a função calcularImc(), e dentro da função de calcular imc tem o determinado calculo: var imc = peso / (altura * altura), em seguida tem toda a estruturação do código a ser executado resultando em um pequeno sistema com mais dinamicidade, em JavaScript na função de imc assim como em qualquer outra função NÃO é obrigatório passar atributos dentre os parênteses por exemplo: function transformarAltura() {}, ou seja, mesmo quando se cria uma função não é obrigatório passar atributos.
+
+        */
+
+        function calcularImc(altura, peso) {
+
+            var imc = peso / (altura * altura)
+            return imc
+        }
+
+        alert('Vamos calcular seu Índice de Massa Corporal(IMC)?')
+
+        altura = prompt('Digite sua altura em centímetros: ')
+        peso = prompt('Digite seu peso: ')
+
+        altura = parseFloat(altura)
+        peso = parseFloat(peso)
+        altura = altura / 100
+
+        // atribui a variável imc o respectivo valor da função, podendo ser utilizada de forma mais flexivel e com um código bem mais limpo.
+        imc = calcularImc(altura, peso)
+
+        if(imc < 16){
+         classificacao = 'Baixo peso muito grave';
+
+        } else if(imc >= 16 && imc <= 16.99){
+         classificacao = 'Baixo peso grave';
+
+        } else if(imc >= 17 && imc <= 18.49){
+         classificacao = 'Baixo peso';
+
+        } else if(imc >= 18.50 && imc <= 24.99){
+         classificacao = 'Peso normal';
+
+        } else if(imc >= 25 && imc <= 29.99){
+         classificacao = 'Sobrepeso';
+
+        } else if(imc >= 30 && imc <= 34.99){ 
+         classificacao = 'Obesidade grau I';
+
+        } else if(imc >= 35 && imc <= 39.99){
+         classificacao = 'Obesidade grau II';
+
+        } else { //se não estiver enquadrado em nenhum critério acima, imc só pode ser maior que 40
+         classificacao = 'Obesidade grau III';
+        } 
+
+        document.write(
+            'Possui índice de massa corporal igual a '
+            + imc + 
+            ' sendo classificado como: <br>'
+            + classificacao
+        )
+
+    </script>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
