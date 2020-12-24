@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+
+    	/** {
+    		border: 1px solid red;
+    	}*/
+    	
+    </style>
+
+    <title>Javascript - Desafio 4</title>
+  </head>
+  <body>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12 m-auto d-flex justify-content-center">
+    			
+    		</div>
+    	</div>
+    </div>
+
+
+
+    <script>
+
+        // Desafio 4
+
+        /* 1) Crie uma aplicação para efetuar cálculo aritméticos de soma e subtração.
+            Considere os seguintes critérios:
+            1) Ao executar o script a aplicação deve solicitar a entrada de um número, seguido de
+            uma operação de soma ou subtração e posteriormente seguido de um segundo
+            número.
+            2) A operação deve ser inserida pelo usuário de forma textual, ou seja, quando o sistema
+            solicita a operação o usuário deve informar o texto ‘soma’ ou ‘subtração’ (sem as
+            aspas).
+            3) Na sequência o sistema deve enviar os parâmetros para uma função efetuar o devido
+            cálculo. Exemplo: calculo(num1, num2, operacao).
+            4) A função deve executar o cálculo com base na operação informada pelo usuário e na
+            sequência deve retornar o valor encontrado.
+            5) Ao término o sistema deve fornecer a seguinte saída para o usuário:
+            “O resultado é: <resultado>.”
+            *A informação em vermelho é uma variável e deve ser substituída pelo seu respectivo valor
+            calculada dentro da aplicação. 
+        */
+
+        // Ok para fazer passo a passo vamos começar com o passo 1 - vamos criar 3 variaveis para pedirmos as 3 informações
+
+        var num1 = prompt('Digite o primeiro número: ')
+        // var operação faz parte do passo 2 -
+        var operacao = prompt('Digite a operação desejada: soma ou subtração ')
+        var num2 = prompt('Digite o segundo número: ')
+
+        // Transformamos as Strings recebidas via prompt em number
+        num1 = parseFloat(num1)
+        num2 = parseFloat(num2)
+
+        // Ok agora criada as variáveis vamos para o próximo passo 3 - Criar a função para realizar o cálculo:
+
+        function calculo(num1, num2, operacao) {
+            switch(operacao) {
+                case 'soma':
+                    document.write('O resultado é: ' + (num1 + num2))
+                    break
+
+                case 'subtração':
+                    document.write('O resultado é: ' + (num1 - num2))
+                    break
+
+                default:
+                    document.write('Erro: Digite "soma" ou "subtração"')
+            }
+        }
+
+        calculo(num1, num2, operacao)
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
