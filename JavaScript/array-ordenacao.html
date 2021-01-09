@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+
+    	/** {
+    		border: 1px solid red;
+    	}*/
+    	
+    </style>
+
+    <title>Javascript - Array - Ordenar elementos</title>
+  </head>
+  <body>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12 m-auto d-flex justify-content-center">
+    			
+    		</div>
+    	</div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        /* Para fazermos a ordenação de elementos dentro de um Array, temos o seguinte exemplo: uma lista de nomes
+        Que contem nomes com as iniciais A, B, C, e D, e a ordem alfabética está inversa, logo em seguida damos um
+        console.log() e para fazermos com que sejam ordenados em ordem alfabética utilizamos o método .sort(),
+        esse método além de ordenar os elementos faz também a ordenação dos índices.
+
+            var listaNomes = Array()
+
+            listaNomes[0] = 'Diego'
+            listaNomes[1] = 'Carlos'
+            listaNomes[2] = 'Beatriz'
+            listaNomes[3] = 'Ana'
+
+            console.log(listaNomes.sort())
+
+        */
+
+        // Da mesma forma o método .sort() funciona também com números, ordenando-os em forma crescente,
+        // Porém quando é feito com números maiores por exemplo: 7, 40, 11, 12, 1 e 3, os valores que contém o número 1 na frente
+        // serão exibidos primeiros, ignorando a sequência crescente , assim até mesmo o 40 viria antes do 7
+
+        // Para solucionar isso é bastante simples, basta criarmos uma função que ensine o método sort() a trabalhar
+        // De forma correta os números, e em seguida passar essa função como atributo do método sort()
+        var listaNumeros = Array()
+
+        listaNumeros[0] = 12
+        listaNumeros[1] = 40
+        listaNumeros[2] = 21
+        listaNumeros[3] = 10
+        listaNumeros[4] = 7
+
+        // Como estamos passando uma função dentro da função sort(), nesse caso não podemos passar os (), pois ela deve ser executada dentro do método sort(), e não executar o sort(), e depois executar
+        // a ordenumeros.
+        console.log(listaNumeros.sort(ordernaNumeros))
+
+        // Na função vamos passar a ela dois parametros sendo a e b
+        function ordernaNumeros(a, b) {
+            // Aqui passamos a - b pois, como a função vai percorrer os valores do array um exemplo seria se a = 12 e b = 40, 12 - 40 = -28
+            // ou seja, como vai retornar um valor negativo, e com o valor negativo o 'a' virá antes de b, sendo assim feito uma ordenação crescente
+            return a - b
+
+            // < 0 = a será ordenado antes de b
+            // > 0 = b será ordenado antes de a
+            // valores iguais a ordem é mantida
+        }
+
+        
+    </script>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
