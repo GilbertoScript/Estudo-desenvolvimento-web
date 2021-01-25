@@ -16,7 +16,7 @@
     	
     </style>
 
-    <title>Javascript - BOM - Screen</title>
+    <title>Javascript - BOM - Location</title>
   </head>
   <body>
 
@@ -24,7 +24,9 @@
     	<div class="row">
     		<div class="col-md-12 m-auto d-flex justify-content-center">
                 
-
+                <!-- Dois botões que recebem um evento de onclick recebendo uma função que, quando disparada faz com que o primeiro botão redirecione ao Google e o segundo botão recarregue a página -->
+                <button onclick="acessarGoogle()">Google</button>
+                <button onclick="atualizaPagina()">Atualizar a página</button>
 
     		</div>
     	</div>
@@ -32,28 +34,21 @@
 
     <script type="text/javascript">
 
-        /* Como fazermos para saber qual a resolução exata do navegador em que os conteúdos html serão exibidos? 
-        Esse e outros métodos e atributos são dados pelo BOM - Browser Object Model, então a partir disso podemos atuar com os métodos do tipo screen, por exemplo:
+        /* Em relação ao BOM - Browser Object Model, temos o location, location serve para podermos atuar sobre a url atual do navegador, por exemplo: podemos forçar um redirecionamento, ou até mesmo dar um reload na página
 
-            window.screen.height
-        
         */
 
-        // Estes dois métodos do BOM, servem para saber qual a altura e largura do navegador, porém o navegador cortando a barra de navegação do windows, ou seja, para recuperar o valor + barra de navegação, seria necessário acessar o método 'height' e 'width'
-        var alturaBrowser = window.screen.availHeight
-        var larguraBrowser = window.screen.availWidth
-
-        //document.write('Altura do browser : ' + alturaBrowser + '<br />')
-        //document.write('Largura do browser : ' + larguraBrowser)
-
-        // A partir disso podemos tomar uma série de decisões e condições dentro do nosso código js, por exemplo:
-
-        if(larguraBrowser < 512) {
-            document.write('Lógica para a impressão do menu mobile!')
-
-        } else {
-            document.write('Lógica para a impressão do menu web!')
+        // Faz com que seja carregada uma nova url, sobrepondo a antiga.
+        function acessarGoogle() {
+            var google = window.location.href="https://google.com.br"
         }
+
+        // Atualiza a página
+        function atualizaPagina() {
+            var reload = window.location.reload(true)
+        }
+
+        
         
     </script>
 
