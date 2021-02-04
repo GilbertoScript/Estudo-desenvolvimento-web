@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Const</title>
+</head>
+<body>
+
+    <div id="output">
+        
+    </div>
+
+    <script>
+
+        // Uma outra maneira de declarar variáveis é por meio do operador const, sua sintaxe é:
+        // const nome = 'João'
+
+        // O const é uma nova feature do JavaScript Moderno ES6, e sua única diferença entre os outros tipos de variáveis é que sua idéia é de que seu valor irá se manter constante, isso é, não vai ser alterado ao decorrer do script, por isso a idéia de const(constante).
+
+        const Linguagem = 'JavaScript'
+
+        {
+            const Linguagem = 'Php'
+            console.log('Dentro do bloco: ' + Linguagem)
+        }
+
+        console.log('Fora do bloco: ' + Linguagem)
+
+        // E por ser uma constante seu valor realmente não pode ser alterado em momento nenhum do script, se por acaso for trocado, irá ocorrer um erro no script, exibido no console do navegador.
+
+    </script>
+</body>
+</html>

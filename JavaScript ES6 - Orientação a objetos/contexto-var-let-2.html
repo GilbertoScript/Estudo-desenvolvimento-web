@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Var e Let</title>
+</head>
+<body>
+
+    <div id="output">
+        
+    </div>
+
+    <script>
+
+        // Temos a seguinte situação: duas variáveis linguagem que recebe valores diferentes, uma no escopo global, e uma no escopo de bloco, e dando um console.log de linguagem, qual seria a variável que vai aparecer? As duas? Errado, isso porque como variáveis do tipo de bloco sofrem 'hoisting'(elevação), é como se a outra variável fosse declarada logo após a primeira, fazendo com que os console.log(), recebam o valor da variável que foi declarada por último, isso é, a variável linguagem = 'Php'
+        
+        /*
+
+        var linguagem = 'JavaScript'
+
+        {
+            var linguagem = 'Php'
+            console.log('Dentro do bloco' + linguagem)
+        }
+
+        console.log('Fora do bloco' + linguagem)
+
+        */
+
+        // E se utilizarmos let?
+
+        let linguagem = 'JavaScript'
+
+        {
+            let linguagem = 'Php'
+            console.log('Dentro do bloco: ' + linguagem)
+        }
+
+        console.log('Fora do bloco: ' + linguagem)
+
+        // Quando utilizamos let, as duas variáveis são exibidas dentro do seu contexto, isso pois o let, preserva o contexto em que a variável foi declarada, fazendo com que não haja alguns comportamentos inesperados ou até mesmo bugs.
+
+        // Quando a variável declarada é do tipo var, ela pode sofrer o 'hoisting'(elevação), se por acaso for escopo de bloco, por exemplo um bloco if/else ou até mesmo um bloco fake, como foi utilizado no exemplo, isso faz com que a variável declarada anteriormente seja sobrescrita, porém quando a variável é declarada como let, isso não ocorre pois, como dito antes, ela preserva o escopo na qual foi declarada.
+
+        // E se for declarada uma variável dentro do escopo de bloco como var, e a let como escopo global? Irá ocorrer um erro pois, a variável do tipo var dentro de bloco sofre elevação, ficando no mesmo contexto que a variável do tipo let, e no console do navegador isso retorna um erro de duplicação de variável.
+
+    </script>
+</body>
+</html>
