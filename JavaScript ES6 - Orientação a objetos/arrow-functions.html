@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Arrow Functions</title>
+</head>
+<body>
+
+    <div id="output">
+        
+    </div>
+
+    <script>
+
+        // As arrow functions é uma nova funcionalidade de escrever funções anônimas de forma mais enxuta e simplificada. Vamos ao exemplo:
+
+        // Aqui temos uma função anônima que cujo objetivo é calcular o quadrado de um número, ou seja multplicálo por ele mesmo.
+
+        /*
+
+        let quadradoDeUmNumero = function(x = 00) {
+            return x * x
+        }
+
+        */
+
+        // Agora iremos realizar a escrita da mesma função de forma mais limpa, com o JavaScript Moderno:
+
+        /*
+            A sintaxe de uma arrow function é basicamente:
+
+                let função = () => {}
+        */
+
+        /*
+
+        let quadradoDeUmNumero = (x) => {
+            return x * x
+        }
+
+        document.write(quadradoDeUmNumero(5))
+
+        */
+
+        // Para deixar as arrow funcions ainda mais enxutas e curtas, se a função em caso estiver recebendo apenas um argumento, pode ser tranquilamente removida dos parênteses(), porém se nenhum argumento estiver sendo recebido, ai sim, é obrigatório o uso dos parênteses, para indicar que é uma arrow function
+
+        // Outra forma para deixar as arrow functions ainda menos verbosas, é removendo as chaves, porém só pode ser removido as chaves quando a instrução for simples, ou não envolva nenhum outro bloco de código, por exemplo:
+
+        /*
+        
+            let quadradoDeUmNumero = x => x * x 
+        
+        */
+
+        // O nome do recurso acima é return implicito.
+
+        // Agora vamos a um exemplo um pouco mais completo utilizando arrow functions, vamos verificar se um número é par ou ímpar
+
+        // ES5
+
+        /* 
+        
+        let verifica = prompt('Digite um número: ')
+
+        let parOuImpar = function(numero) {
+
+            if(numero % 2 == 0) {
+                document.write('O número é par')
+
+            } else {
+                document.write('O número é ímpar')
+            }
+        }
+
+        parOuImpar(verifica)
+        
+        */
+
+        // ES6 - Arrow Function
+
+        let verifica = prompt('Digite um número: ')
+
+        let parOuImpar = numero => {
+            if(numero % 2 == 0) {
+                document.write('O número é par')
+
+            } else {
+                document.write('O número é ímpar')
+            }
+        }
+
+        /* Ainda mais enxuto:
+
+            let verifica = prompt('Digite um número')
+            parOuImpar = numero => numero % 2 == 0 ? 'O número é par' : 'O número é ímpar' 
+        
+        */
+
+        /* Arrow functions não precisam ser em específico anônimas, como no exemplo:
+
+        mensagem = () => {
+            alert('Oi')
+        }
+
+        mensagem()
+        */
+
+        parOuImpar(verifica)
+
+    </script>
+</body>
+</html>
