@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - OO - Abstração</title>
+</head>
+<body>
+
+    <div id="output">
+        <button onclick="document.write(x.consultarSaldo())">Consultar Saldo</button>
+    </div>
+
+    <script>
+        
+        // Na orientação a objetos, o primeiro pilar que estudaremos é o pilar da abstração, esse pilar se referencia a forma em que colocamos coisas do mundo real em nosso código por exemplo: Vamos criar um sistema para uma concessionária, logo precisaremos de carros, carros é a identidade, a primeira característica dentro da abstração, logo para esse carro é necessária uma identidade, ou seja, a segunda característica da abstração, em geral as características são:
+
+        // Entidade - carro
+        // Identidade - x = new Carro()
+        // Características - marca, modelo, cor etc.
+        // Ações - ligar, acerelar, freiar, desligar etc.
+
+        // Vamos ao exemplo:
+
+        // class = Modelo da Entidade/Objeto, obs: Não é uma entidade é apenas o modelo
+        class ContaBancaria {
+            // Os atributos de determinado objeto, devem ser construídos dentro de um construtor
+            // Construção dentro das características: 
+            constructor() {
+                // Agência
+                this.agencia = 1075
+
+                // Número da conta
+                this.numeroConta = 8696548
+
+                // Saldo
+                this.saldo = 50
+
+                // Limite
+                this.limite = 450
+            }
+
+            // Construção das ações:
+            depositar(valorDeposito) {
+                this.saldo += valorDeposito
+            }
+
+            sacar(valorSaque) {
+                this.saldo -= valorSaque
+            }
+
+            consultarSaldo() {
+                return this.saldo
+            }
+        }
+
+        // Agora iremos criar de fato a entidade, e para isso precisamos de uma identidade, e para definir essa identidade basta criarmos uma variável recebendo a 'instância' desse objeto.
+
+        let x = new ContaBancaria()
+        x.sacar(37.5)
+
+    </script>
+</body>
+</html>

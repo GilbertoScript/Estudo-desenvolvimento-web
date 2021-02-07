@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Introdução a orientação a objetos</title>
+</head>
+<body>
+
+    <div id="output">
+        
+    </div>
+
+    <script>
+        
+        // Em relação a orientação a objetos, podemos ter uma comparação de um exemplo prático de calculadora com o paradigma procedural(o clássico es6), e o paradigma de orientação a objetos
+
+        // Paradigma procedural: 
+        // Chamada de procedimentos(procedural) para manipulação de dados
+
+        // Aqui nós criamos os dados e atuamos sobre eles.
+
+        let a = 10
+        let b = 7
+        let operador = 'mult'
+
+        function calcular(a, b, operador) {
+            if(operador == 'mult') {
+                console.log(a * b)
+            }
+        }
+
+        calcular(a, b, operador)
+
+        // Paradigma de orientação a objetos:
+        // Estrutura de dados com comportamentos 
+
+        // Aqui nós criamos os dados e damos a eles devidos comportamentos desejados
+
+        // Para podermos falar que determinado código segue o paradigma de orientação a objetos, o código deve atender a 4 pilares, sendo eles: Abstração, Encapsulamento, Herança e o polimorfismo
+
+        class Calculadora {
+            constructor() {
+                this.a = 10
+                this.b = 7
+                this.operador = 'mult'
+            }
+
+            calcular() {
+                if(this.operador == 'mult') {
+                    console.log(this.a * this.b)
+                }
+            }
+        }
+
+        calculadora = new Calculadora()
+        calculadora.calcular()
+
+    </script>
+</body>
+</html>
