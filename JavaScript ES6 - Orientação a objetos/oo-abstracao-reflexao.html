@@ -87,6 +87,30 @@
         cadeira.girarCadeira()
         console.log(cadeira)
 
+        // ------------------------------------------------------------------------------- //
+
+        class Sofa {
+            constructor(qntdLugares, reclinavel, cor) {
+                this.qntdLugares = qntdLugares
+                this.reclinavel = reclinavel
+                this.cor = cor
+            }
+
+            reclinarSofa() {
+                if(this.reclinavel === true) {
+                    console.log('O sofá reclinou!')
+
+                } else {
+                    console.log('O sofá não reclinou!')
+                }
+            }
+        }
+
+        let sofa = new Sofa(3, true, 'marrom')
+        sofa.reclinarSofa()
+
+        console.log(sofa)
+
     </script>
 </body>
 </html>
