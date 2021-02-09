@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - OO - Encapsulamento</title>
+</head>
+<body>
+
+    <div id="output">
+
+
+
+    </div>
+
+    <script>
+        
+        // No ES6, para um código realmente pertencer ao paradigma de orientação a objetos deve atender aos 4 pilares de oo, o primeiro já visto é o pilar da abstração o segundo é o pilar do encapsulamento.
+
+        // Encapsulamento - Seguro , Reutilizável
+
+        // O encapsulamento completo ainda não existe no JavaScript, então para fazer com que determinado objeto se torne publico ou privado, tem uma concensão, isto é, quando houver um _ antes do nome de determinado atributo, isto indica para o programador que, é melhor não acessar aquele método diretamente, e sim por meio de getters ou setters.
+
+
+        class Tv {
+            constructor() {
+                this._relacaoCanais = [2, 4, 6, 8, 10 , 12]
+                this._canalAtivo = 10
+                this._volume = 15
+            }
+
+            // getters e setters
+            get canalAtivo() {
+                return this._canalAtivo
+            }
+
+            set canalAtivo(canal) {
+                if(this._relacaoCanais.indexOf(canal) !== -1) {
+                    this._canalAtivo = canal
+                }
+
+            }
+        }
+
+        let tv = new Tv()
+
+        // Na chamada de uma função get, não é necessária usar os (), isso porque o interpretador do javascript entende que deve se procurar uma função com a descrição passada
+        tv.canalAtivo = 6
+        console.log(tv.canalAtivo)
+
+    </script>
+
+</body>
+</html>
