@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - OO - Herança</title>
+</head>
+<body>
+
+    <div id="output">
+
+
+
+    </div>
+
+    <script>
+        
+        // Na orientação a objetos em JavaScript ES6, o terceiro pilar a ser seguido para se dizer que um código segue o paradigma de orientação a objetos é o pilar da Herança, que por sua vez, trás dois benefícios, sendo eles: Reutilização e manutenção
+
+        // Para o exemplo de herança dentro do OO, vamos a um exemplo:
+
+        // Esta classe recebe atributos e métodos que serão utilizados em outras duas classes, então ao invés de repetir nas duas classes, criamos uma classe para recebe-los, em seguida fazemos com que as outras duas classes herdem esses atributos e métodos.
+        class Animal {
+            constructor() {
+                this.cor = ''
+                this.tamanho = null
+            }
+
+            dormir() {
+                console.log('Dormir')
+            }
+        }
+
+        /*
+        class Ave {
+            constructor() {
+                this.envergadura = null
+            }
+
+            botarOvos() {
+                console.log('Botar ovos')
+            }
+        }
+        */
+        
+        // Para fazer com que uma classe herde atributos e métodos de outra, é muito simples, basta utilizarmos depois do nome da classe a palavra reservada extends, em seguida o nome da classe que ela vai herdar, Ok, porém a classe cachorro ainda não está herdando Animal, isso por que para uma classe herdar outra, é necessário no construtor da determinada classe filha utilizar o parâmetro super(), antes das declarações this.
+        class Cachorro extends Animal {
+            constructor() {
+                super()
+                this.orelhas = 'Médias'
+            }
+
+            correr() {
+                console.log('Correr')
+            }
+
+            rosnar() {
+                console.log('Rosnar')
+            }
+        }
+
+        // O mesmo se repete aqui, é sempre necessário a utilização de extends seguido do nome da classe pai, e a utilização do parâmetro super(), no constructor da classe filha!
+        class Passaro extends Animal {
+            constructor() {
+                super()
+                this.bico = 'Curto'
+            }
+
+            voar() {
+                console.log('Voar')
+
+            }
+        }
+
+        // Neste exemplo temos a seguinte situação: um Papagaio, ok, o que esse papagaio faz? Ele além de fazer as outras coisas que um Animal faz, e que um Passaro faz, ele também sabe falar, então para que não seja preciso criar todos os atributos e métodos novamente a esse papagaio, nós simplesmente fazemos ele herdar Passaro, fazendo ele herdar a classe Passaro, ele obtem todos seus atributos e métodos, e já que Passaro herda Animal, logo, o papagaio também herdará Animal.
+        class Papagaio extends Passaro {
+            constructor() {
+                super()
+                this.sabeFalar = true
+            }
+
+            falar() {
+                console.log('Falar')
+            }
+        }
+
+        let cachorro = new Cachorro()
+        let passaro = new Passaro()
+        let papagaio = new Papagaio()
+
+        /*
+        cachorro.dormir()
+        passaro.dormir()
+        papagaio.falar()
+        papagaio.dormir()
+        papagaio.voar()
+        */
+
+        console.log(cachorro)
+        console.log(passaro)
+        console.log(papagaio)
+
+        // Dessa forma a manuntenção de código é bem mais simples, já que se quisessemos que todos as classes que herdam Animal, tivessem um novo atributo, bastaria adicionar esse atributo diretamente na classe Animal.
+
+    </script>
+
+</body>
+</html>
