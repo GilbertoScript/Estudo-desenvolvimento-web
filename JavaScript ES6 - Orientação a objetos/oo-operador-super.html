@@ -22,6 +22,8 @@
 
         // O operador super faz com que por exemplo, eu tenho um atributo na classe Passaro, e quero customiza-lo na classe Papagaio, então como eu faria?  Simples, basta  declarar o novo valor no super(), da classe Papagaio, e na classe Pássaro nós declaramos o bico no seu constructor(), e para herdar da classe Animal, basta fazermos uma cascata de acordo com o código:
 
+        // Super() aponta para o constructor da classe pai
+
         class Animal {
             constructor(cor, tamanho, peso) {
                 this.cor = cor
@@ -46,8 +48,8 @@
         }
 
         class Papagaio extends Passaro {
-            constructor(sabeFalar, cor, tamanho, peso) {
-                super('Bico Médio', cor, tamanho, peso)
+            constructor(bico, sabeFalar, cor, tamanho, peso) {
+                super(bico, cor, tamanho, peso)
                 this.sabeFalar = sabeFalar
             }
 
@@ -58,11 +60,13 @@
 
         // Ao criarmos uma instância da classe Papagaio, e a ela dar um valor de sim, esse valor será recebido pelo constructor da classe, então devemos fazer para que
 
-        let papagaio = new Papagaio('Sim', 'Verde', 25, 300)
+        let papagaio = new Papagaio('Médio','Sim', 'Verde', 25, 300)
         console.log(papagaio)
 
         let papagaio2 = new Papagaio('Não', 'Azul', 10, 150)
         console.log(papagaio2)
+
+        papagaio.dormir()
 
     </script>
 
