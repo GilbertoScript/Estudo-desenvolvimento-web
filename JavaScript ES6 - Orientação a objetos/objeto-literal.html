@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Objeto literal</title>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+        
+        // Criação de um objeto produto, com base na notação de class (ES6)
+
+        class Produto {
+            constructor(descricao, preco) {
+                this.descricao = descricao
+                this.preco = preco
+            }
+
+            verDescricao() {
+                document.write(`Descrição do produto: ${this.descricao}, por apenas: ${this.preco}`)
+            }
+        }
+
+        let produto = new Produto('O melhor Notebook!', 'R$ 3.000,00')
+        // produto.verDescricao()
+
+        // --- // // --- //  // --- // // --- // // --- //  // --- // // --- //  // --- //  // --- //  // --- // 
+
+        // Criação de um objeto produto, com base na notação de Objeto Literal/Estático, o nome(chave) e o valor são separados por ':', e para encerrar um valor deverá sempre colocar ao final uma ','.
+
+        let produtoLiteral = {
+            descricao: 'Celular',
+            preco: 800,
+            verDescricao: function() {
+                // Referenciamos o valor dentro do document.write(), com o this., pois está fazendo referencia ao contexto da classe, e não ao contexto da função
+                document.write(`Descrição do produto: ${this.descricao}, por apenas: ${this.preco}`)
+            } 
+        }
+
+        produtoLiteral.verDescricao()
+
+        // Objeto literal = objeto descritivo, que combina pares de nomes e valores, sendo que esses valores podem ser string, number, bolean, function, array, ou até mesmo outros objetos literais
+
+    </script>
+
+</body>
+</html>
