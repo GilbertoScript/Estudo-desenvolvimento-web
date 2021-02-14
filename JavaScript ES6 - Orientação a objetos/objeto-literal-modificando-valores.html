@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Objeto literal modificando valores</title>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Em objetos literais, pode se modificar a qualquer momento seus valores, por exemplo:
+        
+        // Aqui criamos um objeto pessoa que recebe dois pares nome-valor.
+        let pessoa = {
+            nome: 'Gilberto',
+            idade: 17,
+        }
+
+        // Neste primeiro console.log() recuperamos pessoa(objeto) e .nome(atributo do objeto), e o resultado no console.log() é de 'Gilberto'
+        console.log(pessoa.nome)
+
+        // Aqui recuperamos o atributo nome e, a ele damos um novo valor.
+        pessoa.nome = 'Júnior'
+
+        // E se dermos um novo console.log(), o novo valor será 'Júnior'
+        console.log(pessoa.nome)
+
+    </script>
+
+</body>
+</html>
