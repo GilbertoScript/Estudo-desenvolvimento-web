@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Funções construtoras</title>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // As funções construtoras no JavaScript, são de extrema importância pois foi com elas que se suportava o paradigma de orientação a objetos no ES5, agora no ES6, já se tem outras formas de se construir objetos por exemplo:
+
+        // Classe - instânciando um objeto //
+
+        /*
+        class Carro {
+            constructor() {
+                this.cor
+                this.modelo
+                this.velocidadeAtual
+                this.velocidadeMaxima
+            }
+
+            acelerar() {
+                console.log('Acelerar')
+            }
+
+            get velocidadeAtual() {
+
+            }
+
+            set velocidadeAtual() {
+                
+            }
+        }
+
+        let carro = new Carro()
+        */
+
+        // Objeto literal //
+
+        /*
+        let Carro = {
+            cor,
+            modelo,
+            velocidadeAtual,
+            velocidadeMaxima,
+            acelerar() {
+                console.log('Acelerar')
+            },
+
+            get velocidadeAtual() {
+
+            },
+
+            set velocidadeAtual() {
+
+            }
+        }
+        */
+
+        // As funções construtoras, literalmente são construídas, e para isso precisam de um operador new, essas funções recebem a seguinte sintaxe:
+
+        let Carro = function() {
+            // Dentro de funções construtoras, usamos sempre o this.
+            this.cor = 'Cinza'
+            this.modelo = 'HB20'
+            this.velocidadeAtual = 0
+            this.velocidadeMaxima = 200
+
+            this.acelerar = () => {
+                let velocidade = this.getVelocidadeAtual() + 10
+                this.setVelocidadeAtual(velocidade)
+
+            }
+            // Seguindo a convenção do encapsulamento, para não recuperarmos diretamente o velocidade atual, utilizamos o get.
+            this.getVelocidadeAtual = () => {
+                return this.velocidadeAtual
+            }
+            this.setVelocidadeAtual = (velocidadeAtual) => {
+                this.velocidadeAtual = velocidadeAtual
+            }
+        }
+
+        // Parecido com a criação de um objeto a partir da instância de uma classe, as funções construtoras são construídas a partir da instância de uma função:
+
+        let carro = new Carro()
+        
+        for(i = 0; i < 22; i++) {
+            console.log(`A velocidade atual é: ${carro.getVelocidadeAtual()}`)
+            carro.acelerar()
+
+            if(carro.getVelocidadeAtual() > 200) {
+                console.log('Velocidade máxima atingida.')
+                break
+            }
+        }
+    </script>
+
+</body>
+</html>
