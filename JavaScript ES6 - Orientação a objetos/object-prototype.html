@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Object Prototype Introdução</title>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Todos os objetos em JavaScript descendem de Object
+
+        // Avião - atributos: cor e modelo; método: levantarVoo()
+        // Criação de Avião a partir de um objeto literal:
+
+        let a1 = {
+            cor: 'Branca',
+            modelo: 'Airbus a380',
+            levantarVoo() {
+                console.log('Avião começou a levantar o voo')
+            }
+        }
+
+        // Criação de Avião a partir de uma função construtora:
+
+        let AviaoF = function() {
+            this.cor = 'Branca e preta'
+            this.modelo = 'Boeing 787'
+            this.levantarVoo = () => {
+                console.log('Avião começou a levatar o voo')
+            }
+        }
+
+        let a2 = new AviaoF()
+
+        class AviaoC {
+            constructor() {
+                this.cor = 'Azul'
+                this.modelo = 'Embrear E-Jets'
+            }
+
+            levantarVoo() {
+                console.log('Avião começou a levatar o voo')
+            }
+        }
+
+        let a3 = new AviaoC()
+
+        // Ao darmos console.log(), desses três objetos, no console do navegador todos recebem um atributo chamado __proto__, e o seu valor é 'Object'
+
+        // Na mesma hora que um objeto é criado ele descende de Object, que é o nosso 'prototipo', todos os objetos descendem Object, esse Object é uma função, muita atenção nisso.
+        console.log(a1)
+        console.log(a2)
+        console.log(a3)
+    </script>
+
+</body>
+</html>
