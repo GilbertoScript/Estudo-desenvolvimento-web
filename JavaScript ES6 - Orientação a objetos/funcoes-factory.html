@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Funções factory - Factory Function</title>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Funções Factory - Através do padrão de projeto Factory nós podemos implementar uma 'fábrica', para a criação dos nossos objetos em tempo de execução.
+
+        // Vamos a um exemplo, temos que criar um objeto bicicleta, temos algumas formas de se criar por exemplo: Classe, Objeto literal, Função construtora e Função factory(Factory function)
+
+        // Funções factory 'retornam' objetos literais, e por isso sua criação faz mais sentido utilizando um objeto literal
+
+        // Façamos de conta que no nosso script temos o desafio de criar uma coleção de bicicletas
+
+        // Vejam só, se quisessemos criar outra bicicleta além da primeira, precisariamos repetir todo o código:
+
+        // Podemos imaginar um processo de recuperação de informações de um banco de dados, mas fazer isso toda vez, ou seja criar um objeto literal, para cada nova requisição, ficaria algo muito trabalhoso, assim surgiu o design patterns da factory function, ou seja, uma fábrica.
+
+        // Criação com Objeto literal.
+
+        let Bicicleta1 = {
+            cor: 'Branca',
+            marcha: 'Única',
+            aro: 12,
+            pedalar() {
+                console.log(' "Pedalando" ')
+            }
+        }
+
+        let Bicicleta2 = {
+            cor: 'Vermelha',
+            marcha: '18',
+            aro: 26,
+            pedalar() {
+                console.log(' "Pedalando" ')
+            }
+        }
+
+        console.log(Bicicleta1)
+        console.log(Bicicleta2)
+
+        // Criação com Factory Function
+
+        let BicicletaFactory = function(cor, marcha, aro) {
+            // E essa factory function, simplesmente faz um retorno de um objeto literal.
+            return {
+                cor,
+                marcha,
+                aro,
+                pedalar() {
+                    console.log('Pedalando')
+                }
+            }
+        }
+
+        let Bicicleta3 = BicicletaFactory('Verde', 'Única', 20)
+        console.log(Bicicleta3)
+
+        let Bicicleta4 = BicicletaFactory('Preta', '26', 16)
+        console.log(Bicicleta4)
+
+    </script>
+
+</body>
+</html>
