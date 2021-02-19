@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Spread/Rest - Spread</title>
+
+    <style>
+
+        
+        
+    </style>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Spread => Espalhar/ Espalhar estruturas de dados
+        // Sintax Spread => '...', por exemplo: console.log(...dados)
+
+        // Quando temos uma string por exemplo:
+
+        // -- ------- -- //
+        // -- Strings -- //
+        // -- ------- -- //
+
+        let tituloArtigo = 'Qual é a melhor linguagem de programação? Veja o que especialistas falam sobre.'
+
+        // E assim podemos pegar essa string e, espalhar cada um dos seus caracteres utilizando o operador Spread
+
+        console.log(tituloArtigo) // Ao darmos console.log() no navegador o resultado é o conteúdo da string
+
+        console.log(...tituloArtigo)
+        // Porém quando utilizamos o operador spread o resultado é o seguinte: 'Q u a l   é   a   m e l h o r   l i n g u a g e m   d e   p r o g r a m a ç ã o ?   V e j a   o   q u e   e s p e c i a l i s t a s   f a l a m   s o b r e .
+
+        // E algo mais interessante ainda é a utilização do operador Spread para espalhar por exemplo, essa string dentro de um array, e em cada índice desse array, vai ter um caractere:
+
+        console.log([...tituloArtigo])
+
+        // -- ------ -- //
+        // -- Arrays -- //
+        // -- ------ -- //
+
+        // Também é possível espalhar arrays dentro de arrays, como mostra o exemplo a seguir
+        let listaAnimes1 = ['Death note', 'Parasyte', 'The promissed Neverlands']
+        let listaAnimes2 = ['Hellsing', 'Tokyou Ghoul', 'Monster']
+        let listaAnimesTotal = ['Dangodream infinity dungeon', 'Kimono jehi', ...listaAnimes1, ...listaAnimes2]
+
+        // Ao dar console.log() de AnimesTotal, repare que é retornado o seu respectivo array, e mais os outros dois arrays, isso por que com o operador spread, ele 'espalha', os outros dois arrays dentro de um, como no exemplo acima.
+        console.log(listaAnimesTotal)
+
+        // -- ------- -- //
+        // -- Objetos -- //
+        // -- ------- -- //
+
+        let pessoa = {
+            nome: 'Gilberto',
+            idade: 17,
+            profissao: 'Programador',
+        }
+
+        let clone = {
+            endereco: 'Rua zeca tatu 123',
+            ...pessoa
+        }
+
+        console.log(clone)
+
+    </script>
+
+</body>
+</html>
