@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Destructuring Assignment - Desafio</title>
+
+    <style>
+
+        
+        
+    </style>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // O desafio de Destructuring Assignment consiste no seguinte:
+
+        // Temos um array bidimensional em que:
+
+        let coisas = [['Abacaxi', 'Uva', 'Pera'], ['José', 'Maria']]
+
+        // Temos que a partir de Destructuring recuperar o valor de Pera
+
+        // Resolução:
+
+        // Recupero o operador destructuring, e para ele passo o array que será manipulado
+        // Acesso o primeiro array, pulo dois índices e atribuo ao terceiro índice a variável 'p'
+        let [[, , p]] = coisas
+
+        // Console.log() para conferir se é realmente Pera que está sendo recuperado
+         console.log(p)
+
+    </script>
+
+</body>
+</html>
