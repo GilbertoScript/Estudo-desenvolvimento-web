@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Destructuring Assignment</title>
+
+    <style>
+
+        
+        
+    </style>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Uma feature nova muito interessante do ES6, é a Destructuring Assignment
+
+        // Bem simples, o operador destructuring é um operador de desestruturação, que tira valores de dentro de uma estrutura, que por sua vez, pode ser um array ou um objeto
+
+        // ----- //
+        // Array //
+        // ----- //
+
+        let nomes = ['Gilberto', 'Maria', 'Pedro', 'Lucas']
+
+        // Muito comum em JavaScript atribuir a uma variável uma posição de um array
+        // Fazer isso com um único valor é muito comum e sem problemas, mas e se fosse preciso fazer com váááários valores? Ficaria muito trabalhoso e repetitivo certo?
+        /*
+        let nome1 = nomes[0]
+        let nome2 = nomes[1]
+        let nome3 = nomes[2]
+        let nome4 = nomes[3]
+        */
+
+        // Para utilizarmos o destructuring no caso de Arrays é muito simples, basta:
+        // A sintax do destructuring é de [], e em seguida basta falar para qual array nós queremos extrair informações
+        // Na desestruturação seus colchetes ficam antes do valor de atribuição
+
+        // E dentro dos colchetes passamos os índices que queremos recuperar em formato de variáveis, ou seja, se passarmos apenas 2 variáveis, serão recuperados somente os índices 0 e 1
+
+        // E para pular índices basta passar uma instrução vazia
+        let [nome1, nome2, , nome4] = nomes
+
+        console.log(nome1, nome2, nome4)
+
+        // Outra coisa que podemos fazer é atribuir valores padrões, por exemplo: 
+        let produtos = ['Celular', 'Notebook', 'Tv', 'Cooler']
+
+        // Vamos ao Destructuring
+        // Perceba que 'e', é referente a um indice que ainda não existe, sem problemas.
+        // Basta atribuir um parâmetro Default 
+
+        // E se por acaso for feito um valor default, para um elemento que já possui um valor, o parâmetro default é simplesmente desconsiderado
+        let [a, b = 'Mouse', c, d, e = 'iPad'] = produtos
+
+        console.log(a, b, c, d, e)
+
+        // Então por enquanto já vimos que podemos com o destructuring pular índices e até mesmo criar valores default para arrays.
+
+        // E outra possibilidade é a extração de valores de arrays multidimensionais
+        // Primeiro temos a criação de um array bidimensional
+        let listaCadastro = [['José', 'Maria', 'Tião'], ['986', '465', '658']]
+
+        // E para capturar seus valores é muito simples, por exemplo queremos receber o número do cadastro de Maria, basta:
+
+        // Pular o primeiro índice
+        // Em seguida acessar o array, e em seguida pular um índice, assim chegamos ao registro de Maria
+        // Se quisessemos o array por completo era só : let [a, b] = listaCadastro, dessa forma retornaria os dos arrays por completo
+        let [, [, m]] = listaCadastro
+
+        console.log(m)
+
+    </script>
+
+</body>
+</html>
