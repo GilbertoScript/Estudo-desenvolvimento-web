@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Destructuring Assignment pt2</title>
+
+    <style>
+
+        
+        
+    </style>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Prática do operador Destructuring aplicada em objetos:
+        // OBS: Em objetos não é necessário 'pular' atributos, como fazemos com arrays, basta acessar os atributos diretamente
+
+        let produtos = {
+            descricao: 'Notebook',
+            preco: 'R$ 2000,00',
+            // Criação de outro objeto literal
+            detalhes: {
+                fabricante: 'Samsung',
+                modelo: 'Samsung Book E20'
+            }
+
+        }
+
+        // Agora iremos utilizar o operador destructuring, como fazemos para extrair o atributo preço?
+
+        // Diferentemente de extração de arrays, em objetos utilizamos os {}, isso se chama token do destructuring
+        // Token - Array => [], Objeto => {}
+
+        // Aqui precisariamos sempre utilizar o mesmo nome descricao e preco, não poderia ser outro nome, então, como fazer com outros nomes? Por exemplo.. d e p.
+        // let {descricao, preco} = produtos
+
+        // Dessa forma, atribuimos a descrição uma nova variável, chamada d, e a preço uma variável chamada p.
+        // Outra coisa que podemos fazer é utilizar valores default, assim como em arrays, por exemplo, vamos recuperar um atributo que não existe dentro do objeto, normalmente retornaria undefined, mas como utilizamos um parâmetro default, o retorno é do mesmo.
+
+        // E como visto antes, se for definido um valor default, para um atributo que já tinha um valor definido, ele simplesmente ignora o parâmetro default
+
+        // let {descricao: d, preco: p = 1500, ano: a = '2020'} = produtos
+
+        // E como fazer para acessar um atributo dentro de um objeto que está dentro de outro objeto? Simples, basta:
+
+        let {descricao: d, preco: p, ano: a = 'Ano: 2020', detalhes: {fabricante: f, modelo: m} } = produtos
+
+        console.log(d, p, a, f, m)
+        document.write(d)
+
+    </script>
+
+</body>
+</html>
