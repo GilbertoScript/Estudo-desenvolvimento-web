@@ -23,12 +23,21 @@
         // Quando declaramos uma função como no exemplo a seguir:
 
         function exibirMensagem(usuario = 'Usuário', cachorro = 'Cachorro') {
-            var usuario = document.querySelector('#usuario').value
-            var cachorro = document.querySelector('#cachorro').value
-
-            alert(`Olá ${usuario}, seja bem vindo mais uma vez, como vai seu ${cachorro}.`)
-
+        if (document.querySelector('#usuario').value !== '' || document.querySelector('#cachorro').value !== '') {
+            usuario = document.querySelector('#usuario').value
+            cachorro = document.querySelector('#cachorro').value
         }
+        alert(`Olá ${usuario}, seja bem vindo mais uma vez, como vai seu cachorro ${cachorro}.`)
+    }
+        // Um parâmetro Default é como se dentro da função estivesse ocorrendo exatamente isso:
+
+        /*
+        
+        if(usuario = undefined) {
+            usuario = 'Usuário'
+        }
+
+        */
 
         // Se não for passado na chamada da função, nenhum valor, ele retornará para nós no navegador 'undefined', por que de fato não foi definido nem um valor para usuario e cachorro, nesse sentido, com a nova funcionalidade do ES6, pode agora ser atribuido a paramêtros de funções, valores default, ou seja, se o valor que era para ser passado não foi encontrado, ele usará o parâmetro default, ao invés de undefined.
 
