@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Destructuring Assignment pt4</title>
+
+    <style>
+
+        
+        
+    </style>
+</head>
+<body>
+
+    <div id="output">
+    
+        <div>
+
+            Notebook
+            <button onclick="exibirProduto(produto)">Ver produto</button>
+        </div>
+
+        <div id="descricao">
+            
+        </div>
+
+    </div>
+
+    <script>
+
+        // Utilização do Destructuring em conjunto do operador rest
+
+        // Vamos começar com um array:
+
+        let listaIds = ['265', '897', '324', '761']
+
+        // Agora temos a seguinte situação: Como fariamos para recuperar o primeiro índice como uma variável única, e o resto dos índices em uma única variável? Simples, utilizamos o operador Rest.
+
+        // Desestruturando o array, e em seguida utilizando o operador rest, atribuímos a todos os índices restantes, uma mesma variável como no exemplo a seguir:
+        function exibirIds([a, ...ids]) {
+            console.log(`Seu id atual: ${a}, ids restantes: ${ids}`)
+        }
+
+        exibirIds(listaIds)
+
+        // Exemplo com um objeto:
+
+        // Temos um objeto literal, produto que recebe suas devidas características
+        let produto = {
+            nome: 'Notebook',
+            preco: 'R$ 2500,00',
+            id: 87,
+            ano: 2021
+        }
+
+        // Temos um botão que ao ser clicado, dispara a seguinte função: que desestrutura o objeto em três partes: nome, preço, e o restante em uma única variável chamada info.
+
+        // Logo em seguida atuamos sobre esses valores exibindo no navegador as informações sobre o produto.
+        function exibirProduto({nome: n, preco: p, ...info}) {
+            let descricao = document.querySelector('#descricao')
+
+            console.log(n, p, info)
+            descricao.innerHTML = `<br><hr> Nome: ${n}, Preço: ${p}, <br> Demais informações: ${info}`
+        }   
+
+    </script>
+
+</body>
+</html>
