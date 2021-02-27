@@ -1,0 +1,60 @@
+<html>
+    <head>
+       <script type="text/javascript">
+           let funcionarios = [
+               {
+                   nome: 'Fernanda',
+                   cargo: 'Analista de RH',
+                   salario: 3100,
+                   status: 'ativo'
+               },
+               { 
+                   nome: 'Miguel',
+                   cargo: 'Assistente ADM',
+                   salario: 1700,
+                   status: 'ativo'
+               },
+               { 
+                   nome: 'Rosa',
+                   cargo: 'Auxiliar de contabilidade',
+                   salario: 1600,
+                   status: 'inativo'
+               },
+               { 
+                   nome: 'Roberto',
+                   cargo: 'Programador PHP',
+                   salario: 4500,
+                   status: 'ativo'
+               },
+               { 
+                   nome: 'Maria',
+                   cargo: 'Engenheira mecânica',
+                   salario: 7500,
+                   status: 'ativo'
+               }
+           ]
+
+           let filtro1 = funcionarios.filter(function(f){
+                return f.salario < 2000
+           })
+
+           let filtro2 = funcionarios.filter(function(f){
+                return f.salario < 2000
+           }).filter(function(f){
+               return f.status == 'ativo'
+           })
+
+           let filtro3 = funcionarios.filter(f=>(f.salario < 2000))
+
+           console.log('filtro1:')
+           console.log(filtro1)
+
+           console.log('filtro2:')
+           console.log(filtro2)
+
+           console.log('filtro3: ')
+           console.log(filtro3)
+
+       </script>
+    </head>
+</html>
