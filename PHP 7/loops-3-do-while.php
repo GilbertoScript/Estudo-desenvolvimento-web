@@ -21,7 +21,7 @@
 </head>
 <body>
 
-  	<h2>Loops parte 2 - Do While</h2><hr>
+  	<h2>Loops parte 3 - Do While</h2><hr>
 
 	<?php 
 
