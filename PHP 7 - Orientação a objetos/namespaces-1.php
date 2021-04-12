@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>PHP 7 OO - Aula 15 - Namespaces 1</title>
-
-	<style type="text/css" media="screen">
+<?php
 		
-		html {
-			background: #2d3436;
-			color: white;
-		}
-
-	</style>
-</head>
-<body>
-
-	<?php
+		// PHP 7 OO - Aula 15 - Namespaces 1
 
 		// Para evitar potenciais erro ao utilizar bibliotecas de terceiros por exemplo com nomeclaturas semelhantes ou idênticas de outras bibliotecas e até mesmo do próprio php, foi criado os namespaces.
 
@@ -71,8 +55,5 @@
 			print_r($Gilberto);
 		echo "</pre>";
 
-		echo $c->__get('nome');
+		echo $Gilberto->__get('nome');
 	?>
-	
-</body>
-</html>
