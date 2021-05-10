@@ -1,0 +1,3 @@
+-- Os joins são basicamente operadores que nos permitem conectar registros de tabelas diferentes...
+
+-- As principais funções de junções dentro do SQL são: LEFT JOIN, RIGHT JOIN E INNER JOIN.
