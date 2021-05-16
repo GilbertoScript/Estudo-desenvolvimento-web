@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Filmes</title>
+</head>
+<body>
+	
+	<nav class="navbar navbar-light bg-light mb-4">
+		<div class="container">
+			<div class="navbar-brand mb-0 h1">
+				<h3>Catálogo de filmes</h3>
+			</div>
+		</div>
+	</nav>	
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<button type="button" onclick="getFilmes()" class="btn btn-primary">
+					Listar filmes
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Inclusão do arquivo que faz a conversão de xml para json -->
+	<script src="xmltojson.js"></script>
+
+	<!-- Scripts do arquivo -->
+	<script type="text/javascript">
+		
+		function getFilmes() {
+			let xml = new XMLHttpRequest();
+
+			xml.open('GET', 'http://localhost/ajax/filmes/filmes.xml');
+
+			xml.onreadystatechange = () => {
+
+				// Caso seja feito com sucesso todo o processo, acontece isso:
+				if(xml.readyState == 4 && xml.status == 200) {
+
+					let xmlFilmes = xml.responseText;
+					console.log(xmlFilmes);
+
+					// Transformar o xml em uma árvore de elementos
+					let parser = new DOMParser();
+
+					domFilmes = parser.parseFromString(xmlFilmes, 'text/xml');
+					console.log(domFilmes);
+
+					jsonFilmes = xmlToJson(domFilmes);
+
+					console.log(jsonFilmes);
+				}
+
+				// Caso a conexão com o servidor seja feita e tenha recebido a requisição, porém não tenha encontrado o determinado arquivo, será feito isso:
+				if(xml.readyState == 4 && xml.status == 404) {
+					// **** //
+				}
+
+			}
+
+			xml.send();
+		}
+
+	</script>
+</body>
+</html>
