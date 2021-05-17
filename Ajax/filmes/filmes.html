@@ -18,8 +18,8 @@
 		</div>
 	</nav>	
 
-	<div class="container">
-		<div class="row">
+	<div class="container" id="lista">
+		<div class="row mb-5">
 			<div class="col">
 				<button type="button" onclick="getFilmes()" class="btn btn-primary">
 					Listar filmes
@@ -32,42 +32,6 @@
 	<script src="xmltojson.js"></script>
 
 	<!-- Scripts do arquivo -->
-	<script type="text/javascript">
-		
-		function getFilmes() {
-			let xml = new XMLHttpRequest();
-
-			xml.open('GET', 'http://localhost/ajax/filmes/filmes.xml');
-
-			xml.onreadystatechange = () => {
-
-				// Caso seja feito com sucesso todo o processo, acontece isso:
-				if(xml.readyState == 4 && xml.status == 200) {
-
-					let xmlFilmes = xml.responseText;
-					console.log(xmlFilmes);
-
-					// Transformar o xml em uma árvore de elementos
-					let parser = new DOMParser();
-
-					domFilmes = parser.parseFromString(xmlFilmes, 'text/xml');
-					console.log(domFilmes);
-
-					jsonFilmes = xmlToJson(domFilmes);
-
-					console.log(jsonFilmes);
-				}
-
-				// Caso a conexão com o servidor seja feita e tenha recebido a requisição, porém não tenha encontrado o determinado arquivo, será feito isso:
-				if(xml.readyState == 4 && xml.status == 404) {
-					// **** //
-				}
-
-			}
-
-			xml.send();
-		}
-
-	</script>
+	<script src="scripts.js"></script>
 </body>
 </html>
