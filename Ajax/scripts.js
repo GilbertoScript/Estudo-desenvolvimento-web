@@ -1,68 +1,75 @@
-// Recuperamos na função a url do link a ser clicado
-function requisitarPagina(url) {
+function getFilmes() {
+	let xml = new XMLHttpRequest();
 
-	// Incluir um gif via DOM:
-	let conteudo = document.getElementById('conteudo');
-	conteudo.innerHTML = '';
+	xml.open('GET', 'http://localhost/ajax/filmes/filmes.xml');
 
-	// Se o elemento não existir, ele cria, se já estiver criado, ele não entra na condição
-	if(!document.getElementById('loading')) {
+	xml.onreadystatechange = () => {
 
-		let loadingGif = document.createElement('img');
-		loadingGif.id = "loading"
-		loadingGif.src = "assets/loading.gif";
-		loadingGif.className = "rounded mx-auto d-block";
+		// Sucesso no estado da requisição e no status da resposta:
+		if(xml.readyState == 4 && xml.status == 200) {
 
-		conteudo.appendChild(loadingGif);
+			let xmlFilmes = xml.responseText;
 
-		console.log('chegou aqui');
+			// Transformar o xml em uma árvore de elementos
+			let parser = new DOMParser();
+			domFilmes = parser.parseFromString(xmlFilmes, 'text/xml');
+
+			jsonFilmes = xmlToJson(domFilmes);
+
+			// Utilizando um for in, para percorrer o jsonFilmes:
+			for(let i in jsonFilmes['filmes']['filme']) {
+
+				let item = jsonFilmes['filmes']['filme'][i];
+
+				// Inserção na página os elementos dinâmicos
+				let divRow = document.createElement('div')
+				divRow.className = "row"
+
+				let divCol = document.createElement('div')
+				divCol.className = "col"
+
+				// Lógica para recuperar os genêros do filme:
+				let genero = '';
+				for(let g in item.genero) {
+
+					if(genero) genero += ', ';
+					genero += item.genero[g]['#text'];
+				}
+
+				// Lógica para recuperar o elenco do filme:
+				let elenco = '';
+				for(let e in item.elenco.ator) {
+
+					if(elenco) elenco += ', ';
+					elenco += item.elenco.ator[e]['#text'];
+				}
+
+				divRow.appendChild(divCol);
+				divCol.innerHTML = `
+					<p><strong>Título: </strong>${item['titulo']['#text']}</p>
+					<p><strong>Resumo: </strong>${item['resumo']['#text']}</p>
+					<p><strong>Genêro: </strong>${genero}</p>
+					<p><strong>Elenco: </strong>${elenco}</p>
+					<p>
+						<strong>
+							Data de lançamento: 
+						</strong>
+						${item['dataLancamento']['#text']} ( ${item['dataLancamento']['@attributes']['pais']} )
+					</p>
+					<hr />
+				`
+
+				document.getElementById('lista').appendChild(divRow);
+			}
+		}
+
+		// Caso a conexão com o servidor seja feita e tenha recebido a requisição, porém não tenha encontrado o determinado arquivo, será feito isso:
+		if(xml.readyState == 4 && xml.status == 404) {
+			
+			window.location = "../404/404_page.html"
+		}
+
 	}
 
-	// Criação da variável 'ajax' que recebe a classe XMLHttpRequest, que contém os atributos e métodos que serão utilizado para o nosso exemplo de uma SPA - Single Page Aplciation.
-
-	let ajax = new XMLHttpRequest();
-
-	// Requisição não iniciada, state = 0
-	//console.log(ajax.readyState);
-
-	// Conexão estabelecida com o servidor, state = 1
-	ajax.open('GET', url);
-	
-	//console.log(ajax.readyState);
-
-	// 'Alguma lógica para ficar observando para o progresso da requisição'
-	ajax.onreadystatechange = () => {
-
-			if (ajax.readyState == 4 && ajax.status == 200) {
-
-				conteudo.innerHTML = ajax.response;
-				console.log('Requisição finalizada, o status é 200');
-				//document.getElementById('loading').remove();
-			}
-
-			if (ajax.readyState == 4 && ajax.status == 404) {
-
-				window.location = "404/404_page.html";
-				//document.getElementById('loading').remove();
-			}
-	}
-
-	ajax.send();
-	// console.log(ajax)
+	xml.send();
 }
-
-
-// Método open - responsável por configurar qual url será requisitada e por qual método(get, post..)
-	// ajax.open('GET', url);
-
-/* Uma requisição XMLHttpRequest, passa por 5 estados: 
-
-ReadyState 
-
-- 0: Request not initialized (requisição não iniciada)
-- 1: Server connection established (conexão estabelecida com servidor)
-- 2: Request received (requisição recebida)
-- 3: Processing request (processando requisição)
-- 4: Request finished and response is ready (requisição finalizada)
-
-*/
