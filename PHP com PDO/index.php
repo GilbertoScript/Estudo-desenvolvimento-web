@@ -10,27 +10,34 @@
 		$conexao = new PDO($dsn, $usuario, $senha);	
 
 		$query = '
-			create table if not exists tb_usuarios(
-				id int not null primary key auto_increment,
-				nome varchar(50) not null,
-				email varchar(100) not null,
-				senha varchar(16) not null
-			)
+			SELECT 
+				* 
+			FROM 
+				tb_usuarios
+			ORDER BY
+				nome DESC limit 1
 		';
 
-		// Retorno esperado é 0, isso pois o método exec retorna a quantidade de linhas que foram alteradas durante a execução da query, como executamos uma query pertencente ao subgrupo DDL(Data Definition Language), o retorno é 0 pois não foi afetado nenhuma linha, e sim criadas.
-		$retorno = $conexao->exec($query);
+		$stmt = $conexao->query($query);
 
-		$query = '
-			delete from tb_usuarios
-		';
+		// Para retornar apenas um registro utilizamos o método fetch
+		$usuario = $stmt->fetch(PDO::FETCH_OBJ);
 
-		$retorno = $conexao->exec($query);
-		echo $retorno;
+		echo "<pre>";
+			print_r($usuario);
+		echo "</pre>";
 
 	} catch(PDOException $e) {
 
 		echo "Erro: " . $e->getCode() . "<br />Mensagem: " . $e->getMessage();
 	}
+
+	/*
+	// $lista = $stmt->fetchAll(PDO::FETCH_OBJ);
+	// Para obter o retorno apenas dos índices associativos
+	// passamos como parâmetro do fetchAll = 'PDO::FETCH_ASSOC' 
+	// E para recuperar apenas os retornos númericos = 'PDO::FETCH_NUM'
+	// E para se trabalhar com array de objetos = 'PDO::FETCH_OBJ'
+	*/
 		
 ?>
