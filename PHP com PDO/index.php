@@ -14,18 +14,31 @@
 				* 
 			FROM 
 				tb_usuarios
-			ORDER BY
-				nome DESC limit 1
 		';
 
 		$stmt = $conexao->query($query);
 
-		// Para retornar apenas um registro utilizamos o método fetch
-		$usuario = $stmt->fetch(PDO::FETCH_OBJ);
+		foreach ($stmt as $key => $value) {
+			
+			echo "<pre>";
+				print_r($value['nome']);
+			echo "</pre>";
+		};
 
-		echo "<pre>";
-			print_r($usuario);
-		echo "</pre>";
+
+		// Para retornar apenas um registro utilizamos o método fetch
+		//$listaUsuarios = $stmt->fetchAll();
+
+		/* echo "<pre>";
+		 	print_r($listaUsuarios);
+		  echo "</pre>"; */
+
+		/* Percorrendo e listando itens de dentro da variável
+		foreach ($listaUsuarios as $key => $value) {
+			
+				echo $value['nome'];
+				echo "<hr />";
+		} */
 
 	} catch(PDOException $e) {
 
