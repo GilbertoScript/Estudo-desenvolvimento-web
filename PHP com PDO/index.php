@@ -1,6 +1,6 @@
 <?php
 
-	// SQL - Injection - Segurança no backend
+	// SQL - Injection - Segurança no backend - Prepare Statement
 
 	if(!empty($_POST['user']) && !empty($_POST['password'])) {
 
@@ -13,14 +13,21 @@
 
 			$conexao = new PDO($dsn, $usuario, $senha);	
 
-			// query
 			$query = "SELECT * FROM tb_usuarios WHERE ";
-			$query .= " email = '{$_POST['user']}' ";
-			$query .= " AND senha = '{$_POST['password']}' ";
+			$query .= " email = :usuario ";
+			$query .= " AND senha = :senha ";
 
-			echo $query;
+			// Preparando a query para que assim possa se obter mais segurança, evitando SQL injections
+			$stmt = $conexao->prepare($query);
 
-			$stmt = $conexao->query($query);
+			// Agora executamos o bindValue, que por sua vez faz um tratamento em locais onde possam ocorrer possíveis SQL injections
+			$stmt->bindValue(':usuario', $_POST['user']);
+			$stmt->bindValue(':senha', $_POST['password']);
+
+			// Após feitas as tratativas contra SQL injections, podemos executar a query.
+			$stmt->execute();
+
+			// Recuperando o primeiro usuário:
 			$usuario = $stmt->fetch();
 
 			echo "<pre>";
