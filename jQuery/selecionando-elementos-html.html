@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 2 - Selecionando elementos html</title>
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px;
+		}
+
+		section {
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<h2 id="titulo">Selecionando elementos parte 1</h2>
+
+	<section id="sectionPrincipal">
+		<div>Div 1</div>
+		<div class="diversos">Div 2</div>
+
+		<ul id="menu1-ul">
+			<li>Menu 1 - item 1</li>
+			<li class="diversos">Menu 1 - item 2</li>
+			<li>Menu 1 - item 3</li>
+		</ul>
+
+		<ul>
+			<li class="menu2-li">Menu 2 - item 1</li>
+			<li class="menu2-li">Menu 2 - item 2</li>
+			<li class="menu2-li">Menu 2 - item 3</li>
+		</ul>
+
+		<input type="text" placeholder="Campo 1" />
+
+		<select class="diversos">
+			<option>-- Selecione uma opção --</option>
+			<option>-- Opção 1 --</option>
+			<option>-- Opção 2 --</option>
+		</select>
+
+	</section>
+
+	<br><br><br>
+	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1cLmxu3XYpiCKsJn8q64BmWuhmbj5FwwB0yvmh3JYE-wt4B3WmNzn3v3vX2TaMfnGzO0&usqp=CAU" alt="">
+
+	<script>
+		
+		// Para selecionar um elemento html e para também ter acesso aos recursos da biblioteca jQuery, utilizamos o sinal '$', e para o exemplo desse arquivo iremos acessar via DOM os elementos html utilizando jQuery.
+
+		// --- Selecionando elemento(s) por tag --- //
+		console.log('----- Selecionando elementos por tag -----')
+		console.log('')
+
+		// Selecionando h2
+		console.log($('h2'))
+
+		// Selecionando div(s)
+		console.log($('div'))
+
+		// Selecionando ul(s)
+		console.log($('ul'))
+
+		// Selecionando li(s)
+		console.log($('li'))
+
+		// Selecionando input(s)
+		console.log($('input'))
+
+		// Selecionando elemento 'select'
+		console.log($('select'))
+
+		// Selecionando elemento(s) option
+		console.log($('option'))
+
+		// Selecionado imagem(ns)
+		console.log($('img'))
+
+		// --- Selecionando elementos pela classe/id -- //
+		console.log('----- Selecionando elementos pela classe/id -----')
+		console.log('')
+
+		// Selecionando as li's do menu 2
+		console.log($('.menu2-li'))
+
+		// Selecionando vários elementos diversos dentro do código
+		console.log($('.diversos'))
+
+		console.log($('#titulo'))
+		console.log($('#sectionPrincipal'))
+
+	</script>
+</body>
+</html>

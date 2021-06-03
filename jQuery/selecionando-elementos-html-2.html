@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 3 - Selecionando elementos html - parte 2</title>
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px;
+		}
+
+		section {
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<h2 id="titulo">Selecionando elementos parte 2</h2>
+
+	<section>
+		<div>
+			<input class="exemplo1" type="text" placeholder="Input 1">
+			<input type="text" placeholder="Input 2">
+			<input type="text" placeholder="Input 3">
+		</div>
+
+		<div>
+			<div class="exemplo1">Div 1</div>
+			<div>Div 2</div>
+			<div>Div 3</div>
+			<div>Div 4</div>
+			<div>Div 5</div>
+			<div>Div 6</div>
+		</div>
+
+		<ul class="ul1-exemplo2">
+			<li class="exemplo1">Opção 1</li>
+			<li class="exemplo2">Opção 2</li>
+			<li class="exemplo2">Opção 3</li>
+			<li>Opção 4</li>
+			<li>Opção 5</li>
+		</ul>
+
+		<ul class="ul2-exemplo2">
+			<li class="exemplo1">Opção 1</li>
+			<li class="exemplo2">Opção 2</li>
+			<li>Opção 3</li>
+			<li>Opção 4</li>
+			<li class="exemplo2">Opção 5</li>
+		</ul>
+
+	</section>
+
+	<script>
+		
+		// Para esse arquivo(aula) teremos dois principais desafios que são eles: Combinação de seletores e a atuação sobre o array de retorno dos elementos selecionados.
+
+		/* --- - Combinação de seletores - --- */ 
+
+			// 1 - Selecionar elementos por classe de tag específica
+
+			// Se quisermos por exemplo selecionar os elementos de tag li, que estão contidos na classe exemplo1, basta informar isso no início da instrução:
+
+			console.log($('div.exemplo1'))
+
+			// 2 - Selecionar elementos por classe de classe específica
+
+			// Se quisermos por exemplo selecionar os elementos que contêm a classe exemplo 2, que está APENAS na primeira ul, basta informar isso no início da instrução:
+			
+			console.log($('.ul1-exemplo2 .exemplo2'))
+
+
+		/* --- - Atuação sobre o array de retorno dos elementos selecionados - --- */ 
+
+			// Recuperar o primeiro elemento dentro do array de elementos selecionados:
+			console.log($('div div:first'))
+
+			// Recuperar o último elemento dentro do array de elementos selecionados:
+			console.log($('div div:last'))
+
+			// Recuperar apenas os índices pares dentro do array de elementos selecionados:
+			console.log($('div div:even'))
+
+			// Recuperar apena os índices ímpares dentro do array de elementos selecionados:
+			console.log($('div div:odd'))
+
+	</script>
+</body>
+</html>
