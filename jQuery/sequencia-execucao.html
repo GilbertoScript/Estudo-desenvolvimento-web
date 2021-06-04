@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 4 - Sequência de execução de código</title>
+
+	<style type="text/css">
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<script>
+		
+		// Algo que ocorre muito em alguns scripts, é quando como neste exemplo, temos as tags do scripts em cima, ou seja, a tag script será executada antes de que os elementos html estejam criadas, isso pode causar diversos erros em relação ao DOM, visto que não é possível afetar um elemento que não existe, para corrigir isso pode-se fazer com o próprio javascript puro, por exemplo criar uma função que só será executada quando o body estiver todo carregado, porém uma forma de se fazer isso com o jQuery é mais simples, vamos ao exemplo:
+
+		// O que fazemos basicamente é criar uma função que só será executada quando o document(body) da página estiver construído, e encapsulamos todo o conteúdo javascript dentro desta função:
+
+		// $(document).ready(function() {
+
+		// 	function teste() {
+		// 		console.log($('#exemplo1'))
+		// 	}
+			
+		// 	teste()
+		// })
+
+		// Outra forma de se fazer isso, é passando apenas a referência da função quando o arquivo estiver completamente carregado:
+
+		function teste() {
+			console.log($('#exemplo1'))
+		}
+			
+		$(teste)
+
+	</script>
+
+	<h2 id="titulo">Sequência de execução de código</h2>
+
+	<div id="exemplo1">
+		Div exemplo 1
+	</div>
+
+	
+</body>
+</html>
