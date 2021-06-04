@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 5 - Recuperando e manipulando atributos html com jQuery</title>
+
+	<style type="text/css">
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px;
+		}
+		
+		img {
+			margin: 25px;
+			width: 250px;
+			height: 250px;
+			padding: 15px;
+		}
+
+		div {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+	</style>
+</head>
+<body>
+
+	<!-- 
+		imagens: 
+			https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794_960_720.png
+			https://cdn.pixabay.com/photo/2013/07/13/10/51/football-157930_960_720.png
+	-->
+
+	<h2 id="titulo">Recuperando e manipulando atributos</h2>
+
+	<div>
+		<img 
+			src="https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794_960_720.png" 
+			alt="Bola de basquete"
+		>
+
+		<br>
+		<button onclick="trocarImagem()">Trocar imagem</button>
+	</div>
+
+	<!-- <img 
+		src="https://cdn.pixabay.com/photo/2013/07/13/10/51/football-157930_960_720.png" 
+		alt="Bola de futebol"
+		border="1" 
+	> -->
+
+	<script>
+		
+		// Temos uma tag img e temos dois src's de imagens nesse arquivo, agora iremos recuperar a tag img e atribuir a ela um novo atributo
+
+		// O método attr espera dois parâmetros, o primeiro é qual atributo será trabalhado, o segundo é opcional, que corresponde ao valor que esse atributo receberá.
+
+		// E no exemplo abaixo temos a seguinte situação: uma variável que começa com o valor 0, logo em seguida temos a função trocarImagem, que é executada quando temos o botão do script apertado, e quando ele é apertado e a função é executada, conferimos se a variável tem o valor 0, entra em true e executamos o script que irá alterar o src da imagem, alteramos o valor de x e fazemos uma nova verificação, para que assim, a cada vez que o botão for apertado teremos uma outra imagem sendo exibida.
+
+		let x = 0;
+
+		function trocarImagem() {
+
+			if(x === 0) {
+				console.log($('img').attr('src', 'https://cdn.pixabay.com/photo/2013/07/13/10/51/football-157930_960_720.png'))
+
+				console.log($('img').attr('alt', 'Bola de basquete'))
+
+				x = 1;
+
+			} else if(x == 1) {
+				console.log($('img').attr('src', 'https://cdn.pixabay.com/photo/2013/07/12/14/07/basketball-147794_960_720.png'))
+
+				console.log($('img').attr('alt', 'Bola de futebol'))
+
+				x = 0;
+			}
+		}
+
+	</script>
+
+</body>
+</html>
