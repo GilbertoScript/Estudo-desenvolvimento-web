@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 12 - Eventos do browser</title>
+
+	<style>
+			
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px 25px;
+		}
+
+		#conteudo {
+			padding: 25px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+		
+	<h2 id="titulo">Manipulando CSS</h2>
+
+	<div id="conteudo">
+		<h3>Browser</h3>
+		<span>Onload: </span><span id="onload">?</span><br />
+		<span>Scroll: </span><span id="scroll">?</span><br />
+		<span>Resize window: </span><span id="resize">?</span>
+
+		<div id="div-scroll" style="width: 100px; height: 100px; border: 1px solid red; overflow-y: scroll;">
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+	</div>
+
+	<hr />
+
+	<script>
+
+		// Para os eventos em relação ao browser/dom, temos um método que já foi visto aqui que é o ready do dom, ou seja quando o dom, estiver carregado, determinada ação irá acontecer:
+
+		$(document).ready(() => {
+
+			$('#onload').html('Página carregada')
+
+			// Agora iremos utilizar um evento do object window, window guarda o estado da janela do navegador, e como iremos utilizar o evento de scroll, iremos utilizar window para que quando esse evento for executado, possamos manipulá-lo
+
+			$(window).scroll(() => {
+
+				$('#scroll').html('Scroll acionado')
+			})
+
+			// Outro evento é o resize, que é manipulado quando a janela sofre alteração de tamanho.
+			$(window).resize(() => {
+
+				// Um exemplo mais complexo é, quando a janela sofrer redimensionamento, nós podemos alterar algum elemento css, por exemplo:
+
+				$('#resize').html('Página redimensionada').css('background', 'lightblue')
+			})
+		})
+
+		/* -------------------------------------------------------------------------------------------------- */
+
+		// Esses eventos não estão disponíveis apenas no objeto da janela, também estão disponíveis para elementos html, por exemplo vamos executar o evento de scroll em uma div que possui scroll:
+		$('#div-scroll').scroll((e) => {
+
+			// Quando esta div receber o scroll, o seu background também muda:
+			$(e.target).css('background', 'lightblue')
+		})
+
+
+	</script>
+
+</body>
+</html>
