@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 14 - Eventos do mouse - parte 2</title>
+
+	<style>
+			
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px 25px;
+		}
+
+		#conteudo {
+			padding: 25px;
+		}
+
+		#divExterna {
+			background: #ccc;
+			width: 150px;
+			height: 150px;
+			padding: 37.5px;
+		}
+
+		#divInterna {
+			background: black;
+			width: 75px;
+			height: 75px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+		
+	<h2 id="titulo">Eventos do mouse - parte 2</h2>
+
+	<div id="conteudo">
+		<h3>Mouse</h3>
+		<button id="btn1" type="button">Clique aqui</button>
+		<button id="btn2" type="button">Clique aqui 2x</button>
+
+		<div 
+			id="background" 
+			style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px">	
+		</div>
+
+		<span>Resultado do evento sobre a div</span>
+		<span id="resultadoDiv"> ? </span>
+		<hr />
+
+		<br><br>
+		<div id="divExterna">
+			<div id="divInterna">
+				
+			</div>
+		</div>
+		<span>Div externa: </span>
+		<span id="resultado"></span>
+
+		<br>
+
+		<span>Div Inerna: </span>
+		<span id="resultadoInterno"></span>
+
+		<hr>
+	</div>
+
+	<hr />
+
+	<script>
+
+		// Algo que ocorre muito em relação aos eventos de mouse, são confusões, visto que, boa parte dos eventos, são muito parecidos, ou até mesmo idênticos, para exemplificar essa problemática, iremos criar uma situaçã parecida...
+
+		// Os eventos mouseenter e mouseover, são executados quando o cursor do mouse sobrepõe a região do elemento. Mesmo sendo métodos diferentes, seu comportamento em relação ao outro é praticamente idêntico
+
+		// Mouseover
+		// $('#divExterna').mouseover(() => {
+
+		// 	$('#resultado').html('Entrou')
+		// })
+
+		// Mouseenter
+
+		// $('#divExterna').mouseenter(() => {
+
+		// 	$('#divExterna').css('background', 'green')
+		// 	$('#resultado').html('Entrou')
+		// })
+
+		// E se esses dois método funcionam para quando o elemento for sobreposto pelo mouse, assim temos os dois eventos quando o mouse 'sai' da área do determinado elemento, esses eventos são mouseout e mouseleave, vamos ao exemplo:
+
+		// Mouseout
+
+		// $('#divExterna').mouseout(() => {
+
+		// 	$('#divExterna').css('background', 'blue')
+		// 	$('#resultado').html('Saiu')
+		// })
+
+		// Mouseleave
+
+		// $('#divExterna').mouseout(() => {
+
+		// 	$('#divExterna').css('background', 'blue')
+		// 	$('#resultado').html('Saiu')
+		// })
+
+		/* ------------------------- */ /* ------------------------- */ /* ------------------------- */
+
+		// Ok, mas.. Aonde esses elementos se comportam de maneira diferente? Vamos entender:
+
+		// Mouseover / Mouseout (Eventos mais antigos) -- Com esses dois eventos temos um problema conhecido como efeito bubble ou efeito borbulhamento, que gera muito confusão, para explorar esse efeito utilizaremos o console
+
+		// // Mouseover - Div externa 
+
+		// $('#divExterna').mouseover(() => {
+
+		// 	$('#divExterna').css('background', 'green')
+		// 	$('#resultado').html('Entrou')
+
+		// 	console.log('Div externa (entrou)')
+		// })
+
+		// // Mouseout - Div externa
+
+		// $('#divExterna').mouseout(() => {
+
+		// 	$('#divExterna').css('background', 'blue')
+		// 	$('#resultado').html('Saiu')
+
+		// 	console.log('Div externa (saiu)')
+		// })
+
+		// // Mouseover - Div Interna 
+
+		// $('#divInterna').mouseover(() => {
+
+		// 	$('#divInterna').css('background', 'green')
+		// 	$('#resultadoInterno').html('Entrou')
+
+		// 	console.log('Div interna (entrou)')
+		// })
+
+		// // Mouseout - Div Interna
+
+		// $('#divInterna').mouseout(() => {
+
+		// 	$('#divInterna').css('background', 'blue')
+		// 	$('#resultadoInterno').html('Saiu')
+
+		// 	console.log('Div interna (saiu)')
+		// })
+
+
+		/* ------------------------- */ /* ------------------------- */
+		/* ------------------------- */ /* ------------------------- */
+
+		/* Mouseenter / Mouseleave (Eventos mais novos) */
+
+		// Mouseenter Div Externa
+
+		$('#divExterna').mouseenter(() => {
+
+			$('#divExterna').css('background', 'green')
+			$('#resultado').html('Entrou')
+
+			console.log('Div externa (entrou)')
+		})
+
+		// Mouseleave Div Externa
+
+		$('#divExterna').mouseout(() => {
+
+			$('#divExterna').css('background', 'blue')
+			$('#resultado').html('Saiu')
+
+			console.log('Div externa (Saiu)')
+		})
+
+		// Mouseenter - Div Interna 
+
+		$('#divInterna').mouseenter(() => {
+
+			$('#divInterna').css('background', 'green')
+			$('#resultadoInterno').html('Entrou')
+
+			console.log('Div interna (entrou)')
+		})
+
+		// Mouseleave - Div Interna
+
+		$('#divInterna').mouseleave(() => {
+
+			$('#divInterna').css('background', 'blue')
+			$('#resultadoInterno').html('Saiu')
+
+			console.log('Div interna (saiu)')
+		})
+
+
+
+	</script>
+
+</body>
+</html>

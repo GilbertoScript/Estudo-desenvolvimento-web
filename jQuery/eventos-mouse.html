@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 13 - Eventos do mouse</title>
+
+	<style>
+			
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px 25px;
+		}
+
+		#conteudo {
+			padding: 25px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+		
+	<h2 id="titulo">Eventos mouse</h2>
+
+	<div id="conteudo">
+		<h3>Mouse</h3>
+		<button id="btn1" type="button">Clique aqui</button>
+		<button id="btn2" type="button">Clique aqui 2x</button>
+
+		<div 
+			id="background" 
+			style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px">	
+		</div>
+
+		<span>Resultado do evento sobre a div</span>
+		<span id="resultadoDiv"> ? </span>
+		<hr />
+	</div>
+
+	<hr />
+
+	<script>
+
+		// Algo muito comum nos eventos de mouse são os eventos relacionados ao click, e nesse exemplo iremos explorar 4 dos eventos de click's mais importantes/utilizados.
+
+		// Mousedown, mouseup, click e dblclick.
+
+		// Mousedown, o evento de mousedown, ocorre quando o usuário clica em determinado elemento, por exemplo, utilizamos nesse arquivo um botão, quando esse botão for clicado, isto é, apenas clicado, e se o click for 'segurado' pelo mouse, podemos perceber que o evento ocorre, não sendo necessário 'soltar', o clique do mouse para que o evento ocorra, ou seja, ao botão ser pressionado o evento já ocorre.
+
+		$('#btn1').mousedown(() => {
+			$('#background').css('background', 'green')
+		})
+
+		// Mouseup, e como o 'contrário' do evento de mousedown, temos o mouseup, que por sua vez, executa determinado evento quando o clique no botão é liberado, ou seja, se clicar em um botão, e segurar, nada acontece, porém quando o clique desse mesmo botão é solto, ai sim, o evento ocorre.
+
+		// $('#btn1').mouseup(() => {
+		// 	$('#background').css('background', 'blue')
+		// })
+
+		// Click, e por fim o evento de clique, é também um dos mais famosos, sua execução ocorre igualmente ao evento de mouseup, ou seja, quando o elemento for clicado, e o clique for 'liberado' sobre o elemento, o evento ocorrerá, fazendo assim que a determinada execução seja feita.
+
+		$('#btn1').click(() => {
+			$('#background').css('background', 'blue')
+		})
+
+		// Dblcick, o evento de dbclick como o nome diz, é o evento de duplo clique sobre determinado elemento.
+
+		$('#btn2').dblclick(() => {
+			$('#background').css('background', 'gray')
+		})
+
+
+		/* --------------------------- */ /* --------------------------- */ /* --------------------------- */
+
+		// E outro tipo de evento também muito interessante em relação ao mouse, é o de mousemove, que ocorre quando o mouse se move por determinado elemento, é um recurso muito utilizado quando nos referimos a 'drag-and-drop', que jogamos determinado arquivo no browser, esse evento nos da a 'coordenada' de onde o mouse está por exemplo..
+
+		$('#background').mousemove((e) => {
+
+			$('#resultadoDiv').html(`Eixo X: ${e.offsetX}, Eixo Y: ${e.offsetY}`)
+		})
+
+
+	</script>
+
+</body>
+</html>
