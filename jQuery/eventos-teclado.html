@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 15 - Eventos do teclado</title>
+
+	<style>
+			
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px 25px;
+		}
+
+		#conteudo {
+			padding: 25px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+		
+	<h2 id="titulo">Eventos do teclado</h2>
+
+	<div id="conteudo">
+		<h3>Teclado</h3>
+		<span>Nome:</span>
+		<input id="teclado" type="text" />
+		<br><br>
+		<span id="resultado">Resultado do evento sobre o input</span>
+		<hr />
+	</div>
+
+	<hr />
+
+	<script>
+
+		// Dois métodos muito comuns quando falamos de teclado são o keydown e o keyup, que são os respectivos eventos de: pressão e liberação de determinada tecla.
+
+		// Para explorarmos melhor esses eventos, iremos utilizar alguns elementos do html, então vamos.
+
+		// keydown
+
+		$('#teclado').keydown(() => {
+			$('#resultado').html('Tecla pressionada.')
+			console.log('Tecla pressionada.')
+		})
+
+		// keyup
+
+		$('#teclado').keyup((e) => {
+
+			if(e.keyCode == 13) {
+
+				let txt = $(e.target).val()
+
+				$('#resultado').html(txt)
+				$(e.target).val('')
+			}
+		})
+
+	</script>
+
+</body>
+</html>
