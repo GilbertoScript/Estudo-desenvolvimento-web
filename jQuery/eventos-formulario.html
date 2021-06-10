@@ -69,25 +69,16 @@
 
 			// Focus, evento ocorre quando o determinado elemento recebe foco.
 
-			$('#nome').focus((e) => {
+			// Também podemos utilizar a sintaxe sugar, fazendo com que dois elementos html's possuam o mesmo comportamento:
+			$('#nome, #email').focus((e) => {
 
 				$(e.target).addClass('inputFocus')
 
-			})
-
-			$('#email').focus((e) => {
-
-				$(e.target).addClass('inputFocus')
 			})
 
 			// Blur, evento ocorre quando o determinado elemento perde o foco
 
-			$('#nome').blur((e) => {
-
-				$(e.target).removeClass('inputFocus')
-			})
-
-			$('#email').blur((e) => {
+			$('#nome, #email').blur((e) => {
 
 				$(e.target).removeClass('inputFocus')
 			})
