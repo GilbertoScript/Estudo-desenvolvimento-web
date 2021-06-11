@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 17 - Eventos programáticos/auxiliadores</title>
+
+	<style>
+			
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px 25px;
+		}
+
+		#conteudo {
+			padding: 25px;
+		}
+
+		#div1 {
+			width: 150px;
+			height: 150px;
+			border: 3px solid darkslateblue;
+			margin-top: 37.5px;
+		}
+
+		.emDestaque {
+			background-color: darkslategray;
+		}
+
+	</style>
+</head>
+
+<body>
+	<h2 id="titulo">Eventos programáticos/auxiliadores</h2>
+
+	<div id="conteudo">
+		
+		<button id="btn1" type="button">
+			Botão 1
+		</button>
+
+		<button id="btn2" type="button">
+			Botão 2
+		</button>
+
+		<hr>
+
+		<div id="div1"></div>
+
+	</div>
+
+	<script>
+
+		// Iremos começar nossos exemplo com a utilização da função trigger(), que cria eventos de modo programático.
+
+		// Para o exemplo iremos fazer o seguinte: a partir do botão 1 executar um evento que ativa a execução do evento de clique sobre o botão 2.
+
+			$('#btn2').on('click', () => {
+				alert('O botão 2 foi clicado!')
+			})
+
+			$('#btn1').on('click', () => {
+
+				$('#btn2').trigger('click')
+			})
+
+		// Agora iremos utilizar o método hover, que serve para eventos do tipo hover, por exemplo, mouseenter, mouseleave, mouseout, mouseover.
+
+			// $('#div1').on('mouseenter', (e) => {
+
+			// 	$(e.target).addClass('emDestaque');
+			// })
+
+			// $('#div1').on('mouseleave', (e) => {
+
+			// 	$(e.target).removeClass('emDestaque');
+			// })
+
+			// Logo acima temos um exemplo da escrita de duas funções para o mesmo elemento, agora iremos criar isso utilizando uma sintaxe sugar: hover
+
+			$('#div1').hover(
+				e => $(e.target).toggleClass('emDestaque'),
+			)
+
+		// Uma outra função muito interessante e 'sugar' a ser utilizada, é a seguinte: toggleClass(), que verifica se um determinado elemento html possui a classe em questão, casso possua, ele remove, e caso não possua, ele adiciona:
+
+			// $('#div1').toggleClass('emDestaque');
+
+
+	</script>
+
+</body>
+</html>
