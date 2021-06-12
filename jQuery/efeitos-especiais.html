@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 18 - Efeitos especiais</title>
+
+	<style>
+			
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px 25px;
+		}
+
+		#conteudo {
+			padding: 25px;
+			display: flex;
+			justify-content: space-evenly;
+		}
+
+		.grupo {
+			text-align: center;
+		}
+
+		.div {
+			height: 150px;
+			width: 150px;
+		}
+
+		button {
+			margin-bottom: 15px;
+			padding: 7.5px 15px;
+		}
+
+		.div1 {
+			background: darkslategray;
+		}
+
+		.div2 {
+			background: darkgoldenrod;
+		}
+
+		.div3 {
+			background: darkolivegreen;
+		}
+
+	</style>
+</head>
+
+<body>
+	<h2 id="titulo">Efeitos especiais</h2>
+
+	<div id="conteudo">
+		
+		<div class="grupo">
+			<button class="btn1" type="button">DIV 1</button>
+			<div id="div1" class="div div1"></div>
+		</div>
+		<div class="grupo">
+			<button class="btn2" type="button">DIV 2</button>
+			<div id="div2" class="div div2"></div>
+		</div>
+		<div class="grupo">
+			<button class="btn3" type="button">DIV 3</button>
+			<div id="div3" class="div div3"></div>
+		</div>
+
+	</div>
+
+	<script>
+
+		// Algo que é muito utilizado dentro do jQuery, são os efeitos especiais que já vem prontos para uso, esses efeitos podem ser atribuidos a elementos html, e para explorar melhor cada um desses métodos temos no documento alguns elementos estilizados prontos para uso, então vamos lá:
+
+			// Podemos passar como parâmetro para o .hide e para o .show 'slow, medio ou fast', ou o tempo em milissegundos que o elemento irá ir sofrendo a modificação, e se não for passado nenhum parâmetro, o elemento por exemplo em um hide, iria sumir no mesmo instante.
+
+			// // Hide - Esconder
+			// $('.btn1').on('click', () => {
+
+			// 	$('#div1').hide('medio')
+			// })
+
+			// // Show - Mostrar
+			// $('#div2').hide()
+
+			// $('.btn2').on('click', () => {
+
+			// 	$('#div2').show('slow')
+			// })
+
+			// E podemos também utilizar o toggle, que de forma inteligente identifica se o elemento está show, se não estiver, ele vai deixar, e se já estiver, ele o deixa hide, por exemplo:
+
+			// Toggle - Identifica
+			$('.btn1').on('click', () => {
+
+				$('#div1').toggle('slow')
+			})
+
+		// Uma outra categoria de efeitos especiais são os de tipo fade, que com eles podemos fazer a inclusão de efeitos com opacidade, vamos explorar:
+
+			// // FadeOut - Aplica opacidade até o elemento desaparecer
+			// $('.btn2').on('click', () => {
+
+			// 	$('#div2').fadeOut('slow')
+			// })
+
+			// $('#div2').fadeOut('slow')
+
+			// // FadeIn - Exibir o elemento escondido, diminuindo a opacidade até o elemento aparecer
+			// $('.btn2').on('click', () => {
+
+			// 	$('#div2').fadeIn('slow')
+			// })
+
+			// FadeTo - Aplica opacidade até determinado 'percentual' no elemento
+			// $('.btn2').on('click', () => {
+
+			// 	$('#div2').fadeTo('slow', 0.5)
+			// })
+
+			// FadeToggle - Aplica opacidade caso não tenha, e caso tiver, ele remove
+			$('.btn2').on('click', () => {
+
+				$('#div2').fadeToggle('slow')
+			})
+
+		// E outra categoria de eventos que iremos explorar são os eventos de 'deslize', em que podemos deslizar tanto elementos para baixo quanto para cima, vamos explorar:
+
+			// SlideUp - 'Desliza' o elemento para cima, fazendo com que ele se torne invisível
+			// $('.btn3').on('click', () => {
+
+			// 	$('#div3').slideUp('slow')
+			// })
+
+			// $('#div3').slideUp('slow')
+
+			// SlideDown - Torna um elemento invisível, visível, fazendo com que ele ao se tornar visível receba o efeito visual de 'deslize' para baixo
+
+			// $('.btn3').on('click', () => {
+
+			// 	$('#div3').slideDown('slow')
+			// })
+
+			// SlideToggle - Caso o elemento seja visível, torna ele invisível a partir do efeito de 'deslize', para cima, e caso seja invisível, torna ele visível com o efeito de deslizamento para baixo:
+
+			$('.btn3').on('click', () => {
+
+				$('#div3').slideToggle(3000)
+			})
+
+
+	</script>
+
+</body>
+</html>
