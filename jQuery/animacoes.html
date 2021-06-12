@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 19 - Animações</title>
+
+	<style>
+			
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px 25px;
+		}
+
+		#conteudo {
+			padding: 25px;
+		}
+
+		.div1 {
+			width: 150px;
+			height: 150px;
+			border: 1px solid black;
+			background: #aaa;
+		}
+
+	</style>
+</head>
+
+<body>
+	<h2 id="titulo">Animações</h2>
+
+	<div id="conteudo">
+		
+		<button id="btn1" type="button">Iniciar animação</button>
+		<div class="div1">
+			
+		</div>
+
+	</div>
+
+	<script>
+
+		// Quando utilizamos jQuery, é muito comum utilizarmos animações com a função animate, visto que é muito simples a manipulação dessas animações, e esse método animate, aguarda dois parâmetros, o primeiro é um objeto literal que recebe os parâmetros do resultado final esperado no determinado elemento, e o segundo parâmetro, pode também ser um objeto literal ou um number, que aguarda o tempo de execução dessa animação.
+
+		// No segundo parâmetro, podemos receber alguns atributos como por exemplo, duration, que é o tempo da animação, o start, que podemos explorar o método quando o início da animação começa. Ó método complete, que é executado quando o tempo da animação é completo, etc.
+
+		$('#btn1').on('click', () => {
+
+			$('.div1').animate({
+				'width': '300px',
+				'height': '300px',
+				'margin': '25%',
+				'border-radius': '100%',
+
+			}, {
+				duration: 1500,
+				start: () => {
+					console.log('Animação iniciada')
+				},
+
+				complete: () => {
+					console.log('Animação concluída')
+				}
+			})
+		})
+
+	</script>
+
+</body>
+</html>
