@@ -1,0 +1,50 @@
+/* Aninhamento */
+/* Referenciando seletor pai*/
+#conteudo {
+  background: green;
+  padding: 15px;
+  h1, h2 {
+    color: black;
+  }
+  a {
+    color: red;
+    &:hover {
+    color: yellow;
+  }
+  }
+  
+}
+
+/* Variáveis */
+$cor-primaria: blue;
+$tamanho-titulo: 20px;
+
+h2 {
+  color: $cor-primaria;
+}
+
+h3 {
+  color: $cor-primaria;
+}
+
+/* Escopo Variáveis 
+(onde variável é reconhecida) 
+*/
+$cor-padrao: red;
+#rodape {
+  $cor-padrao: green !global;
+  background-color: $cor-padrao;
+}
+
+h2 {
+  color: $cor-padrao;
+}
+
+/* Interpolacao */
+$classe: red;
+$classe: vermelho;
+$color: color;
+
+.#{$classe} {
+  #{$color}: $classe;
+}
