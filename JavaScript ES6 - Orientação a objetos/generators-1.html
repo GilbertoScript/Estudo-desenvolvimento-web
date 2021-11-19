@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Generators pt 1</title>
+
+    <style></style>
+</head>
+<body>
+
+    <script>
+
+        // Uma função generator pode ser usada da seguinte forma, criamos uma função  normal e em seguida logo após o nome funcion colocamos um asterisco ficando da seguinte forma: funcion* testGenerator() { ... }
+
+        function* testGenerator() {
+
+            // Visto que sem a utilização do next a função generator não executa nada, e com o next() executa normalmente, para executarmos essa função até determinado momento do código utilizamos a palavra reservada yeld, o yeld executa tudo que estiver antes dele, e a linha em que ele está.
+
+            console.log('Teste 1');
+            yield console.log('Teste 2');
+            console.log('Teste 3');
+
+            return 'Teste 4';
+        }
+
+        // O retorno da função generator por padrão deixa de ser o conteúdo criado dentro dela e passa a ser um >objeto iterator<, para entender isso melhor podemos dar um console.log do retorno da função.
+
+        let myGenerator = testGenerator();
+        myGenerator.next();
+
+        // O primeiro next executa yield, e o que estiver antes dele, e veja que interessante, se utilizarmos outro next, o que será executado é o que vem após o yeld.
+
+        console.log('- === - === -')
+        console.log(myGenerator.next());
+
+
+    </script>
+
+</body>
+</html>
