@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Generators pt 2</title>
+
+    <style>
+        /*body {
+            background-color: #000;
+        }*/
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        
+        <button type="button" onclick="handleAction()">Avançar</button>
+        <br><br><br>
+
+        <span>
+            Resposta: <input type="text" id="response" />
+        </span>
+    </div>
+
+    <script>
+
+        function* toTalk() {
+
+            let option = yield 'Olá, como vai?';
+            console.log(option);
+
+            yield 'Bem também, obrigado por perguntar';
+            yield 'Terceira etapa ' + option;
+        }
+
+        let talk = toTalk(); // Objeto iterator
+
+        function handleAction() {
+
+            let response = document.querySelector('#response').value;
+            let iteration = talk.next();
+            console.log(iteration);
+        }
+
+    </script>
+
+</body>
+</html>
