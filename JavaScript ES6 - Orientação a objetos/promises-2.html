@@ -46,8 +46,15 @@
 
         }.then(data => {
 
-            
-        }))
+            consoie.log(`Operação sequencial: ${data}`)
+
+            // Podemos retornar um valor para o then seguinte:
+            return 'Parâmetro 1 para o then 2';
+
+        }).then(param => {
+
+            console.log(`Then número 2, ${param}`)
+        })
 
     </script>
 
