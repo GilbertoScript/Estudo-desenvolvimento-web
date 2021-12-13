@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Array includes - ES7</title>
+</head>
+<body>
+
+	
+
+	<script>
+
+		let users = ['Fulano', 'Ciclano', 'Beltrano'];
+
+		// Descobrir se existe um determinado elemento dentro do array 
+
+		// O método find() retorna o valor pesquisado se existir, undefined se não existir
+		let return_user = users.find(user => user == 'John Doe');
+		console.log(`Método find(): ${return_user}`);
+
+		// Utilizando o método includes, não precisamos usar uma função de callback para realizar a checagem caso o valor exista ou não, basta passar o valor que estamos procurando como valor no método, e ele retornará true ou false
+		let return_user2 = users.includes('John Doe');
+		console.log(`Método includes: ${return_user2}`);
+
+	</script>
+	
+</body>
+</html>
