@@ -2,6 +2,6 @@
 
 <p align="center">
   Meu material para estudo front-end contendo: <br />
-  HTML, CSS, Bootstrap, Javascript, ES6, ES7, PHP, Ajax, MySQL, jQuery, MVC, Sass e API com Slim Framework <br />
+  HTML, CSS, Bootstrap, Javascript, ES6, ES7, ES8, PHP, Ajax, MySQL, jQuery, MVC, Sass e API com Slim Framework <br />
   vou sempre atualizando de acordo   com o que vou estudando.
 </p>
