@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Object Values - ES8</title>
+</head>
+<body>
+
+	<script>
+
+		// A partir do objeto a seguir, como seria capaz de o converter para um array? Simples, basta utilizar o método Object.values() 
+
+		let userInfo = {
+			name: 'Fulano de tal',
+			age: '18',
+			address: {
+				uf: 'São Paulo',
+				city: 'São Paulo'
+			},
+			hobbies: [
+				{ id: 1, hobby: 'Ler' },
+				{ id: 2, hobby: 'Programar' }
+			]
+		}
+
+		console.log(userInfo);
+
+		// A partir do objeto nativo do javascript "Object", passamos nosso objeto como parâmetro para o método values. E ao vermos no console log, podemos notar que foi modificado para um array, sendo assim, seus atributos como: name, age etc, são transformados em índices sequenciais, para: 0, 1, 2.
+
+		console.log(Object.values(userInfo));
+		
+	</script>
+	
+</body>
+</html>
