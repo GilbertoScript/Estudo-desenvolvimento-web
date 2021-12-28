@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Object Entries - ES8</title>
+</head>
+<body>
+
+	<script>
+
+		// A partir do objeto a seguir, como seria capaz de o converter para um array? Simples, basta utilizar o método Object.values(), porém esse método troca os índices "name", "age", por índices númericos sequenciais, então para consertar isso basta utilizar o método Object.entries().
+
+		let userInfo = {
+			name: 'Fulano de tal',
+			age: '18',
+			address: {
+				uf: 'São Paulo',
+				city: 'São Paulo'
+			},
+			hobbies: [
+				{ id: 1, hobby: 'Ler' },
+				{ id: 2, hobby: 'Programar' }
+			]
+		}
+
+		console.log(userInfo);
+		console.log(Object.values(userInfo));
+		console.log(Object.entries(userInfo));
+		
+	</script>
+	
+</body>
+</html>
