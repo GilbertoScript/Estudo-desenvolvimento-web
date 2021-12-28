@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Object.getOwnPropertyDescriptors - ES8</title>
+</head>
+<body>
+
+	<script>
+
+		let userInfo = {
+			name: 'Fulano de tal',
+			age: '18',
+			address: {
+				uf: 'São Paulo',
+				city: 'São Paulo'
+			},
+			hobbies: [
+				{ id: 1, hobby: 'Ler' },
+				{ id: 2, hobby: 'Programar' }
+			]
+		}
+
+		// Propriedades de um objeto possuem metadados que são conhecidos como descritores de propriedade
+		
+		// console.log(Object.getOwnPropertyDescriptors(userInfo));
+
+		// --- Descritor Writable: Quando definido como false ele indica que o valor da propriedade não poderá ser modificada
+		Object.defineProperty(userInfo, 'name', { writable: false })
+
+		// --- Descritor Enumerable: Quando definiddo como false, a propriedade em questão não é exibido em laços de repetição, no exemplo a seguir podemos ver que a propriedade address não será exibida no laço de repetição for in.
+		Object.defineProperty(userInfo, 'address', { enumerable: false })
+
+		for(let property in userInfo) {
+			console.log(property, userInfo[property])
+		}
+
+		// --- Descritor Configurable: Quando definida como false, indica que a propriedade não pode ser deletada.
+
+		console.log(Object.getOwnPropertyDescriptors(userInfo));
+
+	</script>
+	
+</body>
+</html>
