@@ -36,7 +36,8 @@
 			console.log(property, userInfo[property])
 		}
 
-		// --- Descritor Configurable: Quando definida como false, indica que a propriedade não pode ser deletada.
+		// --- Descritor Configurable: Quando definida como false, indica que a propriedade não pode ser deletada, e também não poderá ter seus descritores alterados também, a não ser o writable para false, fora isso se torna algo bem restrito
+		Object.defineProperty(userInfo, 'hobbies', { configurable: false })
 
 		console.log(Object.getOwnPropertyDescriptors(userInfo));
 
