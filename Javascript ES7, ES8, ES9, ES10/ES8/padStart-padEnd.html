@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>padStart e padEnd - ES8</title>
+</head>
+<body>
+
+	<div>
+		<h3 id="userCode">Código do usuário </h3>
+		<h3 id="userCode2">Código do usuário: </h3>
+	</div>
+
+	<script>
+
+		/*  O método padStart:
+
+				padStart(<total de qntd de caracteres>, <caractere que será repetido>) 
+
+		    irá fazer o preenchimento a esquerda 
+		*/
+		let userCode = '5874';
+
+		// Expectativa de saída = 00005874, para fazermos isso é bem simples basta:
+		userCode = userCode.padStart(8, '*');
+
+		document.getElementById('userCode').append(`Ciclano: ${userCode}`);
+
+		// Enquanto isso o padEnd() é basicamente a mesma coisa porém com o preenchimento a esquerda.
+		let userCode2 = '7610';
+		userCode2 = userCode2.padEnd(8, '*');
+
+		document.getElementById('userCode2').append(`Fulano: ${userCode2}`);
+
+	</script>
+	
+</body>
+</html>
