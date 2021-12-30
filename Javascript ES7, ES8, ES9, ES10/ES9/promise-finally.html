@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promise finally - ES9</title>
+
+	<style>
+		body {
+			background: #222;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// Resumidamente o finally é um método que foi adicionado ao ES9 que independentemente da resposta da promise, se for resolve ou reject, ele irá ser disparado, ou seja, para evitar duplicação de código é um ótimo método.
+
+		let myPromise = new Promise((resolve, reject) => {
+
+			if(true) {
+
+				reject();
+			}
+
+			resolve();
+
+		})
+		//.then((result) => { console.log(result) })
+		//.catch((rejected) => { console.log(rejected) })
+		.finally(() => {
+
+			console.log('Fluxo rejeitado ou resolvido')
+		})
+		
+	</script>
+	
+</body>
+</html>
