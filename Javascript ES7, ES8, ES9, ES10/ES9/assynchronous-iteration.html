@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asynchronous iteration - ES9</title>
+
+	<style>
+		body {
+			background: #222;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// Ao fazermos uma iteração utilizando por exemplo um for que dentro de seu escopo contém uma requisição assíncrona, teriamos que fazer o conteúdo que iria ser exibido, esperar esse processamento assíncrono que poderia demorar 2 segundos por exemplo, para que não ocorrese bugs na aplicação, tendo isso em vista, utilizar o fot dentro de uma função async e utilizar o await aonde temos essa tal requisição que demora 2 segundos, o código espera para exibir o conteúdo apenas quando as requisições estiverem prontas para serem exibidas. Segue o código abaixo como exemplo:
+
+		let lawsuit = [1, 2, 3, 4, 5];
+
+		let asynchronousIteration = async () => {
+
+			for(process of lawsuit) {
+
+				// Processamentos assíncronos
+				await new Promise((resolve, reject) => {
+
+					setTimeout(() => {
+
+						console.log('Processamento assíncrono');
+						resolve();
+
+					}, 2000)
+				})
+
+				console.log(process);
+			}
+		}
+
+		asynchronousIteration();
+		
+	</script>
+	
+</body>
+</html>
