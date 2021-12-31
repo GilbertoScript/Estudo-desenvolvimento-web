@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 8 - Recuperando e manipulando conteúdo html - Parte 3</title>
+
+	<style type="text/css">
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px;
+		}
+
+		.div1 {
+			padding: 30px 10px;
+		}
+
+		.div2 {
+			padding: 0 10px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h2 id="titulo">Recuperando e manipulando conteúdo interno - 3</h2>
+
+	<div class="div1">
+		<label for="nome">Nome:</label>
+		<input id="nome" type="text">
+		<br>
+	</div>
+
+	<div class="div2">
+		<label for="local">Onde você nos encontrou:</label>
+		<select id="local">
+			<option value="1">Google</option>
+			<option value="2">Facebook</option>
+			<option value="3">Linkedin</option>
+			<option value="4">Outros meios</option>
+		</select>
+	</div>
+
+	<div class="div1">
+		<button onclick="verDados()">Ver dados</button>
+	</div>
+
+	<hr>
+
+	<div class="div1">
+		<label for="genero">Genêro:</label>	<br><br>
+		<div>
+			<input id="genero" class="genero" type="radio" name="genero" value="f" />Feminino <br />
+			<input id="genero" class="genero" type="radio" name="genero" value="m" />Masculino <br />
+		</div>
+	</div>
+
+	<div class="div2">
+		<label for="interesses">Interesses:</label> <br><br>
+		<div id="interesses">
+			<input type="checkbox" name="interesse" class="interesse" value="php" >PHP<br />
+			<input type="checkbox" name="interesse" class="interesse" value="js" >Javascript<br />
+			<input type="checkbox" name="interesse" class="interesse" value="Python" >Python<br />
+			<input type="checkbox" name="interesse" class="interesse" value="Golang" >GoLang<br />
+		</div>
+	</div>
+
+	<script>
+
+		function verDados() {
+
+			/* Neste exemplo temos um input e um select, não podemos alterar seu conteúdo interno utilizando os operadores .html ou .text do jQuery, por isso utilizamos o operador .val() */
+
+			// console.log($('#nome').val())
+			// console.log($('#nome').val('El placeholder'))
+
+			// Isso também com o select..
+
+			// console.log($('#local').val())
+			// console.log($('#local').val('2'))
+
+
+			/* Agora iremos recuperar e manipular os valores dos input de tipo radio e checkbox */
+
+			// Neste exemplo temos a seguinte situação, quando recuperamos o input apenas com a classe, os dois inputs são retornados, sem distinguir o que está selecionado, e para recuperar o input do tipo radio que está selecionado, utilizamos o operador ':checked'. E podemos também utilizar o método val, para que possamos recuperar também o value do elemento.
+			console.log($('.genero:checked').val())
+
+			// Agora podemos recuperar os dados dos inputs de tipo checkbox, e da mesma forma com inputs do tipo radio, utilizamos  o operador :checked, para recuperar os inputs selecionados.
+
+			// Porém quando utilizamos o operador val, temos retorno do valor apenas do primeiro input checkbox selecionado, isso ocorre pois, como o retorno é de um array, o val por si só não tem a inteligência de  percorrer esse array e listar os valores dos checkbox's, e para resolver isso utilizamos um laço de repetição do jQuery chamado each.
+
+			// O each é uma função nativa do jQuery e espera dois parâmetros, um array e uma função de callback. E essa função de callback nada mais é do que uma função que espera também dois parâmetros, o índice e o valor.
+
+			$.each($('.interesse:checked'), (indice, valor) => {
+
+				console.log(indice, valor.value)
+			})
+
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 11 - Manipulando CSS</title>
+
+	<style type="text/css">
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			padding: 10px 25px;
+		}
+
+		#topo {
+			border:  1px solid black;
+			padding: 25px;
+			margin: 25px;
+		}
+
+		.pagina {
+			border: 1px solid black;
+			padding: 25px;
+			margin: 0 25px;
+		}
+
+		#rodape {
+			border: 1px solid black;
+			padding: 25px;
+			margin: 25px;
+		}
+
+		.text-normal {
+			font-weight: normal;
+		}
+
+		.border-white-radius {
+			border-radius: 15px;
+			border: 1px solid whitesmoke;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h2 id="titulo">Manipulando CSS</h2>
+
+	<div id="topo">
+		<ul class="menu">
+			<li class="item">Item 1</li>
+			<li class="item">Item 2</li>
+		</ul>
+	</div>
+
+	<div id="pagina">
+		<div class="secao1">
+			<div class="subSecao">
+				Sub Seção da seção 1
+			</div>
+		</div>
+
+		<div class="secao2">
+			<h3>Seção 2</h3>
+		</div>
+	</div>
+
+	<div id="rodape">
+		<div>
+			<p>Rodapé</p>
+			<span class="opcao1">Opção 1</span>
+		</div>
+	</div>
+
+	<hr>
+
+	<script>
+
+		// Para fazermos a manipulação de elementos css para o html com o jQuery, é muito simples, primeiro, temos alguns métodos, o primeiro que vamos explorar é o css(), que adiciona estilos inline, na tag selecionada.
+
+		// Primeiro selecionamos um elemento, em seguida utilizamos a função css(), que espera dois parâmetros, a regra de estilo que iremos manipular, e em seguida o seu respectivo valor. E se inspecionarmos esse elemento no html, podemos ver que o estilo foi adicionado inline, e podemos repetir essa função quantas vezes forem necessárias.
+ 
+		$('body').css('background', '#1f2430').css('color', 'whitesmoke')
+
+		// Uma outra forma de fazermos essa atribuição de estilos a uma determinada classe, é utilizando um objeto literal.
+
+		$('h2').css({
+			'background': '#0a0e14',
+			'letter-spacing': '4px'
+		})
+
+		// Uma outra função muito interessante de manipulação de elementos css, é a addClass, que adiciona classe(s) a um determinado elemento.
+
+		// E para explorar essa função, temos a classe criada: 'text-normal', porém não está atribuída a nenhum elemento, para isso iremos utilizar o jQuery:
+
+		$('h3').addClass('text-normal')
+		$('#pagina').addClass('pagina border-white-radius')
+
+		// Uma outra operação muito interessante é, verificar a existência de uma classe.
+
+		// O retorno da seguinte operação no console do navegador é false, isso pois, a div pagina, não possui a class text-normal, e quem possui é um elemento filho dessa div. A partir disso poderiamos fazer uma lógica, por exemplo: if($('pagina').hasClass(.text-normal) { $('#pagina').addClass('text-normal')})
+		console.log($('#pagina').hasClass('.text-normal'))
+
+		// E a ultima das funcionalidades do jQuery para manipulação de classes, é a removeClass, que como o nome diz, remove classe(s) de um determinado elemento html.
+
+		$('#pagina').removeClass('border-white-radius') 
+
+
+	</script>
+</body>
+</html>

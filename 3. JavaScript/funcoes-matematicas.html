@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+
+    	/** {
+    		border: 1px solid red;
+    	}*/
+    	
+    </style>
+
+    <title>Javascript - Funções nativas para manipulação matemática</title>
+  </head>
+  <body>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12 m-auto d-flex justify-content-center">
+
+    			
+    		</div>
+    	</div>
+    </div>
+
+
+
+    <script>
+
+      // Para o primeiro exemplo de hoje temos a seguinte situação: uma variavel do tipo number que recebe um número fracionado, mas.. e se na nossa aplicação quisessemos que não existisse valores fracionados? Precisariamos fazer um arredondamento do determinado número, e para fazer isso é muito simples, basta chamarmos o método Math.ceil(), por exemplo: 
+
+      var x = Math.ceil(58.589)
+
+      // No navegador temos o seguinte resultado: um número 37 exibido no navegador. 
+      document.write(x)
+      document.write('<br>')
+
+      // Com o método Math.ceil() o arredondamento é feito para cima ou seja se for 10.222 retornará 11, então como que faz para que o arredondamento seja feito para baixo? Simples só utilizar o método Math.floor()
+
+      var y = Math.floor(45.956)
+      document.write(y)
+      document.write('<br>')
+
+      // E como que faria para fazer um arredondamento de valor médio? Esse arredondamento deveria ocorrer da seguinte forma: temos um número fracionado por exemplo 10.580 e se quisessemos que quando o número tiver a fração ultrapassada do valor médio seja feita o arredondamento? Se for >= 10.500 o arredondamento será feito para cima e se ficar inferior a 10.499 o arredondamento ficará inferior, isso é simples basta utilizarmos o método Math.round(), segue o exemplo:
+
+      var z = Math.round(10.500)
+      document.write(z)
+      document.write('<br>')
+
+      // Um outro método muito interessante dentro do JavaScript é o método Math.radom(), e ele faz com que seja gerado um número randômico entre 0 e 1, por exemplo 0.5465465, segue o exemplo:
+
+      var r = Math.random()
+      document.write(r)
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

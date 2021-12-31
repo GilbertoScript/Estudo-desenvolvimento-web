@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Objeto literal único</title>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Um fato interessante a cerca de objetos literais é, que cada objeto literal é um objeto único.
+
+        // Por exemplo: se houver uma variável pessoa que recebe um objeto, e uma variável x que recebe o mesmo objeto da variável pessoa, essas duas variáveis irão apontar para o mesmo objeto. Preste atenção, ele não faz uma cópia, ele realmente aponta para o mesmo objeto que a outra variável aponta.
+
+        let pessoa = {
+            nome: 'Gilberto',
+            idade: 17,
+            dizerOi() {
+                console.log('Oi.')
+            }
+        }
+
+        let x = pessoa
+
+        console.log(pessoa)
+        console.log(x)
+
+        let assinatura = {
+            idCliente: 000000,
+            descricaoServico: 'Internet',
+            status() {
+                console.log('Ativo')
+            }
+        }
+
+        let y = assinatura
+
+        console.log(assinatura)
+        console.log(y)
+
+        // Ou seja, nem x e nem y, recebem o objeto literal, eles recebem a referência de acesso ao objeto, ou seja: x recebe a referência para a variável pessoa que por sua vez retorna o objeto, e a mesma coisa ocorre com y.
+
+        // -- //
+        // Manipulação de valores com a variável y, e o valor é alterado, tanto no y como em assinatura
+        y.descricaoServico = 'Internet + TV + Telefone'
+        console.log(assinatura.descricaoServico)
+        console.log(y.descricaoServico)
+
+    </script>
+
+</body>
+</html>

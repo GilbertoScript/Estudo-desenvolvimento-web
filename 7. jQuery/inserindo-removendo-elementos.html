@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 9 - Inserindo e removendo elementos</title>
+
+	<style type="text/css">
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px;
+		}
+
+		#div1 {
+			padding: 30px 10px;
+		}
+
+		#div2 {
+			padding: 0 10px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h2 id="titulo">Inserindo e removendo elementos</h2>
+
+	<ul id="div1">
+		<li class="first-item">item 1</li>
+		<li>item 2</li>
+		<li>item 3</li>
+	</ul>
+
+	<div id="div2">
+		<div>item 1</div>
+		<div>item 2</div>
+		<div>item 3</div>
+	</div>
+
+	<hr>
+
+	<script>
+
+		// Nesse exemplo, iremos inserir elemento html no script de forma programável com jQuery.
+
+		// Para tal, precisamos usar a referência de outro item, por exemplo, na nossa lista div1 temos 3 itens, se quisermos inserir um outro item basta:
+
+		// E uma observação importante é que as tags html que possuem fechamento e abertura possuem funçõesque podem aplicar itens html's, dentro e fora da tag, antes ou depois.
+
+		// Para fazer a inclusão de um item ao final dessa lista podemos utilizar o método append. E para fazer a inclusão no início, utilizamos o prepend
+
+		// Inserções inner html
+		$('#div1').append('<li>item 4</li>')
+		$('#div2').prepend('<div>item 0</div>')
+
+		// Também podemos adicionar elementos antes ou depois daquele elemento escolhido, por exemplo, poderiamos adicionar um parágrafo antes e depois da nossa lista div1.
+
+		// Inserções de elementos no mesmo nível
+		$('.first-item').before('<p>-- Lista 1: </p><br />')
+		$('#div1').after('<hr /><br /><br />')
+
+		// Uma outra função é a *html, que no caso substitui todo o elemento anterior que estava na tag.
+
+		$('#div1').html('<p>Novo conteúdo</p>')
+
+		// Outra função muito importante quando falamos de conteúdo html é a função *remove, que como o nome diz, remove todo o conteúdo html que estava lá antigamente.
+		$('#div1').remove()
+		
+	</script>
+</body>
+</html>

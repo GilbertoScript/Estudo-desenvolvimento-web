@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <style>
+
+      /** {
+        border: 1px solid black;
+      }*/
+
+    </style>
+
+    <title>Javascript - Eventos - Janela</title>
+  </head>
+  <body 
+  id="body" 
+  onresize="telaSofreAlteracao()"
+  onscroll="aoRolarTela()"
+  >
+    <div class="container-fluid">
+      <div class="row">
+          <div id="gray-area" class="col-md-6 bg-secondary" style="height: 3000px;">
+
+          </div>
+      </div>
+    </div>
+
+
+
+    <script>
+
+      /* Em relação aos principais eventos de execução da "janela" ou frame temos:
+
+            onresize - quando a janela do navegador sofrer uma alteração em seu tamanho, seja reduzindo ou aumentando
+             o evento é disparado, o onresize é um evento específico do body ou seja, só deverá ser usado na tag <body>
+
+            onscroll - quando o scroll do mouse é utilizado esse evento é disparado podendo ser feita alguma tomada
+             de decisão, o onscroll é um evento que pode ser atribuido a qualquer elemento com uma barra de rolagem, por
+             isso é atribuido a div col-md-6 height de 3000px para que assim tenha uma barra de rolagem e o scroll funcione
+
+        E os eventos de janela estão ligados a manipulação de exibicação de páginas html
+      */
+      
+      // Função criada ao elemento onresize, alterando a cor de fundo e disparando uma mensagem de alerta quando o evento
+      // acontece
+      function telaSofreAlteracao() {
+          document.getElementById('body').style.backgroundColor = "gray"
+          alert('Tamanho da tela alterada')
+      }
+
+      function aoRolarTela() {
+          alert('Ao ser feito a rolagem da barra lateral, essa mensagem irá aparecer')
+      }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

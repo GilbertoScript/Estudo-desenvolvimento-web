@@ -1,0 +1,84 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	background: #dcdcdc;
+	height: 400px;
+	display: flex;
+	text-align: center;
+
+	/* row|row-reverse|column|column-reverse */
+
+	flex-direction: row;
+
+	/* nowrap|wrap|wrap-reverse 
+
+	flex-wrap: nowrap;
+
+	/* flex-start|flex-end|center|space-between|space-around */
+
+	justify-content: center;
+
+	/* stretch|center|flex-start|flex-end|baseline 
+
+	align-items: stretch; */
+}
+
+.item {
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	background: white;
+	border: 1px solid gray;
+
+	/* Define a proporção do espaço ocupado por um item */
+
+	flex-grow: 0;
+
+	/* Define a capacidade de redução do tamanho do item */
+
+	flex-shrink: 1;
+
+	/* Define o tamanho inicial do flex item antes da distribuição do espaço restante */
+
+	flex-basis: auto;
+}
+
+.item1 {
+	/* flex-grow: 1; */
+	/* flex-shrink: 1; */
+}
+
+.item2 {
+	/* flex-grow: 2; */
+	/* flex-shrink: 2; */
+}
+.item3 {
+	/* flex-grow: 3; */
+	/* flex-shrink: 5; */
+}
+
+/*
+.ordem1 {
+	order: 1;
+}
+
+.ordem2 {
+	order: 2;
+}
+
+.ordem3 {
+	order: 3;
+}
+
+.ordem4 {
+	order: 4;
+}
+*/
+
+h1 {
+	text-align: center;
+	background: #dcdcdc;
+}

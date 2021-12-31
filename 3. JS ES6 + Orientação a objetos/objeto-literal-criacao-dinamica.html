@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Objeto literal - criação dinâmica</title>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Na criação de objetos literais é muito comum a necessidade de deixar seus atributos dinâmicos.
+
+        // Aqui temos um clássico exemplo de um objeto literal simples, com dois pares nome/valor
+        let computador = {
+            marca: 'Samsung',
+            preco: 'R$ 3.000,00',
+        }
+
+        console.log(computador)
+
+        // Façamos de conta que aqui tem uma lógica que adiciona ao computador um novo par nome/valor, por exemplo 'polegadas', para adicionar isso ao objeto literal é muito simples, basta:
+        computador.polegadas = '15'
+
+        // E se agora dermos um outro console.log() do objeto computador, ele já está com o seu novo par nome/valor
+        console.log(computador)
+
+        // Isso também funciona para funções, por exemplo:
+
+        computador.ligarComputador = () => {
+            console.log('Computador ligou')
+        }
+
+        // E podemos também executar essas funções:
+
+        computador.ligarComputador()
+
+
+    </script>
+
+</body>
+</html>

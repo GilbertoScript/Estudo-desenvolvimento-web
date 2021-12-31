@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+
+    	/** {
+    		border: 1px solid red;
+    	}*/
+    	
+    </style>
+
+    <title>Javascript - Funções nativas para manipular datas</title>
+  </head>
+  <body>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12 m-auto d-flex justify-content-center">
+    			
+    		</div>
+    	</div>
+    </div>
+
+
+
+    <script>
+
+    /*
+
+        var data = new Date()
+
+        // document.write(data) <= Quando digitamos o seguinte comando é exibido no navegador a determinada data do dia em que o script foi executado ou seja o resultado no navegador foi o seguinte:            Wed Dec 23 2020 14:24:29 GMT-0300 (Horário Padrão de Brasília)
+
+        // Desafio: adicionar ou remover componentes(dia, mês ou ano) da determinada data
+        // Para fazermos isso começamos alterando o valor de data para string com o método .toString()
+
+        // Utilizando o método .setDate() e passando como parâmetro uma string temos o seguinte resultado no navegador: Wed Dec 01 2020..., isso é o dia anteriormente estava em 23 agora que alteramos seu valor já é exibido com sucesso no navegador.
+
+        data.setDate('01')
+        document.write(data.toString())
+        document.write('<hr>')
+
+        // Outra forma de fazer isso e removendo dias meses ou anos é da seguinte forma:
+        // E deste método é interessante que o JavaScript tem inteligência de alterar também os meses e os anos se o número for alto, é como se ele acompanhasse.
+
+        data.setDate(data.getDate() + 2) // Aidiona ou remove dias
+        document.write(data.toString())
+        document.write('<hr> <br>')
+
+        data.setMonth(data.getMonth() - 3) // Aidiona ou remove meses
+        document.write(data.toString())
+        document.write('<hr> <br>')
+
+        data.setFullYear(data.getFullYear() + 10) // Aidiona ou remove anos
+        document.write(data.toString())
+        document.write('<hr> <br>')
+
+    */
+
+        // Então como fazer cálculos entre datas? Da seguinte forma: Primeiro vamos criar duas datas aleatórias, e a pergunta é: Quantos dias existem entre as duas datas?
+
+        //30/04/2020
+        var data1 = new Date(2020, 3, 30)
+
+        //15/01/2017
+        var data2 = new Date(2017, 0, 15)
+
+        document.write(data1)
+        document.write('<br>')
+        document.write(data2)
+
+        document.write('<br> <br> <hr>')
+
+        // Converter data para algo que possamos calcular:
+        document.write(data1.getTime())
+        document.write('<br>')
+        document.write(data2.getTime())
+        document.write('<br> <br> <hr>')
+
+        // Encontrar a quantidade de milissegundos entre data1 e data2
+        var milissegundosEntreDatas = Math.abs(data1.getTime() - data2.getTime())
+
+        document.write(milissegundosEntreDatas)
+        document.write('<br>')
+
+        // 1 dia = 24horas, 1hora = 60 minutos, 1minuto = 60segundos = 1segundo = 1000milissegundos
+        // Então quantos milissegundos tem 1 dia? Para calcular é simples basta que seja feito:
+        var milissegundosPorDia = ( 1 * 24 * 60 * 60 * 1000)
+
+        document.write('1 dia tem: ' + milissegundosPorDia + ' milissegundos.')
+        document.write('<br>')
+
+        // Realiza o cálculo exato de dias entre data1 e data2
+        document.write(
+          'A diferença entre data1  e data2 é de: '
+          + Math.ceil(milissegundosEntreDatas / milissegundosPorDia) + ' dias')
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

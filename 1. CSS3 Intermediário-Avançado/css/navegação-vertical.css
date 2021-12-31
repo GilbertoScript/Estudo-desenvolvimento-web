@@ -1,0 +1,77 @@
+/*body {
+	background-color: #f0f3bd;
+}
+
+/*
+#menu {
+	background-color: #02c39a;
+}
+
+h2 {
+	margin-left: 20px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin-left: 20px;
+	padding: 5px 20px;
+	background-image: url(../Imagens/seta.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+
+h2 {
+	margin-left: 40px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul a {
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	color: #092327;
+	text-decoration: none;
+	text-indent: 40px;
+	display: block;
+	background: #f7b600 url(../Imagens/menu.png) left bottom;
+	background-repeat: no-repeat;
+}
+
+a:hover {
+	background-position: right bottom;
+	background-color: #f99200;
+	color: white;
+}
+
+#home-li {
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+#contato-li {
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+#home-li, a:visited {
+	background-position: right bottom;
+	background-color: white;
+	color: black;
+}
+
+/* Alinhar o menu no centro 
+#menu {
+	display: table;
+	margin: auto;
+}
+*/

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Posicionamentos (static, relative, absolute e fixed)</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+		body {
+			background: #95afc0;
+		}
+
+       #container {
+       		background: #f1f2f6;
+       		width: 800px;
+       		margin: 10px auto;
+       		padding: 10px;
+       		position: relative;
+       		border-radius: 30px;
+       }
+
+       .menu1 {
+        border-radius: 30px;
+
+       	color: #2f3542;
+       	font-family: "Comic Sans MS", cursive, sans-serif;
+       	padding-right: 12px;
+       	padding-left: 12px;
+       	text-decoration: none;
+
+         color: #FFF;
+	     background-color: #8395a7;
+	     border: none;
+	     height: 30px;
+	     line-height: 15px;
+	     padding: 0 20px;
+	     cursor: pointer;
+       }
+
+       /* POSICIONAMENTOS */
+
+       h1 {
+       	position: static;
+       }
+
+       p {
+       	width: 300px;
+       }
+
+       .relative {
+       	border: 1px solid red;
+       	position: relative;
+       	absolute, relative, absolute, fixed 
+       	left: 20px;
+       }
+
+       .img {
+       	position: absolute;
+       	right: 60px;
+       	top: 160px;
+       }
+
+        .fixed {
+       	border: 1px solid red;
+       	position: fixed;
+       }
+
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<h1 style="text-align: center;">Posicionamentos</h1>
+
+        <div id="menu" style="text-align: center; padding: 6px; margin: 3px;">
+        <a href="a" class="menu1">Sobre posicionamentos</a> 
+        <a href="a" class="menu1">Tipos de posicionamentos</a>       	
+        </div>
+
+
+		<p>
+			P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ipsum nulla, porta at dui nec, efficitur rhoncus erat. Donec ut mi cursus justo fringilla ultricies et non tortor. Phasellus ac nunc quis ex laoreet posuere. Integer suscipit ut ipsum vel congue. Sed vitae purus maximus, convallis sem sed, consequat augue.
+		</p>
+
+		<p>
+			P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ipsum nulla, porta at dui nec, efficitur rhoncus erat. Donec ut mi cursus justo fringilla ultricies et non tortor. Phasellus ac nunc quis ex laoreet posuere. Integer suscipit ut ipsum vel congue. Sed vitae purus maximus, convallis sem sed, consequat augue.
+		</p>
+
+	    <p>
+			P3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ipsum nulla, porta at dui nec, efficitur rhoncus erat. Donec ut mi cursus justo fringilla ultricies et non tortor. Phasellus ac nunc quis ex laoreet posuere. Integer suscipit ut ipsum vel congue. Sed vitae purus maximus, convallis sem sed, consequat augue.
+		</p>
+
+		<div class="img">
+			<img src="https://jquery-plugins.net/image/plugin/getlorem-library-to-generate-lorem-ipsum-text.png">
+		</div>
+
+		<hr>
+		<h2 style="text-align: center;">Lorem ipsum</h2>
+		<p style="text-align: center; margin: auto;">
+			 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ipsum nulla, porta at dui nec, efficitur rhoncus erat. Donec ut mi cursus justo fringilla ultricies et non tortor.
+		</p>
+	</div>
+
+</body>
+</html>

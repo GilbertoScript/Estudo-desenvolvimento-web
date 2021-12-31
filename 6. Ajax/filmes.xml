@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<filmes>
+    <filme id="1">
+        <titulo>Vingadores: Guerra Infinita</titulo>
+        <resumo>Homem de Ferro, Thor, Hulk e os Vingadores se unem para combater seu inimigo mais poderoso, o maligno Thanos. Em uma missão para coletar todas as seis pedras infinitas, Thanos planeja usá-las para infligir sua vontade maléfica sobre a realidade.</resumo>
+        <genero>Aventura</genero>
+        <genero>Ação</genero>
+        <elenco>
+            <ator>Robert Downey Jr</ator>
+            <ator>Chris Hemsworth</ator>
+            <ator>Mark Ruffalo</ator>
+        </elenco>
+        <dataLancamento pais='Brasil'>26 de abril de 2018</dataLancamento>
+    </filme>
+
+    <filme id="2">
+        <titulo>Onde está segunda</titulo>
+        <resumo>What Happened to Monday é um filme distópico de ficção científica e suspense, escrito por Max Botkin e Kerry Williamson, dirigido por Tommy Wirkola e estrelando Noomi Rapace, Glenn Close, e Willem Dafoe.</resumo>
+        <genero>Ficção científica</genero>
+        <genero>Suspense</genero>
+        <elenco>
+            <ator>Noomi Rapace</ator>
+            <ator>GLENN CLOSE</ator>
+            <ator>WILLEM DAFOE</ator>
+        </elenco>
+        <dataLancamento pais='Franca'>30 de agosto de 2017</dataLancamento>
+    </filme>
+</filmes>

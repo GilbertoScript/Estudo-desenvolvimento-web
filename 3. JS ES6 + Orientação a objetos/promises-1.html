@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Promises parte 1</title>
+
+    <style>
+        /*body {
+            background-color: #000;
+        }*/
+    </style>
+</head>
+<body>    
+
+    <script>
+
+        // Um objeto do tipo promise, recebe dois parâmetros que irão ser tratados, eles consistem em: resolve e reject ou seja, o que irá fazer com que a função seja executada ou rejeitada.
+
+        let response = {};
+        let myFirstPromise = new Promise((resolve, reject) => {
+
+            try {
+
+                // Criando um erro para que o fluxo seja direcionado para o catch
+                // throw new Error('Ops! An error has ocurred!');
+
+                setTimeout(() => {
+
+                    response = { data: { msg: 'We retrieved the data successfully' } }
+                    resolve('Success');
+                }, 3000)
+
+            } catch(e) {
+
+                setTimeout(() => {
+
+                    reject(e);
+                }, 3000)
+            }
+        });
+
+        console.log(myFirstPromise);
+
+        setTimeout(() => {
+
+            console.log(myFirstPromise);
+            console.log(response);
+        }, 5000)
+
+    </script>
+
+</body>
+</html>

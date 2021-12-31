@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+
+    	/** {
+    		border: 1px solid red;
+    	}*/
+    	
+    </style>
+
+    <title>Javascript - HTML DOM - Selecionando elementos</title>
+  </head>
+  <body>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12 m-auto d-flex justify-content-center">
+
+                 <input 
+                  type="text" 
+                  id="entrada" 
+                  class="form-control w-75 mt-5"
+                  placeholder="Digite um caracter aqui"
+                  onkeyup="distribuiCaracter()"
+                 >
+
+    		</div>
+        </div>
+        
+        <div class="row d-flex mt-4">
+
+            <div class="col-md-6 d-flex justify-content-end">
+                <input id="numeros" type="text" class="form-control w-50" placeholder="Números" disabled="disabled">
+            </div>
+            <div class="col-md-6">
+                <input id="letras" type="text" class="form-control w-50" placeholder="Letras" disabled="disabled">
+            </div>
+        
+        </div>
+    </div>
+
+
+    <script>
+
+        /* Para a aula de hoje teremos um pequeno desafio: Temos que digitar caracteres em um determinado input
+         e logo depois esses caracteres serão exibidos ou no input que recebe apenas letras, ou no que recebe apenas
+         números, e para fazermos isso é bem simples, vamos aos passos:
+
+        Primeiro nós criamos os 3 inputs, o que recebe os caracteres e os que irão distribui-los
+        Agora nós colocamos os 2 inputs que exibirão os caracteres como disabled para que não possa alterar seus valores
+        Então passamos ao primeiro input o evento de teclado que é disparado após o caracter ser digitado, criando uma função chamada distribuirCaracter
+        Dentro dessa função criamos uma variavel caracter que recebera o valor do que for digitado dentro do input de qualquer caracter
+        Agora nós limpamos tudo que foi digitado no input atribuindo ao input um valor vazio
+        Algo que é legal é limpar os espaços em branco nas extremidades da String digitada, utilizando o método nativo .trim()
+        Então para fazermos com que os caracteres sejam distribuidos ou em imput número ou em input letra utilizaremos um switch case
+            passando como casos as strings de 0 a 9, e atribuindo a todas elas um mesmo propósito: pegar o input de número e atribuir o valor
+            da variavel caracter, assim o valor que foi digitado em caracter(primeiro input), será atribuido ao input número caso
+            seja algum caracter de 0 a 9, caso contrário 'default:' será atribuido ao input de campo letras.
+        
+        */
+
+        function distribuiCaracter() {
+
+            // Selecionar o valor digitado
+            var caracter = document.getElementById('entrada').value
+
+            // Limpa o campo de digitação
+            document.getElementById('entrada').value = ''
+
+            // Limpa os espaços em branco nas extremidades da String
+            // Método nativo de variáveis String, faz com que os espaços em branco sejam removidos
+            caracter.trim()
+
+            switch(caracter) {
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    // Adicionar o caracter no campo referente ao de números
+                    document.getElementById('numeros').value += caracter
+                break
+
+                default:
+                    // Adicionar o caracter no campo referente ao de letras 
+                    document.getElementById('letras').value += caracter
+            }
+        }
+       
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

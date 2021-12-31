@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Spread/Rest - Rest</title>
+
+    <style>
+
+        
+        
+    </style>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Os operadores Spread/Rest, no JavaScript ES6 o operador spread serve para 'espalhar', ou até mesmo 'concatenar' de certa forma, e o operador Rest, serve para 'juntar'
+
+        // Um detalhe do operador rest é, de que ele é muito utilizado junto de funções
+
+        // Por exemplo temos uma função soma que não tem um número de argumentos definido:
+
+        // Como recuperar os atributos, de maneira que não precisassemos criar argumentos, para todos? Simples, basta criarmos um argumento que recebe o operador rest
+        function soma(...param) {
+            let resultado = 0
+
+            console.log(param)
+
+            // O que acontece a seguir é basicamente o seguinte: param = 7, 9, 3, 6, 7, 2,
+            // A partir de param, nós executamos forEach, que percorre sobre cada elemento do array
+            // For each espera uma função
+            // Nesta função 'v' é atribuido a todos os elementos de param
+            // E a partir disso nós fazemos o seguinte: resultado += v
+            // Que basicamente significa resultado = resultado + '7, 9, 3, 6, 7, 2'
+            param.forEach((v) => {
+                resultado += v
+            })
+            
+            return resultado
+        }
+
+        // E na chamada da função nós passamos alguns atributos:
+        console.log(soma(7, 9, 3, 6, 7, 2, 89, -512, -96, 85, 652, -9))
+
+        // -- -- //
+        // -- -- //
+
+        // Outra coisa que podemos fazer também, é, a partir do operador rest, utilizar em uma função parâmetros definidos e indefinidos por exemplo:
+        
+        // O que acontece a seguir é o seguinte: temos uma função multplicacao que por sua vez recebe dois argumentos, sendo os seguintes m = 'multiplicador', e numeros, recebendo o operador rest, sendo um argumento indefinido, e na chamada da função o primeiro parâmetro será o multiplicador e os demais pertencerão ao 'numeros', que serão distribuidos em um array.
+        function multiplicacao(m, ...numeros) {
+            let resultado = 0
+
+            numeros.forEach((v) => {
+                resultado += m * v
+
+            })
+
+            return resultado
+        }
+
+        console.log('Chamada da função multiplicação a seguir: ')
+        console.log(multiplicacao(5, 10, 2))
+
+    </script>
+
+</body>
+</html>

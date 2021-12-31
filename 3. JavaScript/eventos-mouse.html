@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      * {
+        border: 1px solid black;
+      }
+    </style>
+
+    <title>Javascript - Eventos - Mouse</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div
+          id="caixa1"
+          class="col-md-6 d-flex justify-content-center"
+          style="background-color: cadetblue; height: 150px; cursor: pointer"
+          onclick="aoClicar()"
+        >
+          Dê um simples clique
+        </div>
+
+        <div
+          id="caixa2"
+          class="col-md-6 d-flex justify-content-center"
+          style="background-color: coral; height: 150px; cursor: pointer"
+          ondblclick="aoClicarDuasVezes()"
+        >
+          Dê um clique duplo
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          id="caixa3"
+          class="col-md-6 d-flex justify-content-center"
+          style="background-color: lightblue; height: 150px; cursor: pointer"
+          onmouseup="aoCliqueSerSolto()"
+        >
+          Dê um simples clique e segure e veja que nada acontece, porém ao
+          clique ser solto veja que a cor é alterada
+        </div>
+
+        <div
+          id="caixa4"
+          class="col-md-6 d-flex justify-content-center"
+          style="background-color: aquamarine; height: 150px; cursor: pointer"
+          onmouseover="aoMousePassarPorCima()"
+        >
+          Passe o mouse sobre mim
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          id="caixa5"
+          class="col-md-6 d-flex justify-content-center"
+          style="background-color: brown; height: 150px; cursor: pointer"
+          onmouseout="aoRetirarOMouse()"
+        >
+          Passe o mouse sobre mim, retire e veja o que acontece
+        </div>
+        <div
+          id="caixa6"
+          class="col-md-6 d-flex justify-content-center"
+          style="background-color: green; height: 150px; cursor: pointer"
+          onmouseout="aoRetirarOMouse2()"
+          onmouseover="aoMousePassarPorCima2()"
+        >
+          Duplo evento: passe o mouse sobre mim e depois retire
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <script>
+      /* Algum dos principais eventos a ser utilizados em relação ao mouse em JavaScript são os seguintes:
+
+          onclick - ao clicar
+          ondblclick - on double click - ao clicar no elemento duas vezes
+          onmouseup - quando o mouse "solta" o click, ou seja ao clicar nd acontece, mas ao soltar o botão de click o evento é disparado
+          onmouseover - quando o mouse passa por cima do determinado elemento o evento é disparado
+          onmouseout - quando o cursor do mouse "sai de cima" do determinado elemento o evento é disparado
+
+          Os eventos são declarados na sintaxe da tag html passadas como propriedades ou seja: "<div onclick="">"
+          Outro detalhe importante é que esses eventos podem ser combiandos
+      */
+
+      // Função passada ao evento onclick, muda a cor de fundo e a cor da letra ao elemento ser clicado
+      function aoClicar() {
+        document.getElementById("caixa1").style.backgroundColor = "grey";
+        document.getElementById("caixa1").style.color = "white";
+      }
+
+      // Função passada ao evento ondblclick, muda a cor de fundo e a cor da letra ao elemento ser clicado duas vezes
+      function aoClicarDuasVezes() {
+        document.getElementById("caixa2").style.backgroundColor = "black";
+        document.getElementById("caixa2").style.color = "white";
+      }
+
+      // Função passada ao evento onmouseup, muda a cor de fundo e a cor da letra ao elemento ter o botão do clique solto
+      // pelo usuário, ou seja, ao clicar nada acontece, mas ao soltar o botão de clique o evento é disparado
+      function aoCliqueSerSolto() {
+        document.getElementById("caixa3").style.backgroundColor = "lightgreen";
+        document.getElementById("caixa3").style.color = "white";
+      }
+
+      // Função passada ao evento onmouseover, muda a cor de fundo e a cor da letra ao determinado elemento ter o mouse
+      // passado por cima dele
+      function aoMousePassarPorCima() {
+        document.getElementById("caixa4").style.backgroundColor = "white";
+        document.getElementById("caixa4").style.color = "blue";
+      }
+
+      // Função passada ao evento onmouseout, muda a cor de fundo e a cor da letra do determinado elemento quando o cursor
+      // do mouse sair da área do elemento ou seja, quando o cursor passar por cima do elemento nada acontece, porém
+      // quando ele sair da área do elemento o evento é disparado
+      function aoRetirarOMouse() {
+        document.getElementById("caixa5").style.backgroundColor = "yellow";
+        document.getElementById("caixa5").style.color = "red";
+      }
+
+      // Criação de duas funções distintas para um mesmo elemento fazendo com que ele tenha dois eventos:
+      function aoMousePassarPorCima2() {
+        document.getElementById("caixa6").style.backgroundColor = "red";
+        document.getElementById("caixa6").style.color = "white";
+      }
+
+      function aoRetirarOMouse2() {
+        document.getElementById("caixa6").style.backgroundColor = "green";
+        document.getElementById("caixa6").style.color = "black";
+      }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

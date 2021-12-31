@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 10 - Navegando entre elementos htmls</title>
+
+	<style type="text/css">
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px 25px;
+		}
+
+		#topo {
+			border:  1px solid black;
+			padding: 25px;
+			margin: 25px;
+		}
+
+		#pagina {
+			border: 1px solid black;
+			padding: 25px;
+			margin: 0 25px;
+		}
+
+		#rodape {
+			border: 1px solid black;
+			padding: 25px;
+			margin: 25px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h2 id="titulo">Navegando entre elementos html</h2>
+
+	<div id="topo">
+		<ul class="menu">
+			<li class="item">Item 1</li>
+			<li class="item">Item 2</li>
+		</ul>
+	</div>
+
+	<div id="pagina">
+		<div class="secao1">
+			<div class="subSecao">
+				Sub Seção da seção 1
+			</div>
+		</div>
+
+		<div class="secao2">
+			<h3>Seção 2</h3>
+		</div>
+	</div>
+
+	<div id="rodape">
+		<div>
+			<p>Rodapé</p>
+			<span class="opcao1">Opção 1</span>
+		</div>
+	</div>
+
+	<hr>
+
+	<script>
+
+		// Com o nosso DOM estruturado, agora iremos explorar os métodos que existem dentro do jQuery para fazermos a navegação entre elementos dentro do html, vamos começar com o parent().
+
+		// Para explorar essa funcionalidade iremos utilizar a div secao1. Dando um console.log() do parent da instância de secao1, temos no navegador a div página
+		console.log($('.secao1').parent())
+
+		// Outro método muito interessante, é o metodo closest, que faz a procura por elementos pais de um determinado elemento.
+
+		// E para explorar esse método utilizaremos a div subSecao, e nós iremos procurar por algum elemento pai que possua o id pagina.
+		console.log($('.subSecao').closest('#pagina'))
+
+		// um outro exemplo seria acessar por meio de um li.item, procurar por um elemento que possua a nomenclatura #topo, ou procurar na li o elemento pai ul, poderiamos fazer com o parent() também
+		console.log($('.item').parent())
+
+		// E também temos um operador que podemos denominar de 'inverso' do closest, que ao invés de procurar por elementos pais, procura pelo elemento filho passado como parâmetro.
+
+		// E para explorar melhor o operador find(), iremos utilizar o elemento div#rodapé, nós iremos procurar pelo elemento p, que está dentro de uma div:
+
+		console.log($('#rodape').find('p'))
+
+		// Um outro exemplo seria a partir da div#topo, selecionar os elementos cujo a classe seja .item.
+
+		console.log($('#topo').find('.item'))
+
+		// Um exemplo mais complexo de navegação seria a partir do elemento .secao1, acessar o elemento h3, da div irmã do elemento .secao1, para fazer isso precisariamos subir um elemento, segue o exemplo:
+
+		console.log($('.secao1').parent().find('h3'))
+
+		// O mesmo exemplo, porém a partir da subSecao que está contida na secao1
+
+		console.log($('.secao1').parent().parent().find('h3'))
+
+		
+	</script>
+</body>
+</html>

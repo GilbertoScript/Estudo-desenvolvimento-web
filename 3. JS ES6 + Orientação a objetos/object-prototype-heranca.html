@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Object Prototype Herança</title>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Object Prototype - Todos os objetos em JavaScript descendem de Object
+        // Vamos a um exemplo com objetos literais
+
+        // Na essência todos os objetos a seguir, são filhos de Object.prototype
+
+        // Criação de um prototipo em Object, que será herdado para todos os objetos
+        // Cuidado na criação de prototipos globais, pois serão herdados por todos os objetos
+        Object.prototype.estado = 'Vivo' 
+
+        let animal = {
+            olhos: 'Olhos frontais',
+            patas: 'Patas'
+        }
+
+        let vertebrado = {
+            __proto__: animal,
+            ossos: 'Ossos'
+        }
+
+        let ave = {    
+            __proto__: vertebrado,
+            asas: 'Asas',
+            peso: 'Baixo peso',
+
+            // E se por algum motivo houver uma sobreposição de atributo, como por exemplo os de olhos, o que o Javascript faz é simplesmente utilizar o atributo no escopo mais baixo que está sendo utilizado, por exemplo, se estivermos utilizando olhos a partir de ave, recuperará os olhos no seu respectivo escopo, se for em vertebrado ou em animal, os olhos recuperados serão respectivamente de animal, já que é o escopo mais próximo, a ser utilizado.
+
+            // Em outras palavras o Javascript retorna o atributo que ele encontrar primeiro.
+            olhos: 'Olhos laterais'
+        }
+
+        console.log(ave)
+        // Primeiramente se fosse feito a instância do seguinte código, retornaria no console do navegador um 'undefined', isso pois, ave não tinha o atributo ossos, porém depois que é feito a inclusão de __proto__, no contexto ave, passando como valor, um outro objeto, ave passa a herdar todos os seus atributos 
+        console.log(ave.olhos, ave.patas, ave.peso)
+
+
+    </script>
+
+</body>
+</html>

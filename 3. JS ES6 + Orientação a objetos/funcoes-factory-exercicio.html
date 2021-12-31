@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Funções factory Exercício</title>
+
+    <style>
+
+        #output {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 400px;
+            justify-self: center;
+        }
+
+        h2 {
+            padding: 5px;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output">
+
+        <h2>Cadastre sua bicicleta</h2>
+
+        <input id="cor" type="text" placeholder="Cor"><br>
+        <input id="marcha" type="text" placeholder="Marcha"><br>
+        <input id="aro" type="text" placeholder="Aro"><br>
+        <button onclick="criarBicicleta()">Enviar</button>
+
+    </div>
+
+    <script>
+
+        let Bicicleta = function() {
+            return {
+                cor,
+                marcha,
+                aro,
+            }
+        }
+
+        function criarBicicleta() {
+            cor = document.getElementById('cor').value
+            marcha = document.getElementById('marcha').value
+            aro = document.getElementById('aro').value
+
+            console.log(Bicicleta(cor, marcha, aro))
+        }
+
+    </script>
+
+</body>
+</html>

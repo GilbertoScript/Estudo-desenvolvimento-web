@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - OO - Operador Super()</title>
+</head>
+<body>
+
+    <div id="output">
+
+
+
+    </div>
+
+    <script>
+        
+        // O operador super na programação orientada a objetos em JavaScript, é de suma importância, isso pois, somente utilizando ele dentro do constructor(), antes dos this., é que se pode fazer com que aquela classe herde aquela que está sendo indicada pelo extends.
+
+        // Onde tiver extends, obrigatoriamente tem que ter o super()
+
+        // O operador super faz com que por exemplo, eu tenho um atributo na classe Passaro, e quero customiza-lo na classe Papagaio, então como eu faria?  Simples, basta  declarar o novo valor no super(), da classe Papagaio, e na classe Pássaro nós declaramos o bico no seu constructor(), e para herdar da classe Animal, basta fazermos uma cascata de acordo com o código:
+
+        // Super() aponta para o constructor da classe pai
+
+        class Animal {
+            constructor(cor, tamanho, peso) {
+                this.cor = cor
+                this.tamanho = tamanho
+                this.peso = peso
+            }
+
+            dormir() {
+                console.log('Dormir')
+            }
+        }
+
+        class Passaro extends Animal {
+            constructor(bico, cor, tamanho, peso) {
+                super(cor, tamanho, peso)
+                this.bico = bico
+            }
+
+            voar() {
+                console.log('Voar')
+            }
+        }
+
+        class Papagaio extends Passaro {
+            constructor(bico, sabeFalar, cor, tamanho, peso) {
+                super(bico, cor, tamanho, peso)
+                this.sabeFalar = sabeFalar
+            }
+
+            falar() {
+                console.log('Falar')
+            }
+        }
+
+        // Ao criarmos uma instância da classe Papagaio, e a ela dar um valor de sim, esse valor será recebido pelo constructor da classe.
+
+        let papagaio = new Papagaio('Médio','Sim', 'Verde', 25, 300)
+        console.log(papagaio)
+
+        let papagaio2 = new Papagaio('Não', 'Azul', 10, 150)
+        console.log(papagaio2)
+
+        papagaio.dormir()
+
+    </script>
+
+</body>
+</html>

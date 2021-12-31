@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+
+    	/** {
+    		border: 1px solid red;
+    	}*/
+    	
+    </style>
+
+    <title>Javascript - Funções nativas para manipular strings</title>
+  </head>
+  <body>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12 m-auto d-flex justify-content-center">
+    			
+    		</div>
+    	</div>
+    </div>
+
+
+
+    <script>
+
+      // Propriedade length <= A propriedade length retorna a quantidade de caracteres de uma string por exemplo:
+
+      document.write('Gilberto Alves De Sousa Júnior'.length)
+      document.write('<br>')
+
+      // Outro método bastante interessante é o método charAt(), esse método retorna o determinado caracter que foi indicado dentro de seus parênteses, ou seja se tivermos 'abc' e pedirmos um charAt(2), será retornado o caractere q está na posição 2 ou seja o caractere b.
+
+      document.write('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.charAt(20))
+      document.write('<br>')
+
+      // Outro método é o charCodeAt(), ele retorna o "Unicode" do caractere indicado dentre os parênteses:
+
+      document.write('Série: Dexter'.charCodeAt(10))
+      document.write('<br>')
+
+      // Criação da variável nome para a manipulação do método indexOf()
+
+      var nome = 'Gilberto'
+
+      // No exemplo a seguir temos a utilização do método indexOf(), o que ocorre aqui é o seguinte: temos a variável nome que recebe a string Gilberto, em seguida pedimos para que seja imprimido no navegador a seguinte situação: dentro da variável nome invocamos o método indexOf e dentro de seus parênteses passamos a string 'r', isso faz com que ao ser analisado a variavel nome será procurado dentro dela a string r, e se existir será exibido no navegador a posição em que a determinada string ou caracter ficará, ou seja, no método charAt() digitamos a posição e temos de retorno a string, e aqui digitamos a string e temos de retorno a posição.
+
+      // Observação importante: o método indexOf() faz a diferenciação de caracteres mínusculos e maiúsculos
+
+      // Sempre que não houver o caracter indicado será retornado um -1
+      document.write(nome.indexOf('j'))
+      document.write('<br>')
+
+      // Criação de variável nome2 para a manipulação do método replace()
+
+      var nome2 = 'Gilberto Alves'
+
+      // O resultado no navegador é o seguinte: ao invés de ser exibido o sobrenome Alves, é exibido o sobrenome Silva, isso ocorre por que no método replace() ele faz a substituição da String indicada, ou seja primeiramente eu indiquei que eu queria substituir a palavra Alves, e depois adicionei a palavra Silva, sendo assim ocorreu a troca de valores e o resultado exibido no navegador é Gilberto Silva, e se por algum motivo digitar o primeiro valor e ele não existir, não terá substituição alguma!
+      document.write(nome2.replace('Alves', 'Silva'))
+      document.write('<br>')
+
+      // O método substr basicamente faz um "corte" na string, passados como valores para ela o valor inicial do recorrte, e o valor até onde deve ser feito o corte. No navegador o Resultado é ilberto, pq ele recortou o valor 1 G e foi até o 8.
+      document.write(nome2.substr(1, 8))
+      document.write('<br>')
+
+      // Os dois próximos parâmetros são utilizados para converter o texto para caixa baixa e para caixa alta, ficará tudo em maiúscula e minúscula, os dois não esperam parâmetro algum.
+
+      document.write(nome.toLowerCase())
+      document.write('<br>')
+
+      document.write(nome.toUpperCase())
+      document.write('<br>')
+
+      // Criação da variável para a manipulação do metódo trim()
+
+      var texto = ' Olá como vai '
+
+      // O método trim serve para remover os espaços em branco das extremidades das strings, ao imprimir o texto no navegador ele aparece sem os espaçamentos das extremidades.
+      document.write(texto.trim())
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

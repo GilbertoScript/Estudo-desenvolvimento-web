@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Funções construtoras - encapsulamento</title>
+</head>
+<body>
+
+    <div id="output">
+
+        
+
+    </div>
+
+    <script>
+
+        // Na criação de funções construtoras, a utilização de atributos e métodos privados e públicos se torna mais fácil do que na criação em classes. 
+
+        // Agora vamos supor que criamos o objeto abaixo, todos os atributos estão acessíveis diretamente na instância do objeto, façamos de conta que queremos que não estejam todos acessíveis, e se tornem privados, como fariamos?
+
+        // Por exemplo, a velocidade máxima de um carro não pode ser modificada, então no nosso script, não podemos simplesmente deixar que a velocidadeMaxima receba um novo valor, para isso devemos usar uma convenção e torná-la 'privada'.
+
+        /*
+        let Carro = function() {
+            // Dentro de funções construtoras, usamos sempre o this.
+            this.cor = 'Cinza'
+            this.modelo = 'HB20'
+            this.velocidadeAtual = 0
+            this.velocidadeMaxima = 200
+
+            this.acelerar = () => {
+                let velocidade = this.getVelocidadeAtual() + 50
+                if(velocidade > this.velocidadeMaxima) {
+                    velocidade = this.velocidadeMaxima
+                }
+                this.setVelocidadeAtual(velocidade)
+
+            }
+            // Seguindo a convenção do encapsulamento, para não recuperarmos diretamente o velocidade atual, utilizamos o get.
+            this.getVelocidadeAtual = () => {
+                return this.velocidadeAtual
+            }
+
+            this.setVelocidadeAtual = (velocidadeAtual) => {
+                this.velocidadeAtual = velocidadeAtual
+            }
+        }
+
+        let carro = new Carro()
+        console.log(carro)
+        */
+
+        // Iremos alterar o contexto de velocidadeMaxima, o escopo que estava antigamente era como um atributo do objeto, agora passa a ser uma variável do escopo da função
+
+        let Carro = function() {
+            let velocidadeMaxima = 200
+            let quilometrosRodados = 0
+
+            this.cor = 'Cinza'
+            this.modelo = 'HB20'
+            this.velocidadeAtual = 0
+
+            this.acelerar = () => {
+                let velocidade = this.getVelocidadeAtual() + 50
+                if(velocidade > velocidadeMaxima) {
+                    velocidade = velocidadeMaxima
+                }
+                this.setVelocidadeAtual(velocidade)
+
+                setQuilometrosRodados(0.09)
+                console.log(quilometrosRodados)
+
+            }
+
+            this.getVelocidadeAtual = () => {
+                return this.velocidadeAtual
+            }
+
+            this.setVelocidadeAtual = (velocidadeAtual) => {
+                this.velocidadeAtual = velocidadeAtual
+            }
+
+            var setQuilometrosRodados = function(q) {
+                quilometrosRodados += q
+            }
+        }
+
+        let carro = new Carro()
+        
+        for(i = 0; i < 10; i++) {
+            carro.acelerar()
+            console.log(carro)
+        }
+
+        // Diferentemente do exemplo de carro anterior, agora se dermos um console.log() de carro, o atributo(que já não é mais atributo) velocidadeMaxima, não será exibido, isso pois se tornou 'privado'
+        // console.log(carro)
+
+    </script>
+
+</body>
+</html>

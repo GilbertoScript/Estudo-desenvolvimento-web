@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Melhoria - Objeto literal</title>
+</head>
+<body>
+
+    <div id="output">
+
+        <div>
+                <input id="nome" type="text" placeholder="Nome">
+                <input id="idade" type="text" placeholder="Idade">
+                <input id="genero" type="text" placeholder="Genero">
+                <input id="profissao" type="text" placeholder="Profissão">
+                <button id="button" onclick="verDescricaoGlobal()">
+                    Cadastrar e, ver descrição: 
+                </button>
+        </div>
+
+        <div id="resultado">
+
+        </div>
+
+    </div>
+
+    <script>
+        
+        // Quando falamos de objetos literais, temos uma forma ainda mais enxuta de se trabalhar com eles, isso é, ao invés de usarmos várias variáveis para o controle de dados, poderiamos usar um objeto literal de notação ES6, para que o script seja bem mais limpo.
+
+        // A seguir temos a criação de um script que ao ter um botão clicado chama uma função que recupera os valores de um formulário e atraves de um objeto 'objeto', pega as informações e dispara uma função que exibi na tela as informações cadastradas. 
+
+
+        function verDescricaoGlobal() {
+            let nome = document.querySelector('#nome').value
+            let idade = document.querySelector('#idade').value
+            let genero = document.querySelector('#genero').value
+            let profissao = document.querySelector('#profissao').value
+
+            // Notação de objeto ES5
+            /*
+            let objeto = {
+                nome: nome,
+                idade: idade,
+                genero: genero,
+                profissao: profissao,
+                verDescricao: function() {
+                    let div = document.querySelector('#resultado')
+                    div.innerHTML =
+                    `
+                    Olá ${this.nome}, você realizou o cadastro, suas informações: <br><br>
+                    Nome: ${this.nome} <br>
+                    Idade: ${this.idade} <br>
+                    Gênero: ${this.genero} <br>
+                    Profissão: ${this.profissao}
+                    `
+                }
+            }
+            */
+            
+            // Notação de objeto ES6
+            // Como o par chave(nome) + valor, possuem o mesmo nome, não precisa ser feito a atribuição de um valor, basta colocar o nome e depois uma ',', por exemplo :
+            let objeto = {
+                nome,
+                idade,
+                genero,
+                profissao,
+                // E em funções não precisa do par nome e valor da antiga forma, basta fazermos assim: 
+                verDescricao() {
+                    let div = document.querySelector('#resultado')
+                    div.innerHTML =
+                    `
+                    Olá ${this.nome}, você realizou o cadastro, suas informações: <br><br>
+                    Nome: ${this.nome} <br>
+                    Idade: ${this.idade} <br>
+                    Gênero: ${this.genero} <br>
+                    Profissão: ${this.profissao}
+                    `
+                }
+            }
+
+            // Chamada da função dentro da função, se não for chamada não é executada.
+            objeto.verDescricao()
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* * {
+	border: 1px solid red;
+}
+*/
+
+
+body {
+	background-color: grey;
+	font-family: "Times New Roman", Times, serif;
+}
+
+h2 {
+	margin-top: 0;
+	padding-top: 0;
+	height: 96px;
+	line-height: 96px;
+	text-align: center;
+	font-size: 32px;
+	background-color: #293241;
+	color: white;
+}
+
+table {
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	padding: 10px;
+	border-collapse: separate; /* collapse; */
+	background-color: #293241;
+	color: white;
+}
+
+th, td {
+	padding: 15px;
+}
+
+th {
+	text-transform: uppercase;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	font-size: 18px;
+	letter-spacing: 0.09em;
+}
+
+tr:hover {
+	background-color: #e76f51;
+}
+
+/* tr.alternado {
+	background-color: #efefef;
+}
+*/
+
+.numero {
+	text-align: right;
+}

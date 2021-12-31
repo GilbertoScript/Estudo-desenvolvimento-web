@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Var e Let</title>
+</head>
+<body>
+
+    <div id="output">
+        
+    </div>
+
+    <script>
+        
+        // 3 Escopos: Global, função e de bloco
+        // Se for declarada a variável com o escopo global, ela poderá ser utilizada em qualquer momento dentro do script, ou seja, a variável de tipo global, tem o maior nível.
+
+        // No exemplo é utilizado uma variável do tipo global que é chamada em diversos momento do script, e todas as vezes ela é chamada e tem seu valor exibido no console.log(), isso porque ela pode ser acessada em qualquer momento do script.
+
+        // Agora e uma variável do tipo função? Caso for declarada uma variável dentro de uma função, ela pode ser utilizada dentro da função e, dentro dos blocos desta função. No exemplo temos a seguinte situação: uma variável com o mesmo nome foi declarada dentro do escopo da função, e quando é exibido o console.log(), apenas dentro da função e do seu respectivo bloco, esta variável é exibida, isso pois, ela não atingiu a variável fora do seu escopo, e como ela tem seu 'loacl', com uma especificidade maior, ela é levada em consideração acima da variável de escopo global.
+
+        /*
+        
+        var linguagem = 'JavaScript'
+
+        function x() {
+            // Escopo de função
+            var linguagem = 'Python'
+
+            console.log('Função: ' + linguagem)
+
+            if(true) {
+                // Escopo de bloco
+                console.log('Bloco dentro da função: ' + linguagem)
+
+            }
+        }
+
+        x()
+
+        if(true) {
+            // Escopo de bloco
+            console.log('Bloco de escopo global: ' + linguagem)
+        }
+        
+        */
+
+        // ======================================================================================================= //
+        // Segundo exemplo: 
+
+        /*
+        
+        // Caso uma variável seja declarada dentro de um escopo de bloco, no escopo global, ela irá sofrer um 'hoisting' (elevação), agora podendo ser chamada, no escopo global fora do bloco, dentro do bloco global(onde foi declarada), dentro de escopo de função, e dentro de blocos dentro de funções: 
+
+        function x() {
+            // Escopo de função
+            console.log('Dentro da função: ' + linguagem)
+
+            if(true) {
+                // Escopo de bloco
+                console.log('Dentro do bloco da função: ' + linguagem)
+
+            }
+        }
+
+        if(true) {
+            // Escopo de bloco
+            var linguagem = 'Pearl'
+            console.log('Dentro do bloco global: ' + linguagem)
+        }
+
+        console.log('Nível global: ' + linguagem)
+
+        // Lembrando de chamar a função após a variável ser criada, isso para que não ocorra nenhum comportamento inesperado ou até mesmo erros.
+        x()
+
+        // Caso uma variável declarada dentro de um bloco dentro de uma função, essa variável sofrerá um 'hoisting', apenas para a função, ou seja tudo que for declarado dentro da função ou de blocos dentro de uma função, só ficará disponível para aquela função.
+        
+        */
+
+        // ======================================================================================================= //
+        // Terceiro exemplo: 
+
+        // E o LET? O que é? Simples, é um tipo de variável que preserva o escopo onde foi criada, ou seja, se ela for criada dentro de um bloco global, ela ficara disponível apenas para aquele bloco, mesmo sendo declarada dentro de um bloco dentro de uma função, o escopo em geral da função não terá acesso a essa variável let, apenas o bloco em que a variável let foi declarada.
+
+        function x() {
+            // Escopo de função
+
+            if(true) {
+                // Escopo de bloco
+                let linguagem = 'Assembly'
+                console.log(linguagem)
+
+            }
+        }
+
+        if(true) {
+            // Escopo de bloco
+        }
+
+        x()
+
+    </script>
+</body>
+</html>

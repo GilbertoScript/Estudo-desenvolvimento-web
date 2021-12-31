@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+
+    	/** {
+    		border: 1px solid red;
+    	}*/
+    	
+    </style>
+
+    <title>Javascript - Variáveis</title>
+  </head>
+  <body>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12 m-auto d-flex justify-content-center">
+    			<h1 class="mt-3">Variáveis</h1>
+    		</div>
+    	</div>
+    </div>
+
+
+
+    <script>
+
+        /* Na criação de uma variável deve ser seguido algumas regras por exemplo a primeira coisa que precisamos 
+           fazer é declarar que o item a seguir é uma variável ou seja precisamos esvcrever "var", em seguida daremos o nome a nossa variável ou seja "var nome", em seguida precisaremos definir o valor da nossa variável, sendo assim precisaremos colocar um sinal de "=", agora sim, a última coisa que precisamos fazer é definir o valor da variável, lembrando se ela for do tipo texto(String), precisaremos colocar '', ou "", ou seja agora vamos criar uma variável do tipo texto então a unica coisa que precisamos fazer é simplesmente escrever var nome = "Joãozinho"
+        */
+
+        // Tipos de variáveis: String, Number e Boolean
+
+        // String
+        var nome = 'Joãozinho'
+        var texto = 'Curso de JavaScript'
+        var alfabeto = 'abcedghijklmnopqrstuvwxyz'
+
+        // Number
+        var numeroInteiro = -7
+        var numeroFracionado = 84.4
+
+        // Boolean
+        var condicao1 = true // true => verdadeiro 
+        var condicao2 = false // false => falso
+
+        /* O comando alert() serve para que seja aberto no navegador uma caixa de diálogo e dentro do () será a mensagem
+           exibida no navegador, por exemplo se você passar dentro do comando alert() uma variável do tipo Number com o nome numeros e com o valor 123456789, será exibida na caixa de diálogo o conteúdo da variável que você colocou no comando alert()
+        */
+
+        // alert(numeroInteiro)
+
+
+        /* O comando document representa todo o documento HTML a conhecida DOM,
+           e por meio do .write (que significa escrever) ele escreve no documento HTML
+           o determinado valor que você irá passar, por exemplo, se você criou uma variável String com o nome alfabeto
+           que tem o valor "abcdefghi", através do comando document.write(alfabeto) será escrito no seu documento html o valor da variável string que você passou.
+        */
+
+        // document.write(numeroFracionado)
+
+
+        /* Muito utilizado no processo de debug de determinado sistema ou site o elemento console.log() tem como 
+           objetivo exibir na aba console do navegador o determinado valor ou mensagem que você escrever em (), por exemplo se eu criar uma variável do tipo String com o nome alfabeto e que possui o valor abdefgh..., será exibido no console do navegador(f12 ou ctrl+shift+i ou inspecionar) o determinado valor que você atribuiu a sua variável.
+         */
+
+        console.log(nome, alfabeto, texto)
+        
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

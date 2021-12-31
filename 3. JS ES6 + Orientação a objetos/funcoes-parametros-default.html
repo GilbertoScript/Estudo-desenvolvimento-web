@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Funções - Parâmetros Default</title>
+</head>
+<body>
+
+    <div id="output">
+
+        <input type="text" name="usuario" id="usuario" placeholder="Usuário">
+        <input type="text" name="cachorro" id="cachorro" placeholder="Cachorro">
+        <button onclick="exibirMensagem()"> Enviar </button>
+        
+    </div>
+
+    <script>
+
+        // Em relação ao JavaScript Moderno, temos os parâmetros Default de funções.
+
+        // Quando declaramos uma função como no exemplo a seguir:
+
+        function exibirMensagem(usuario = 'Usuário', cachorro = 'Cachorro') {
+        if (document.querySelector('#usuario').value !== '' || document.querySelector('#cachorro').value !== '') {
+            usuario = document.querySelector('#usuario').value
+            cachorro = document.querySelector('#cachorro').value
+        }
+        alert(`Olá ${usuario}, seja bem vindo mais uma vez, como vai seu cachorro ${cachorro}.`)
+    }
+        // Um parâmetro Default é como se dentro da função estivesse ocorrendo exatamente isso:
+
+        /*
+        
+        if(usuario = undefined) {
+            usuario = 'Usuário'
+        }
+
+        */
+
+        // Se não for passado na chamada da função, nenhum valor, ele retornará para nós no navegador 'undefined', por que de fato não foi definido nem um valor para usuario e cachorro, nesse sentido, com a nova funcionalidade do ES6, pode agora ser atribuido a paramêtros de funções, valores default, ou seja, se o valor que era para ser passado não foi encontrado, ele usará o parâmetro default, ao invés de undefined.
+
+    </script>
+</body>
+</html>

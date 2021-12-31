@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - OO - Abstração - Reflexão</title>
+</head>
+<body>
+
+    <div id="output">
+        
+    </div>
+
+    <script>
+        
+        // Na orientação a objetos em JS, quando falamos de abstração nos referimos fortemente a como tornar algo abstrato em entidade
+
+        // Temos a seguinte idéia: Um software de marcenaria
+        // Os objetos são: uma cadeira e um sofá
+
+        // Para entendermos melhor a ideia de abstração, primeiro utilizaremos o paradigma procedural:
+
+        // Array de cadeiras
+        /*
+        let cadeiras = Array()
+
+        cadeiras[0] = Array()
+        cadeiras[0]['qntdPernas'] = 4
+        cadeiras[0]['giratoria'] = false
+        cadeiras[0]['cor'] = 'azul'
+
+        cadeiras[1] = Array()
+        cadeiras[1]['qntdPernas'] = 1
+        cadeiras[1]['giratoria'] = true
+        cadeiras[1]['cor'] = 'verde'
+
+        const adicionarCadeira = (qntdPernas, giratoria, cor) => {
+            let cadeira = Array()
+
+            cadeira[0] = Array()
+            cadeira[0]['qntdPernas'] = qntdPernas
+            cadeira[0]['giratoria'] = giratoria
+            cadeira[0]['cor'] = cor
+
+            cadeiras.push(cadeira)
+        }
+
+        adicionarCadeira(6, true, 'branca')
+        console.log(cadeiras)
+        */
+
+        /*
+        const girarCadeira = (indice) => {
+            if(cadeiras[indice]['giratoria'] === true) {
+                console.log('Cadeira girou!')
+
+            } else {
+                console.log('Cadeira não girou!')
+            }
+        }
+
+        girarCadeira(1)
+        */
+
+        // ------------------------------------------------------------------------------- //
+        // Paradigma de orientação a objetos
+
+        class Cadeira {
+            constructor(qntdPernas, giratoria, cor) {
+                this.qntdPernas = qntdPernas
+                this.giratoria = giratoria
+                this.cor = cor
+            }
+
+            girarCadeira() {
+                if(this.giratoria === true) {
+                    console.log('Cadeira girou!')
+
+                } else {
+                    console.log('Cadeira não girou!')
+                }
+            }
+        }
+
+        let cadeira = new Cadeira(4, true, 'laranja')
+        cadeira.girarCadeira()
+        console.log(cadeira)
+
+        // ------------------------------------------------------------------------------- //
+
+        class Sofa {
+            constructor(qntdLugares, reclinavel, cor) {
+                this.qntdLugares = qntdLugares
+                this.reclinavel = reclinavel
+                this.cor = cor
+            }
+
+            reclinarSofa() {
+                if(this.reclinavel === true) {
+                    console.log('O sofá reclinou!')
+
+                } else {
+                    console.log('O sofá não reclinou!')
+                }
+            }
+        }
+
+        let sofa = new Sofa(3, true, 'marrom')
+        sofa.reclinarSofa()
+
+        console.log(sofa)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Template String</title>
+</head>
+<body>
+
+    <div id="output">
+        
+    </div>
+
+    <script>
+
+        // Template String é mais um dos recursos do JavaScript moderno ES6, ele tem como objetivo 'interpolar' códigos javascript com strings
+
+        let nome = 'Gilberto'
+
+        // Normalmente para concatenarmos algo seria da seguinte forma: 
+        // document.write('Oi, ' + nome + ' tudo bem?')
+
+        // Mas de certo modo, é meio cansativo escrever um texto concatenando tudo isso, por isso surgiu o template string, para amenizar esse problema: 
+
+        // Os template string devem ser colocados dentro dos sinais de crase ``
+        // E sua sintaxe é basicamente : ${variavel}, ou seja um sinal de cifrão seguido de abre e fecha chaves, e pode ser feito tranquilamente a quebra de linha, diferentemente das aspas simples.
+
+        /* document.write(
+            `Oi ${nome},
+             como vai?
+            `)
+        */
+
+        // E também pode ser utilizado operadores, por exemplo:
+
+        // document.write(`7 + 7 = ${7 + 7}`)
+
+        // E funciona com funções!
+
+        function calcular(x, y) {
+            return x * y
+        }
+
+        document.write(`A multiplicação de 15 * 9 é = ${calcular(15, 9)}`)
+
+        // Então basicamente o template string, serve para abrir uma janela dentro de uma string, para que seja feito a interpretação de todo o código inserido dentre as chaves
+
+
+    </script>
+</body>
+</html>

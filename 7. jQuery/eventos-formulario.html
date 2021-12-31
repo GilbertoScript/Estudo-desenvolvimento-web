@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 15 - Eventos do formulário</title>
+
+	<style>
+			
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px 25px;
+		}
+
+		#conteudo {
+			padding: 25px;
+		}
+
+		.inputFocus {
+			color: whitesmoke;
+			background: #0a0e14;
+		}
+
+	</style>
+
+</head>
+
+<body>
+		
+	<h2 id="titulo">Eventos do formulário</h2>
+
+	<div id="conteudo">
+		<h3>Formulário</h3>
+			<form id="form">
+				<span>Nome:</span>
+				<input id="nome" type="text" />
+
+				<span>E-mail:</span>
+				<input id="email" type="text" />
+
+				<br><br>
+				<span>Motivo do contato:</span>
+				<select id="options">
+					<option value="">-- Selecione --</option>
+					<option value="duvida">Dúvida</option>
+					<option value="sugestao">Sugestão</option>
+				</select>
+				
+				<button type="submit">Enviar</button>
+			</form>
+	</div>
+
+	<hr />
+
+	<script>
+
+		// Quando utilizamos formulários, é muito comum ter que utilizar eventos em seus respectivos elementos, e o jQuery trás essas manipulações de forma muito simples, e para explorar esses eventos iremos utilizar alguns métodos.
+
+			// Focus, evento ocorre quando o determinado elemento recebe foco.
+
+			// Também podemos utilizar a sintaxe sugar, fazendo com que dois elementos html's possuam o mesmo comportamento:
+			$('#nome, #email').focus((e) => {
+
+				$(e.target).addClass('inputFocus')
+
+			})
+
+			// Blur, evento ocorre quando o determinado elemento perde o foco
+
+			$('#nome, #email').blur((e) => {
+
+				$(e.target).removeClass('inputFocus')
+			})
+
+		// Outro evento muito importante de ser tratado é o evento de 'change' de determinado elemento html, por exemplo, em elementos do tipo checkbox, radio ou select, temos a mudança no estado do elemento, quando selecionamos uma outra opção. Vamos explorar esse comportamento.
+
+			// Change
+
+			$('#options').change((e) => {
+
+				console.log($(e.target).val())
+			})
+
+		// Um outro evento muito interessante é o submit, que acontece quando determinado elemento sofre do type submit.
+
+			// Submit
+
+			$('#form').submit((e) => {
+
+				e.preventDefault()
+
+				console.log($('#nome').val())
+				console.log($('#email').val())
+				console.log($('#options').val())
+			})
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Var e Let</title>
+</head>
+<body>
+
+    <div id="output">
+        
+    </div>
+
+    <script>
+
+        // Temos a seguinte situação: duas variáveis linguagem que recebe valores diferentes, uma no escopo global, e uma no escopo de bloco, e dando um console.log de linguagem, qual seria a variável que vai aparecer? As duas? Errado, isso porque como variáveis do tipo de bloco sofrem 'hoisting'(elevação), é como se a outra variável fosse declarada logo após a primeira, fazendo com que os console.log(), recebam o valor da variável que foi declarada por último, isso é, a variável linguagem = 'Php'
+        
+        var linguagem = 'JavaScript'
+
+        {
+            var linguagem = 'Php'
+            console.log('Dentro do bloco' + linguagem)
+        }
+
+        console.log('Fora do bloco' + linguagem)
+
+    </script>
+</body>
+</html>

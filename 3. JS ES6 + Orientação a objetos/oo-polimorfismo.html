@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - OO - Polimorfismo</title>
+</head>
+<body>
+
+    <div id="output">
+
+
+
+    </div>
+
+    <script>
+        
+        // O último requisito - pilar - que se deve seguir para se dizer que um código segue o paradigma de orientação a objetos, é o pilar do polimorfismo, o polimorfismo é basicamente a sobrescrita de métodos, e é reutilizável.
+
+        // O uso do polimorfismo(sobrescrita de métodos), faz mais sentido quando utilizada em classes filhas, não há muito sentido em escrever métodos para uma classe filha específica, isso porque, as outras classes filhas herdariam esse método
+
+        class Animal {
+            constructor(cor, tamanho) {
+                this.cor = cor
+                this.tamanho = tamanho
+            }
+
+            dormir() {
+                console.log('Dormir')
+            }
+        }
+
+        class Passaro extends Animal {
+            constructor(bico, cor, tamanho) {
+                super(cor, tamanho)
+                this.bico = bico
+            }
+
+            voar() {
+                console.log('Voar')
+            }
+        }
+
+        class Papagaio extends Passaro {
+            constructor(sabeFalar, bico, cor, tamanho) {
+                super(bico, cor, tamanho)
+                this.sabeFalar = sabeFalar
+            }
+
+            sabeFalar() {
+                console.log('Falar')
+            }
+        }
+
+        // Veja, como avestruz herda pássaro automaticamente herda o método de voar, mas avestruz não voa, ai que entra o polimorfismo, se avestruz não voa temos que sobrescrever esse método.
+        class Avestruz extends Passaro {
+            constructor(bico, cor, tamanho) {
+                super(bico, cor, tamanho)
+            }
+
+            enterrarCabeca() {
+                console.log('Enterrar a cabeça')
+            }
+
+            // E aqui que nós implementamos o pilar do polimorfismo, é bem simples na realidade, a sobrescrita do método se dá simplesmente, escrevendo o método que se deseja sobrescrever e passar suas novas instruções, antigamente o avestruz herdava o voo da classe Passaro, mas como avestruz não voa, vamos sobrescrever esse método para avestruz não voa:
+            voar() {
+                console.log('Avestruz não voou')
+            }
+        }
+
+        // Apenas lembrando, o super da classe filha referencia o constructor da classe pai
+        let papagaio = new Papagaio('Sim', 'Médio', 'Verde', 'Pequeno')
+        let avestruz = new Avestruz('Curto', 'Preto e branco', 'Grande')
+
+        console.log(papagaio)
+        console.log(avestruz)
+
+        papagaio.voar()
+        // Ao executarmos console.log() do método voar(), aparece avestruz não voou, isso pois esse método foi sobrescrito.
+        avestruz.voar()
+
+    </script>
+
+</body>
+</html>

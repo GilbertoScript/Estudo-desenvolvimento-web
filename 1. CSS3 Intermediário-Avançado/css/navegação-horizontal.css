@@ -1,0 +1,77 @@
+body {
+	text-align: center;
+	color: white;
+	background: url('https://i2.wp.com/www.nordestelab.com.br/wp-content/uploads/2017/02/fullscreen-menu-background.jpg?ssl=1');
+}
+
+div {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+ul {
+	/*width: 720px;*/
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	list-style-type: none;
+	background: #159cb0 url(../Imagens/fundo-horizontal.png);
+	background-repeat: repeat-x;
+	float: left;
+}
+
+ul li {
+	float: left;
+}
+
+ul a {
+	text-decoration: none;
+	display: block;
+	padding: 0 4em;
+	line-height: 2.2em;
+	background: url(../Imagens/divisor.png) left top;
+	background-repeat: repeat-y;
+}
+
+ul .primeiro a {
+	background: none;
+}
+
+ul a:hover {
+	color: #085662;
+	background: #a8dadc;
+}
+
+a {
+	color: white;
+}
+
+#conteudo {
+	flex-direction: column;
+	margin: auto;
+	width: 800px;
+	text-align: center;
+}
+
+h2 {
+	display: block;
+}
+p {
+	display: block;
+}
+
+img {
+	width: 350px;
+}
+
+#paragrafos {
+    padding: 9px;
+	position: relative;
+	bottom: 350px;
+	left: 380px;
+	width: 400px;
+	text-align: center;
+
+}
+

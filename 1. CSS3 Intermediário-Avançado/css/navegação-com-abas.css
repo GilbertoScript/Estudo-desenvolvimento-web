@@ -1,0 +1,93 @@
+/* * {
+	border: 1px solid red;
+}*/
+
+body {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	text-align: center;
+	color: #FFF;
+}
+
+#navbar {
+	display: flex;
+	justify-content: center;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	width: 593px;
+	list-style-type: none;
+}
+
+ul li {
+	background: url(../Imagens/aba-direita.png);
+	background-repeat: no-repeat;
+	background-position: top right; 
+	float: left;
+}
+
+li a {
+	background: url(../Imagens/aba-esquerda.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+	display: block;
+	padding: 0 2em;
+	line-height: 3em;
+	text-decoration: none;
+	color: #FFF;
+}
+
+a:hover {
+	color: #894a1f;
+}
+
+ul #atual {
+	background: url(../Imagens/aba-direita-atual.png);
+	background-repeat: no-repeat;
+	background-position: top right; 
+	
+}
+
+ul #atual a {
+	background: url(../Imagens/aba-esquerda-atual.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+
+#title-home {
+	border-radius: 10px;
+	padding: 10px;
+	background-color: #f77f00;
+}
+
+#conteudo {
+	margin: auto;
+	width: 800px;
+	height: 560px;
+	color: black;
+}
+
+img {
+	position: relative;
+	left: 210px;
+}
+
+.p-conteudo {
+	position: relative;
+	top: -350px;
+	left: 18px;
+	width: 400px;
+}
+
+#rodape {
+	margin: auto;
+	width: 500px;
+	background-color: #f77f00;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 50px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS ES6 - Destructuring Assignment pt3</title>
+
+    <style>
+
+        
+        
+    </style>
+</head>
+<body>
+
+    <div id="output">
+    
+
+
+    </div>
+
+    <script>
+
+        // Utilizando Desestruturação em funções, como recuperar objetos ou arrays dentro de funções a partir da desestruturação.
+
+        // Exemplo de desestruturação de um array dentro de uma função:
+
+        let listaUsuarios = ['Abel', 'Ana', 'Bruno', 'Camila', 'Gilberto']
+
+        // Lembrando sempre a possibilidade de utilizar parâmetros default.
+        function exibirUsuarios([x, , , y, z, a = 'Júnior']) {
+            console.log(a, x, y, z)
+        }
+
+        // Deste método precisamos passar na chamada da função a posição dos índices que desejamos receber dentro da função.
+        //recuperarUsuarios(listaUsuarios[0], listaUsuarios[3], listaUsuarios[4])
+
+        // Para desestruturar o array dentro da função, não precisamos indicar os índices na chamada da função.
+        exibirUsuarios(listaUsuarios)
+
+        // Exemplo de desestruturação de um objeto dentro de uma função:
+
+        let produto = {
+            descricao: 'Celular',
+            sistema: 'Android',
+            preco: 'R$ 800,00',
+            detalhes: {
+                memoriaRam: '2Gigas',
+                ano: 2021
+            }
+        }
+
+        function verProduto({descricao: d, sistema: s, preco: p, marca: m = 'Sony',}) {
+            // Como 'm', ainda não existe dentro do objeto produto, poderiamos atribuir a ele um valor default:
+            // Porém é muito mais simples fazer isso com a nova feature do ES6, logo acima.
+
+            /*
+            if(m == undefined) {
+                m = 'Sony'
+            }
+            */
+
+            console.log(d, s, p, m)
+        }
+
+        verProduto(produto)
+
+    </script>
+
+</body>
+</html>

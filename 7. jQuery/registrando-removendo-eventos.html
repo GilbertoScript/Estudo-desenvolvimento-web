@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<title>JQuery - Aula 16 - Registrando/removendo eventos com on e off</title>
+
+	<style>
+			
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			color: whitesmoke;
+			background: #0a0e14;
+			padding: 10px 25px;
+		}
+
+		#conteudo {
+			padding: 25px;
+		}
+
+		.desfocado {
+			color: #0a0e14;
+			background: whitesmoke;
+		}
+
+		.focado {
+			color: whitesmoke;
+			background: #0a0e14;
+		}
+
+	</style>
+
+</head>
+
+<body>
+		
+	<h2 id="titulo">Registrando/Removendo eventos com on e off</h2>
+
+	<div id="conteudo">
+		
+		<input class="desfocado" type="text" placeholder="Nome" />
+		<button>Enviar</button>
+
+	</div>
+
+	<script>
+
+		// Algo muito comum no jQuery é a utilização dos métodos on e off, para que, seja executado determinado evento, a sintaxe do comando on é basicamente, .on('evento', () => {})
+
+			$('body').on('focus', 'input', (e) => {
+
+				$(e.target).removeClass('desfocado')
+				$(e.target).addClass('focado')
+			})
+
+			$('body').on('blur', 'input', (e) => {
+
+				$(e.target).removeClass('focado')
+				$(e.target).addClass('desfocado')
+			})
+
+		// E qual o problema disso, qual a tratativa que temos que dar para esse elemento? Bom, vamos explorar melhor isso, por exemplo, se criassemos um input para a div conteudo, o normal que queriamos, é que os eventos do input, sejam atribuidos a esse input, porém isso não ocorre, e para corrigir isso vamos voltar logo acima e corrigir, trocando o elemento de 'input' para 'body', e colocar como segundo parâmetro do evento 'on', os elementos que queiramos afetar dentro de body.
+
+			$('#conteudo').append(
+				`<br /><br />
+				<input class="desfocado" type="text" placeholder="Email" /><hr />`
+			)
+
+		// E após compreender esse cenário de que, os elemento criados após de forma programática receberem o mesmo evento que os elemento que já foram criados antes, pode ser dada, selecionando um elemento pai, e, atribuindo a todos os elementos filhos dele o respectivo evento, da mesma forma podemos remover os eventos de forma programática seguindo a hierarquia dos elementos, por exemplo:
+
+			// A seguinte expressão remove o evento de 'focus', de todos os inputs, sendo criados ou não de forma programática.
+			$('body').off('focus', 'input')
+
+
+	</script>
+
+</body>
+</html>
