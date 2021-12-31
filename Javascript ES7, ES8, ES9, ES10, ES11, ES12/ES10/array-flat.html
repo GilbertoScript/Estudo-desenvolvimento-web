@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Array flat - ES10</title>
+
+	<style>
+		body {
+			background: #222;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// A seguir temos um exemplo de um array multi-dimensional, com o método array flat é muito simples torná-lo um array de uma única dimensão.
+		let arrayExample = [1, 2, 3, 4, [5, 6, 7, 8], 9, 10, [11, 12, [13, [14]]]];
+
+		// Quando nenhum valor é passado para o método flat(<profundidade>), a profundidade que o flat vai alcançar é apenas de 1, ou seja, sub-arrays de sub-arrays não serão elevados, porém é possível passar valores maiores veja a seguir:
+		let flatArrayExample = arrayExample.flat(3);
+
+		console.log('Array sem o flat: :', arrayExample);
+		console.log('Array utilizando flat: ', flatArrayExample);
+		
+	</script>
+	
+</body>
+</html>
