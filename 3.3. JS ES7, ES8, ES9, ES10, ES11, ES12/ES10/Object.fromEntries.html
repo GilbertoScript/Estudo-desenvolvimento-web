@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Object.fromEntries - ES10</title>
+
+	<style>
+		body {
+			background: #222;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// O método fromEntries é utilizado basicamente para converter um array para um objeto, seguindo as seguintes regras: par chave e valor, chave sempre numérica, quando não possível utilizar chave numérica, criar um array de arrays.
+
+		let userData = [
+			['name', 'John Doe'],
+			['address', [
+				['city', 'São Paulo'],
+				['uf', 'SP']
+			]],
+			['hobbies', ['programar', 'estudar']]
+		]
+
+		// Acessando o Objeto nativo do Javascript e utilizando o método fromEntries, é possível 
+		console.log(Object.fromEntries(userData));
+		
+	</script>
+	
+</body>
+</html>
