@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Array flatmap - ES10</title>
+
+	<style>
+		body {
+			background: #222;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// Basicamente o flatMap é um método que unifica os dois métodos(map e flat), que simplesmente ao invés de usar o map que retorna um array de arrays, e em seguida o nivelar com o flat, utilizamos o flatMap que já faz isso em uma única instância.
+
+		let names = [
+			'João, José, Maria',
+			'Sanda, Rosângelo',
+			'Marcos, Cristian, Fernanda'
+		]
+
+		// Com o exemplo a seguir podemos percorrer o array e o dividir por meio do método split, assim criando um array de arrays:
+		let mapNames = names.map(item => {
+			return item.split(',')
+		})
+
+		console.log(mapNames);
+
+		// Agora veja o exemplo a seguir utilizando o método flatmap:
+		let flatMapNames = names.flatMap(item => {
+			return item.split(',')
+		})
+
+		// Visualizando isso no navegador percebemos que ao invés de ser criado um array de arrays, o que aconteceu foi que o array foi completamente "achatado", fazendo todos os seus elementos subirem de nível, tornando um array limpo de 1 camada.
+		console.log(flatMapNames);
+		
+	</script>
+	
+</body>
+</html>
