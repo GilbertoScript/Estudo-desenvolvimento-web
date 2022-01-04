@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Catch com parâmetro opcional - ES10</title>
+
+	<style>
+		body {
+			background: #222;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// Antigamente para conseguirmos chegar até a execução do bloco catch dentro de um try, era necessário que ocorrese um erro, assim podendo ser capturado pelo catch, e ser tratado como no exemplo a seguir:
+
+		/*
+
+			try {
+
+				throw 'Houve um erro na aplicação.'
+
+			} catch(e) {
+
+				console.log(e)
+			}
+
+		*/
+
+		// A partir do ES10 isso não é mais obrigatório, agora o catch pode ser acessado sem ser necessário a captura de um erro, veja no exemplo a seguir:
+
+		try {
+			throw 'Houve um erro na aplicação.'
+
+		} catch {
+			
+			console.log('Chegou no catch');
+		}
+		
+	</script>
+	
+</body>
+</html>
