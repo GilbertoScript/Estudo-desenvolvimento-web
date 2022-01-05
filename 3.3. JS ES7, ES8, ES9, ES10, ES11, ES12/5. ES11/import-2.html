@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dynamic import 2 - ES11</title>
+
+	<style>
+		body {
+			background: #ccc;
+			color: black;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<button id="btn-saudacao">
+		Exibir saudação
+	</button>
+
+	<hr>
+
+	<p>Digite seu CEP para fazer a consulta com 8 números e sem caracteres especiais</p>
+
+	<input type="text" id="input-cep" placeholder="Digite seu CEP">
+	<button id="btn-cep">Consultar CEP</button>
+
+	<script type="module">
+
+		// import { greetingMessage, getAddressByCEP } from './import/lib.mjs'
+
+		// Mesmo se o conteúdo das importações forem usados ou não, por padrão o javascript faz a importação do arquivo, isso se for uma aplicação grande, não faria sentido importar arquivos que não estão sendo utilizados, causando uma melhora significativa no desempenho da aplicação, ai que entra o dynamic imports.
+
+		document.querySelector('#btn-saudacao').addEventListener('click', () => {
+
+			// Para utilizar as importações dinâmicas é muito simples, basta quando formos usar a função que queremos fazer a importação, ao invés de importar antes, veja a seguir:
+
+			import('./import/lib.mjs')
+				.then(module => {
+
+					alert(module.greetingMessage());
+					console.log(module.greetingMessage())		
+				})
+		})
+
+		document.querySelector('#btn-cep').addEventListener('click', () => {
+
+			let inputCEP = document.querySelector('#input-cep').value;
+
+			if(inputCEP.length == 8) {
+
+				import('./import/lib2.mjs')
+					.then(module => {
+
+						console.log(
+							module.getAddressByCEP(inputCEP).then(data => console.log(data))
+						)
+					})
+				
+			} else {
+
+				alert('Digite o CEP corretamente!');
+			}
+			
+		})
+		
+	</script>
+	
+</body>
+</html>

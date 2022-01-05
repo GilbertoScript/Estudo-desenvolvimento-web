@@ -15,11 +15,13 @@
 </head>
 <body>
 
-	<h1 class="saudacao">Boas vindas</h1>
+	<h1 class="saudacao"></h1>
 
 	<script type="module">
 
 		import { greetingMessage, getAddressByCEP } from './import/lib.mjs'
+
+		// Mesmo se o conteúdo das importações forem usados ou não, por padrão o javascript faz a importação do arquivo, isso se for uma aplicação grande, não faria sentido importar arquivos que não estão sendo utilizados, causando uma melhora significativa no desempenho da aplicação, ai que entra o dynamic imports.
 
 		document.querySelector('.saudacao').innerHTML = greetingMessage();
 
