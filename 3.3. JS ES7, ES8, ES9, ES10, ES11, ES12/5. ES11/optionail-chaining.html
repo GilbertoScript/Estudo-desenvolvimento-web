@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Optional Chaining - ES11</title>
+
+	<style>
+		body {
+			background: #ccc;
+			color: black;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// Objeto que guarda um simples orçamento pessoal
+		let personalBudget = {
+			2021: {
+				janeiro: {
+					pessoal: 2000,
+					casa: 1500,
+					investimento: 1000 
+				},
+				fevereiro: {
+					pessoal: 1000,
+					casa: 1800,
+					investimento: 1900
+				},
+			}
+		}
+
+		// Basicamente o option chaining funciona da seguinte forma: Ao termos um código que não existe e está sendo executado, como no exemplo a seguir em que damos um console.log de um atributo do objeto que não exista, ao invés de usarmos um if else para fazer a validação disso toda vez, podemos utilizar o optional chaining, transformando o código bem menos verboso e amigável.
+
+		// O optional chaining é utilizado com um "?" logo após o atribut que não temos certeza se existe ou não.
+
+		console.log(personalBudget['2021'].marco?.pessoal);
+		// undefined.pessoal
+
+		console.log('-- Conteúdo ---')
+
+	</script>
+	
+</body>
+</html>
