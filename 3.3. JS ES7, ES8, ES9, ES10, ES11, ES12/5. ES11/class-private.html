@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Class private - ES11</title>
+
+	<style>
+		body {
+			background: #ccc;
+			color: black;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<script type="module">
+
+		class User {
+
+			// Atributo privado
+			#status = null;
+			#statusMessage = ['Disponível', 'Indisponível'];
+
+			constructor(name) {
+
+				this.#changeStatus();
+				this.name = name;
+			}
+
+			// Método privado
+			#changeStatus() {	
+
+				this.#status = Math.floor(Math.random() * 2)
+			}
+
+			getInfoUser() {
+
+				return `Informações do usuário - Nome: ${this.name}`;
+			}
+
+			getStatus() {
+
+				return this.#status;
+			}
+
+			getStatusMessage() {
+
+				return this.#statusMessage[this.#status];
+			}
+		}
+
+		let user = new User('John Doe');
+		console.log(user.getInfoUser());
+
+		// Console de atributo público e privado:
+		console.log(user.name);
+		console.log('---------------');
+		console.log(user.getStatus());
+		console.log(user.getStatusMessage());
+		
+	</script>
+	
+</body>
+</html>
