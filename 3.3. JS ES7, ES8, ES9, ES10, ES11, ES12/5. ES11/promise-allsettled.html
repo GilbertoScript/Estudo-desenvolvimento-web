@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promise allSettled - ES11</title>
+
+	<style>
+		body {
+			background: #ccc;
+			color: black;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		const promise1 = new Promise((resolve, reject) => {
+
+			return setTimeout(() => resolve('Promise 1 resolvida com sucesso!'), 2000)
+		})
+
+		const promise2 = new Promise((resolve, reject) => {
+
+			return setTimeout(() => reject('Promise 2 foi rejeitada...'), 2000)
+		})
+
+		const promise3 = new Promise((resolve, reject) => {
+
+			return setTimeout(() => resolve('Promise 3 resolvida com sucesso!'), 2000)
+		})
+
+		const allPromises = [promise1, promise2, promise3];
+
+		// O método allSettled espera um array de promises, e após que essas promises estiverem concluídas, é possível tomar alguma ação com base nisso.
+		Promise.allSettled(allPromises)
+			.then((results) => {
+				results.forEach((result) => {
+
+					if(result.status === 'fulfilled') {
+
+						console.log(result.value);
+
+					} else {
+
+						console.log(result.reason);
+					}
+					
+				})
+			})
+
+	</script>
+	
+</body>
+</html>
