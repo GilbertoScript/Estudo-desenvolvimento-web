@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nullish coalescing operator - ES11</title>
+
+	<style>
+		body {
+			background: #ccc;
+			color: black;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// Testando com o operador lógico OR
+
+		// O nullish coalescing é basicamente criado para quando você quer que determinado valor seja considerado e utilizável pelo operador OR ||, sua sintaxe é ??
+		let test1 = null || 'Valor a direita';
+		let test2 = 0 ?? 'Valor a direita';
+		let test3 = undefined || 'Valor a direita';
+		let test4 = '' ?? 'Valor a direita';
+		let test5 = 'Usuário' || 'Valor a direita';
+
+		console.log(`Teste 1: ${test1}`);
+		console.log(`Teste 2: ${test2}`);
+		console.log(`Teste 3: ${test3}`);
+		console.log(`Teste 4: ${test4}`);
+		console.log(`Teste 5: ${test5}`);
+
+
+	</script>
+	
+</body>
+</html>
