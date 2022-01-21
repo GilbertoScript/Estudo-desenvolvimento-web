@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Logical Or Assignment - ES12</title>
+
+	<style>
+		body {
+			background: #ccc;
+			color: black;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// O operador logical or assignment (||=) é utilizado quando a variável em questão possui o valor false => null, undefined, 0, ''
+
+		let v1 = 10
+		let v2 = ''  // false
+		let v3 = null  // false
+		let v4 = undefined  // false
+		let v5 = 0  // false
+		let v6 = 'String'
+
+		v1 ||= 50
+		v2 ||= 100
+		v3 ||= 200
+		v4 ||= 300
+		v5 ||= 400
+		v6 ||= 500
+
+		console.log('V1:', v1)
+		console.log('V2:', v2)
+		console.log('V3:', v3)
+		console.log('V4:', v4)
+		console.log('V5:', v5)
+		console.log('V6:', v6)
+
+	</script>
+	
+</body>
+</html>
