@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Logical Nullish Assignment - ES12</title>
+
+	<style>
+		body {
+			background: #ccc;
+			color: black;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// O operador logical nullish assignment (??=) é utilizado quando a variável em questão possui o valor nulo ou undefined
+
+		let v1 = 10
+		let v2 = null // variável nula = null ou undefined
+
+		// Atribuição lógica nula (??=)
+
+		// Como a variável v1 possui um valor válido, não sendo nulo nem undefined, o valor original vai ser mantido
+		v1 ??= 50
+
+		// Porém com a variável v2 que possui valor nulo, seu respectivo valor é alterado
+		v2 ??= 100
+
+		console.log('v1:', v1, 'v2:', v2)
+
+		// ----------------------------------------------------- //
+
+		let userInfo = {
+			name: 'John Doe',
+			age: '30'
+		}
+
+		userInfo.name ??= 'Nome não informado!'
+		userInfo.age ??= 'Idade não definida!'
+		userInfo.address ??= 'Endereço não definido!'
+
+		console.log(userInfo)
+
+		// ----------------------------------------------------- //
+
+		let arrayExample = ['John Doe', 30, null, 'Uva', undefined, []]
+
+		arrayExample.forEach((item, indice) => {
+
+			arrayExample[indice] ??= '<Não informado!>'
+		})
+
+		console.log(arrayExample)
+
+	</script>
+	
+</body>
+</html>
