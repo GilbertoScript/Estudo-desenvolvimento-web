@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Numeric separator - ES12</title>
+
+	<style>
+		body {
+			background: #ccc;
+			color: black;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// Inteiro
+		let num1 = 1000000000000
+	
+		// Decimal
+		let num2 = 4_457_214.59
+
+		// Binário
+		let num3 = 0b1010_1010_1010
+
+		// Hexadecimal
+		let num4 = 0xFFF_FFF
+
+		// Octal
+		let num5 = 0o23_35
+
+		// O console e o retorno será o mesmo, o underline apenas facilita a leitura dos números literais definidos dentros do código
+		let num6 = 1_000_000_000_000
+		console.log(num1)
+		console.log(num2)
+		console.log(num3)
+		console.log(num4)
+		console.log(num5)
+		console.log(num6)
+
+		// Restrições
+		// let r1 = 100__000
+		// let t2 = 0_10
+		// let t3 = 200_
+
+	</script>
+	
+</body>
+</html>
