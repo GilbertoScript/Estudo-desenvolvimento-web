@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>String replaceAll() - ES12</title>
+
+	<style>
+		body {
+			background: #ccc;
+			color: black;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		// O método replace All permite substituir ocorrências de um caracter em um determinada string, nos retornando uma nova variável
+
+		let string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt, nisl non porttitor lacinia, risus tellus tempor tortor, eget malesuada orci sapien sit amet dolor. Morbi non venenatis nisi.';
+
+		console.log(string)
+		console.log('-------------')
+
+		// replaceAll(<string que será substituida>, <o que irá substituir essa string>)
+		let string2 = string.replaceAll('o', '0').replaceAll('a', '4').replaceAll('e', '3');
+
+		console.log(string2)
+
+	</script>
+	
+</body>
+</html>
