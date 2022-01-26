@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promise Any - ES12</title>
+
+	<style>
+		body {
+			background: #ccc;
+			color: black;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		const promise1 = new Promise((resolve, reject) => {
+
+			setTimeout(() => resolve('Primeira promise foi resolvida com sucesso!'), 3000)
+		})
+
+		const promise2 = new Promise((resolve, reject) => {
+
+			setTimeout(() => resolve('Segunda promise foi resolvida com sucesso!'), 2000)
+		})
+
+		const promise3 = new Promise((resolve, reject) => {
+
+			setTimeout(() => resolve('Terceira promise foi resolvida com sucesso!'), 4000)
+		})
+
+		let promises = [promise1, promise2, promise3]
+
+		Promise.any(promises) // Retorna uma promise
+			.then((resolved) => {
+
+				console.log(resolved)
+			})
+			.catch((e) => {
+				console.log(erro)
+			})
+
+	</script>
+	
+</body>
+</html>
