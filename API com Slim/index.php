@@ -6,13 +6,45 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
 
-$app = new \Slim\App;
+$app = new \Slim\App([
+	'settings' => [
+		'displayErrorDetails' => true
+	] 
+]);
+
+/* Container dependency injection */
+class Servico {
+
+}
+
+/* Container Pimple */
+$container = $app->getContainer();
+$container['servico'] = function(){
+	return new Servico;
+};
+
+$app->get('/servico', function(Request $request, Response $response) {
+
+	$servico = $this->get('servico');
+	var_dump($servico);
+	
+} );
+
+/* Controllers como serviço */
+$container = $app->getContainer();
+$container['Home'] = function(){
+	return new MyApp\controllers\Home( new MyApp\View );
+};
+$app->get('/usuario', 'Home:index' );
 
 
-/* Padrão PSR7 */
+$app->run();
+
+
+/* Padrão PSR7 
 $app->get('/postagens', function(Request $request, Response $response){
 
-	/* Escreve no corpo da resposta utilizando o padrão PSR7 */
+	/* Escreve no corpo da resposta utilizando o padrão PSR7 
 	$response->getBody()->write("Listagem de postagens");
 
 	return $response;
@@ -29,6 +61,7 @@ delete -> Deletar dados do servidor (Delete)
 
 */
 
+/*
 $app->delete('/usuarios/remove/{id}', function(Request $request, Response $response){
 
 	$id = $request->getAttribute('id');
@@ -36,7 +69,7 @@ $app->delete('/usuarios/remove/{id}', function(Request $request, Response $respo
 	/*
 	Deletar do banco de dados com DELETE..
 	....
-	*/
+	
 
 	return $response->getBody()->write( "Sucesso ao deletar: " . $id );
 
@@ -53,7 +86,7 @@ $app->put('/usuarios/atualiza', function(Request $request, Response $response){
 	/*
 	Atualizar no banco de dados com UPDATE..
 	....
-	*/
+	
 
 	return $response->getBody()->write( "Sucesso ao atualizar: " . $id );
 
@@ -69,14 +102,14 @@ $app->post('/usuarios/adiciona', function(Request $request, Response $response){
 	/*
 	Salvar no banco de dados com INSERT INTO..
 	....
-	*/
+	
 
 	return $response->getBody()->write( "Sucesso" );
 
-} );
+} );*/
 
 
-$app->run();
+
 
 /*
 $app->get('/postagens2', function(){
