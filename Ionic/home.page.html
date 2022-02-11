@@ -7,14 +7,135 @@
 </ion-header>
 
 <ion-content padding>
+
+	<h4>Listas</h4>
+	<ion-list>
+		<ion-item>
+			<ion-icon slot="start" name="add"></ion-icon>
+			<ion-label>1.Lorem ipsum dolor sit amet</ion-label>
+		</ion-item>
+		<ion-item>
+			<ion-icon slot="start" name="star"></ion-icon>
+			<ion-label>2.Lorem ipsum dolor sit amet</ion-label>
+		</ion-item>
+	</ion-list>
+
+	<h4>Listas avatar</h4>
+	<ion-list>
+		<ion-item>
+			<ion-avatar slot="start">
+				<ion-img src="https://source.unsplash.com/random/200x200"></ion-img>
+			</ion-avatar>
+			<ion-label>Jamilton Damasceno</ion-label>
+		</ion-item>
+
+		<ion-item>
+			<ion-avatar slot="start">
+				<ion-img src="https://source.unsplash.com/random/200x200"></ion-img>
+			</ion-avatar>
+			<ion-label>Maria Paula</ion-label>
+		</ion-item>
+		
+	</ion-list>
+
+	<h4>Listas slide</h4>
+	<ion-list>
+		<ion-item-sliding>
+
+			<ion-item>
+				<ion-label>Jamilton Damasceno</ion-label>
+			</ion-item>
+
+			<ion-item-options side="end">
+				<ion-item-option color="success">
+					<ion-icon slot="start" name="create"></ion-icon>
+					Alterar
+				</ion-item-option>
+				<ion-item-option color="danger">
+					<ion-icon slot="start" name="trash"></ion-icon>
+					Excluir
+				</ion-item-option>
+			</ion-item-options>
+
+		</ion-item-sliding>
+
+		<ion-item-sliding>
+
+			<ion-item>
+				<ion-label>Maria Paula</ion-label>
+			</ion-item>
+
+			<ion-item-options side="end">
+				<ion-item-option color="success">
+					<ion-icon slot="start" name="create"></ion-icon>
+					Alterar
+				</ion-item-option>
+				<ion-item-option color="danger">
+					<ion-icon slot="start" name="trash"></ion-icon>
+					Excluir
+				</ion-item-option>
+			</ion-item-options>
+
+		</ion-item-sliding>
+
+	</ion-list>
+
+
+	<h4>Cartões</h4>
+	<ion-card color="danger">
+		<ion-img src="https://source.unsplash.com/random/800x600"></ion-img>
+		<ion-card-content>
+			<ion-card-title>
+				Lorem ipsum dolorem sit amet
+			</ion-card-title>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu interdum mauris. Vivamus magna enim, pharetra sit amet aliquam eu, lobortis nec libero.</p>
+		</ion-card-content>
+	</ion-card>
+
+	<h4>Cartões com cabeçalho</h4>
+	<ion-card>
+		
+		<ion-card-header>
+			<ion-card-title>
+				Lorem ipsum dolorem sit amet
+			</ion-card-title>
+			<ion-card-subtitle>
+				pharetra sit amet aliquam eu, lobortis nec
+			</ion-card-subtitle>
+		</ion-card-header>
+
+		<ion-img src="https://source.unsplash.com/random/800x600"></ion-img>
+
+		<ion-card-content>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu interdum mauris. Vivamus magna enim, pharetra sit amet aliquam eu, lobortis nec libero.</p>
+		</ion-card-content>
+
+	</ion-card>
+
+	<h4>Cartão com listagem de itens</h4>
+	<ion-card>
+
+		<ion-item href="http://google.com.br">
+			<ion-icon slot="start" name="add"></ion-icon>
+			<ion-label>1.Lorem ipsum dolor sit amet</ion-label>
+		</ion-item>
+
+		<ion-item href="http://google.com.br">
+			<ion-icon slot="start" name="star"></ion-icon>
+			<ion-label>2.Lorem ipsum dolor sit amet</ion-label>
+		</ion-item>
+
+	</ion-card>
+
   
+  <!--
   <h1>Botões</h1>
 
   <ion-button>Padrão</ion-button>
 
   <ion-button href="http://google.com.br">Link</ion-button>
 
-  <!-- Cores -->
+  
   <h4>Cores</h4>
   <ion-button color="primary">Primary</ion-button>
   <ion-button color="secondary">Secondary</ion-button>
@@ -56,6 +177,7 @@
 	<ion-button size="large">Large</ion-button>
 	<ion-button>Padrão</ion-button>
 	<ion-button size="small">Small</ion-button>
- 	
+ 	-->
+
 </ion-content>
 
